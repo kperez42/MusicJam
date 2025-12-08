@@ -71,7 +71,7 @@ struct EditProfileView: View {
     let lookingForOptions = ["Men", "Women", "Everyone"]
     let educationOptions = ["Prefer not to say", "High School", "Some College", "Associate's", "Bachelor's", "Master's", "Doctorate", "Trade School"]
     let religionOptions = ["Prefer not to say", "Agnostic", "Atheist", "Buddhist", "Catholic", "Christian", "Hindu", "Jewish", "Muslim", "Spiritual", "Other"]
-    let relationshipGoalOptions = ["Prefer not to say", "Casual Dating", "Long-term Relationship", "Marriage", "Friendship", "Not Sure Yet"]
+    let musicianGoalOptions = ["Prefer not to say", "Find Band Members", "Start a Band", "Join a Band", "Casual Jam Sessions", "Studio Collaboration", "Songwriting Partner", "Session Musician", "Open to All"]
     let smokingOptions = ["Prefer not to say", "Never", "Socially", "Regularly", "Trying to Quit"]
     let drinkingOptions = ["Prefer not to say", "Never", "Rarely", "Socially", "Regularly"]
     let petsOptions = ["Prefer not to say", "No Pets", "Dog", "Cat", "Both", "Other Pets", "Want Pets"]
@@ -1427,15 +1427,15 @@ struct EditProfileView: View {
                         }
                     }
 
-                    // Relationship Goal
+                    // Musician Goal
                     VStack(alignment: .leading, spacing: 8) {
-                        Label("Looking For", systemImage: "heart.circle")
+                        Label("Musician Goal", systemImage: "guitars.fill")
                             .font(.caption)
                             .fontWeight(.semibold)
                             .foregroundColor(.secondary)
 
                         Menu {
-                            ForEach(relationshipGoalOptions, id: \.self) { option in
+                            ForEach(musicianGoalOptions, id: \.self) { option in
                                 Button(option) {
                                     relationshipGoal = option == "Prefer not to say" ? nil : option
                                 }
@@ -1854,18 +1854,18 @@ struct EditProfileView: View {
                 .cornerRadius(12)
             }
 
-            // Relationship Goal
+            // Musician Goal
             VStack(alignment: .leading, spacing: 8) {
-                Text("Relationship Goal")
+                Text("Musician Goal")
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .foregroundColor(.secondary)
 
-                Picker("Relationship Goal", selection: Binding(
+                Picker("Musician Goal", selection: Binding(
                     get: { relationshipGoal ?? "Prefer not to say" },
                     set: { relationshipGoal = $0 == "Prefer not to say" ? nil : $0 }
                 )) {
-                    ForEach(relationshipGoalOptions, id: \.self) { option in
+                    ForEach(musicianGoalOptions, id: \.self) { option in
                         Text(option).tag(option)
                     }
                 }

@@ -119,32 +119,32 @@ struct PromptLibrary {
             "My greatest passion is...",
             "My favorite way to spend a weekend is..."
         ],
-        "Dating": [
-            "I'm looking for someone who...",
-            "The way to win me over is...",
-            "My love language is...",
-            "My idea of a perfect date is..."
+        "Music & Collaboration": [
+            "I'm looking for musicians who...",
+            "The best jam session I ever had was...",
+            "My musical influences are...",
+            "My dream collaboration would be..."
         ],
         "Personality": [
             "I'm the type of person who...",
-            "You'll know I like you if...",
-            "My friends would describe me as...",
+            "You'll know I like your playing if...",
+            "My bandmates would describe me as...",
             "Something you should know about me is..."
         ],
         "Fun & Quirky": [
             "Don't judge me, but I love...",
-            "My guilty pleasure is...",
+            "My guilty pleasure song is...",
             "The dorkiest thing about me is...",
             "Two truths and a lie..."
         ],
         "Goals & Dreams": [
-            "My biggest goal this year is...",
+            "My biggest musical goal this year is...",
             "In 5 years, I'll be...",
-            "A bucket list item of mine is...",
+            "A bucket list gig of mine is...",
             "I'm currently learning..."
         ],
         "Hot Takes": [
-            "An unpopular opinion I have is...",
+            "An unpopular music opinion I have is...",
             "My most controversial take is...",
             "The hill I'll die on is...",
             "Change my mind about..."
