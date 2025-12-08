@@ -1,8 +1,8 @@
 //
-//  ShareDateView.swift
-//  Celestia
+//  JamSessionView.swift
+//  MusicJam
 //
-//  Share date details with trusted contacts for safety
+//  Coordinate jam session details with trusted contacts for safety
 //
 
 import SwiftUI
@@ -11,14 +11,14 @@ import MapKit
 
 struct ShareDateView: View {
     @EnvironmentObject var authService: AuthService
-    @StateObject private var viewModel = ShareDateViewModel()
+    @StateObject private var viewModel = JamSessionViewModel()
     @Environment(\.dismiss) var dismiss
-    @State private var selectedMatch: User?
-    @State private var dateTime = Date()
+    @State private var selectedMusician: User?
+    @State private var sessionTime = Date()
     @State private var location = ""
     @State private var additionalNotes = ""
     @State private var selectedContacts: Set<EmergencyContact> = []
-    @State private var showMatchPicker = false
+    @State private var showMusicianPicker = false
 
     var body: some View {
         ScrollView {
@@ -26,8 +26,8 @@ struct ShareDateView: View {
                 // Header
                 headerSection
 
-                // Date Details
-                dateDetailsSection
+                // Session Details
+                sessionDetailsSection
 
                 // Emergency Contacts
                 contactsSection
@@ -38,16 +38,16 @@ struct ShareDateView: View {
             .padding()
         }
         .background(Color(.systemGroupedBackground))
-        .navigationTitle("Share Your Date")
+        .navigationTitle("Coordinate Jam Session")
         .navigationBarTitleDisplayMode(.inline)
         .task {
             await viewModel.loadEmergencyContacts()
         }
         .sheet(item: $viewModel.shareConfirmation) { confirmation in
-            DateSharedConfirmationView(confirmation: confirmation)
+            SessionSharedConfirmationView(confirmation: confirmation)
         }
-        .sheet(isPresented: $showMatchPicker) {
-            MatchPickerView(selectedMatch: $selectedMatch)
+        .sheet(isPresented: $showMusicianPicker) {
+            MusicianPickerView(selectedMusician: $selectedMusician)
         }
     }
 
@@ -55,14 +55,14 @@ struct ShareDateView: View {
 
     private var headerSection: some View {
         VStack(spacing: 12) {
-            Image(systemName: "person.2.badge.gearshape")
+            Image(systemName: "guitars.fill")
                 .font(.system(size: 50))
-                .foregroundColor(.blue)
+                .foregroundColor(.orange)
 
-            Text("Stay Safe on Your Date")
+            Text("Jam Session Safety")
                 .font(.title2.bold())
 
-            Text("Share your date plans with trusted contacts. They'll receive your details and can check in on you.")
+            Text("Share your jam session plans with trusted contacts. They'll know where you are and can check in on you.")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
@@ -73,29 +73,29 @@ struct ShareDateView: View {
         .cornerRadius(16)
     }
 
-    // MARK: - Date Details Section
+    // MARK: - Session Details Section
 
-    private var dateDetailsSection: some View {
+    private var sessionDetailsSection: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Date Details")
+            Text("Session Details")
                 .font(.headline)
 
             VStack(spacing: 16) {
-                // Match Selection
+                // Musician Selection
                 Button {
-                    showMatchPicker = true
+                    showMusicianPicker = true
                 } label: {
                     HStack {
                         Image(systemName: "person.crop.circle")
                             .font(.title2)
-                            .foregroundColor(.purple)
+                            .foregroundColor(.orange)
 
                         VStack(alignment: .leading) {
-                            Text("Who are you meeting?")
+                            Text("Who are you jamming with?")
                                 .font(.caption)
                                 .foregroundColor(.secondary)
 
-                            Text(selectedMatch?.fullName ?? "Select match")
+                            Text(selectedMusician?.fullName ?? "Select musician")
                                 .font(.body)
                                 .foregroundColor(.primary)
                         }
@@ -117,7 +117,7 @@ struct ShareDateView: View {
                         .font(.caption)
                         .foregroundColor(.secondary)
 
-                    DatePicker("", selection: $dateTime, in: Date()...)
+                    DatePicker("", selection: $sessionTime, in: Date()...)
                         .datePickerStyle(.graphical)
                         .padding()
                         .background(Color.white)
@@ -130,7 +130,7 @@ struct ShareDateView: View {
                         .font(.caption)
                         .foregroundColor(.secondary)
 
-                    TextField("Restaurant name or address", text: $location)
+                    TextField("Studio name or address", text: $location)
                         .textFieldStyle(.plain)
                         .padding()
                         .background(Color.white)
@@ -172,7 +172,7 @@ struct ShareDateView: View {
                 } label: {
                     Text("Manage")
                         .font(.subheadline)
-                        .foregroundColor(.blue)
+                        .foregroundColor(.orange)
                 }
             }
 
@@ -187,7 +187,7 @@ struct ShareDateView: View {
                         .font(.headline)
                         .foregroundColor(.secondary)
 
-                    Text("Add trusted contacts who can check on you during your date.")
+                    Text("Add trusted contacts who can check on you during your jam session.")
                         .font(.caption)
                         .foregroundColor(.secondary)
                         .multilineTextAlignment(.center)
@@ -200,7 +200,7 @@ struct ShareDateView: View {
                             .foregroundColor(.white)
                             .padding(.horizontal, 24)
                             .padding(.vertical, 12)
-                            .background(Color.blue)
+                            .background(Color.orange)
                             .cornerRadius(10)
                     }
                 }
@@ -233,9 +233,9 @@ struct ShareDateView: View {
     private var shareButton: some View {
         Button {
             Task {
-                await viewModel.shareDateDetails(
-                    match: selectedMatch,
-                    dateTime: dateTime,
+                await viewModel.shareSessionDetails(
+                    musician: selectedMusician,
+                    sessionTime: sessionTime,
                     location: location,
                     notes: additionalNotes,
                     contacts: Array(selectedContacts)
@@ -244,7 +244,7 @@ struct ShareDateView: View {
         } label: {
             HStack {
                 Image(systemName: "paperplane.fill")
-                Text("Share Date Details")
+                Text("Share Session Details")
             }
             .font(.headline)
             .foregroundColor(.white)
@@ -252,21 +252,21 @@ struct ShareDateView: View {
             .padding()
             .background(
                 LinearGradient(
-                    colors: [.blue, .purple],
+                    colors: [.orange, .purple],
                     startPoint: .leading,
                     endPoint: .trailing
                 )
             )
             .cornerRadius(16)
-            .shadow(color: .blue.opacity(0.3), radius: 10, y: 5)
+            .shadow(color: .orange.opacity(0.3), radius: 10, y: 5)
         }
         .disabled(!viewModel.canShare(
-            match: selectedMatch,
+            musician: selectedMusician,
             location: location,
             contacts: selectedContacts
         ))
         .opacity(viewModel.canShare(
-            match: selectedMatch,
+            musician: selectedMusician,
             location: location,
             contacts: selectedContacts
         ) ? 1.0 : 0.5)
@@ -285,12 +285,12 @@ struct ContactSelectionRow: View {
             HStack(spacing: 12) {
                 // Profile image
                 Circle()
-                    .fill(Color.blue.opacity(0.1))
+                    .fill(Color.orange.opacity(0.1))
                     .frame(width: 40, height: 40)
                     .overlay(
                         Text(contact.name.prefix(1))
                             .font(.headline)
-                            .foregroundColor(.blue)
+                            .foregroundColor(.orange)
                     )
 
                 // Info
@@ -309,7 +309,7 @@ struct ContactSelectionRow: View {
                 // Checkmark
                 Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
                     .font(.title3)
-                    .foregroundColor(isSelected ? .blue : .gray.opacity(0.3))
+                    .foregroundColor(isSelected ? .orange : .gray.opacity(0.3))
             }
             .padding()
             .background(Color.white)
@@ -319,10 +319,10 @@ struct ContactSelectionRow: View {
     }
 }
 
-// MARK: - Date Shared Confirmation View
+// MARK: - Session Shared Confirmation View
 
-struct DateSharedConfirmationView: View {
-    let confirmation: DateShareConfirmation
+struct SessionSharedConfirmationView: View {
+    let confirmation: SessionShareConfirmation
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
@@ -343,10 +343,10 @@ struct DateSharedConfirmationView: View {
 
                 // Message
                 VStack(spacing: 12) {
-                    Text("Date Details Shared!")
+                    Text("Session Details Shared!")
                         .font(.title.bold())
 
-                    Text("Your trusted contacts have been notified and will receive updates.")
+                    Text("Your trusted contacts have been notified about your jam session.")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                         .multilineTextAlignment(.center)
@@ -384,7 +384,7 @@ struct DateSharedConfirmationView: View {
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(Color.blue)
+                        .background(Color.orange)
                         .cornerRadius(16)
                 }
             }
@@ -403,12 +403,15 @@ struct DateShareConfirmation: Identifiable {
     let dateTime: Date
 }
 
+// Alias for backward compatibility
+typealias SessionShareConfirmation = DateShareConfirmation
+
 // MARK: - View Model
 
 @MainActor
-class ShareDateViewModel: ObservableObject {
+class JamSessionViewModel: ObservableObject {
     @Published var emergencyContacts: [EmergencyContact] = []
-    @Published var shareConfirmation: DateShareConfirmation?
+    @Published var shareConfirmation: SessionShareConfirmation?
 
     private let db = Firestore.firestore()
 
@@ -422,7 +425,7 @@ class ShareDateViewModel: ObservableObject {
 
             emergencyContacts = snapshot.documents.compactMap { doc in
                 let contact = try? doc.data(as: EmergencyContact.self)
-                // Filter for contacts that have date alerts enabled
+                // Filter for contacts that have session alerts enabled
                 return contact?.notificationPreferences.receiveScheduledDateAlerts == true ? contact : nil
             }
 
@@ -432,25 +435,25 @@ class ShareDateViewModel: ObservableObject {
         }
     }
 
-    func canShare(match: User?, location: String, contacts: Set<EmergencyContact>) -> Bool {
-        match != nil && !location.isEmpty && !contacts.isEmpty
+    func canShare(musician: User?, location: String, contacts: Set<EmergencyContact>) -> Bool {
+        musician != nil && !location.isEmpty && !contacts.isEmpty
     }
 
-    func shareDateDetails(
-        match: User?,
-        dateTime: Date,
+    func shareSessionDetails(
+        musician: User?,
+        sessionTime: Date,
         location: String,
         notes: String,
         contacts: [EmergencyContact]
     ) async {
-        guard let match = match, let userId = AuthService.shared.currentUser?.id else { return }
+        guard let musician = musician, let userId = AuthService.shared.currentUser?.id else { return }
 
         do {
-            let dateShare: [String: Any] = [
+            let sessionShare: [String: Any] = [
                 "userId": userId,
-                "matchId": match.id as Any,
-                "matchName": match.fullName,
-                "dateTime": Timestamp(date: dateTime),
+                "musicianId": musician.id as Any,
+                "musicianName": musician.fullName,
+                "sessionTime": Timestamp(date: sessionTime),
                 "location": location,
                 "notes": notes,
                 "sharedWith": contacts.map { $0.id },
@@ -458,36 +461,36 @@ class ShareDateViewModel: ObservableObject {
                 "status": "active"
             ]
 
-            try await db.collection("shared_dates").addDocument(data: dateShare)
+            try await db.collection("shared_jam_sessions").addDocument(data: sessionShare)
 
             // Send notifications to contacts
             for contact in contacts {
-                try await sendDateNotification(to: contact, match: match, dateTime: dateTime, location: location)
+                try await sendSessionNotification(to: contact, musician: musician, sessionTime: sessionTime, location: location)
             }
 
-            shareConfirmation = DateShareConfirmation(
+            shareConfirmation = SessionShareConfirmation(
                 sharedWith: contacts.map { $0.name },
-                dateTime: dateTime
+                dateTime: sessionTime
             )
 
             AnalyticsServiceEnhanced.shared.trackEvent(
                 .featureUsed,
                 properties: [
-                    "feature": "share_date",
+                    "feature": "share_jam_session",
                     "contactsCount": contacts.count
                 ]
             )
 
-            Logger.shared.info("Date details shared with \(contacts.count) contacts", category: .general)
+            Logger.shared.info("Jam session details shared with \(contacts.count) contacts", category: .general)
         } catch {
-            Logger.shared.error("Error sharing date details", category: .general, error: error)
+            Logger.shared.error("Error sharing session details", category: .general, error: error)
         }
     }
 
-    private func sendDateNotification(
+    private func sendSessionNotification(
         to contact: EmergencyContact,
-        match: User,
-        dateTime: Date,
+        musician: User,
+        sessionTime: Date,
         location: String
     ) async throws {
         guard let userId = AuthService.shared.currentUser?.id else { return }
@@ -502,37 +505,23 @@ class ShareDateViewModel: ObservableObject {
             "contactEmail": contact.email ?? "",
             "contactPhone": contact.phoneNumber,
             "userId": userId,
-            "matchName": match.fullName,
-            "dateTime": Timestamp(date: dateTime),
+            "musicianName": musician.fullName,
+            "sessionTime": Timestamp(date: sessionTime),
             "location": location,
-            "formattedDateTime": dateFormatter.string(from: dateTime),
+            "formattedDateTime": dateFormatter.string(from: sessionTime),
             "sentAt": Timestamp(date: Date()),
-            "type": "safety_date_alert"
+            "type": "safety_session_alert"
         ]
 
         // Save notification to Firestore for tracking
         try await db.collection("safety_notifications").addDocument(data: notificationData)
 
-        // PRODUCTION NOTE: Actual SMS/Email sending would be handled by a backend service
-        // This would typically integrate with services like:
-        // - Twilio for SMS
-        // - SendGrid for Email
-        // - Firebase Cloud Functions to trigger these services
-        //
-        // Example backend flow:
-        // 1. Cloud Function watches 'safety_notifications' collection
-        // 2. When new document added, function triggers
-        // 3. Function calls Twilio/SendGrid to send SMS/Email to contact
-        // 4. Updates notification document with delivery status
-        //
-        // For development/testing, notification is logged and saved to database
-
         let message = """
-        Safety Alert from Celestia:
-        \(AuthService.shared.currentUser?.fullName ?? "A user") has shared their date details with you.
+        Safety Alert from MusicJam:
+        \(AuthService.shared.currentUser?.fullName ?? "A musician") has shared their jam session details with you.
 
-        Date: \(dateFormatter.string(from: dateTime))
-        Meeting: \(match.fullName)
+        Session: \(dateFormatter.string(from: sessionTime))
+        With: \(musician.fullName)
         Location: \(location)
 
         This is an automated safety notification.
@@ -547,10 +536,13 @@ class ShareDateViewModel: ObservableObject {
     }
 }
 
-// MARK: - Match Picker View
+// Alias for backward compatibility
+typealias ShareDateViewModel = JamSessionViewModel
 
-struct MatchPickerView: View {
-    @Binding var selectedMatch: User?
+// MARK: - Musician Picker View
+
+struct MusicianPickerView: View {
+    @Binding var selectedMusician: User?
     @Environment(\.dismiss) var dismiss
     @StateObject private var matchService = MatchService.shared
     @State private var isLoading = false
@@ -561,7 +553,7 @@ struct MatchPickerView: View {
         NavigationStack {
             Group {
                 if isLoading {
-                    ProgressView("Loading matches...")
+                    ProgressView("Loading connections...")
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 } else if matches.isEmpty {
                     emptyStateView
@@ -569,7 +561,7 @@ struct MatchPickerView: View {
                     matchList
                 }
             }
-            .navigationTitle("Select Match")
+            .navigationTitle("Select Musician")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -593,10 +585,10 @@ struct MatchPickerView: View {
                 .foregroundColor(.gray.opacity(0.5))
 
             VStack(spacing: 12) {
-                Text("No Matches Yet")
+                Text("No Connections Yet")
                     .font(.title2.bold())
 
-                Text("You don't have any matches to share your date with yet. Start swiping to find matches!")
+                Text("You don't have any musician connections yet. Start discovering musicians to connect with!")
                     .font(.body)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
@@ -612,14 +604,14 @@ struct MatchPickerView: View {
         List {
             ForEach(Array(matches.enumerated()), id: \.0) { index, match in
                 if let otherUser = getOtherUser(from: match) {
-                    MatchPickerRow(user: otherUser) {
-                        selectedMatch = otherUser
+                    MusicianPickerRow(user: otherUser) {
+                        selectedMusician = otherUser
                         dismiss()
 
                         // Track analytics
                         AnalyticsManager.shared.logEvent(.matchSelected, parameters: [
                             "match_id": match.id ?? "",
-                            "source": "share_date"
+                            "source": "share_jam_session"
                         ])
                     }
                 }
@@ -630,7 +622,6 @@ struct MatchPickerView: View {
 
     // MARK: - Helper Methods
 
-    // PERFORMANCE FIX: Use batch queries instead of N+1 queries
     private func loadMatches() async {
         guard let currentUserId = AuthService.shared.currentUser?.id else { return }
 
@@ -668,13 +659,6 @@ struct MatchPickerView: View {
                 // Map users to their match IDs
                 for user in batchUsers {
                     guard let userId = user.id else { continue }
-                    // Find match that includes this user
-                    if let match = matches.first(where: {
-                        ($0.user1Id == userId || $0.user2Id == userId) && $0.user1Id != userId || $0.user2Id != userId
-                    }), let matchId = match.id {
-                        matchUsers[matchId] = user
-                    }
-                    // Also store by user ID for easier lookup
                     for match in matches {
                         let otherUserId = match.user1Id == currentUserId ? match.user2Id : match.user1Id
                         if otherUserId == userId, let matchId = match.id {
@@ -684,9 +668,9 @@ struct MatchPickerView: View {
                 }
             }
 
-            Logger.shared.info("Loaded \(matches.count) matches for date sharing using batch queries", category: .general)
+            Logger.shared.info("Loaded \(matches.count) connections for session sharing using batch queries", category: .general)
         } catch {
-            Logger.shared.error("Error loading matches for picker", category: .general, error: error)
+            Logger.shared.error("Error loading connections for picker", category: .general, error: error)
         }
     }
 
@@ -696,9 +680,12 @@ struct MatchPickerView: View {
     }
 }
 
-// MARK: - Match Picker Row
+// Alias for backward compatibility
+typealias MatchPickerView = MusicianPickerView
 
-struct MatchPickerRow: View {
+// MARK: - Musician Picker Row
+
+struct MusicianPickerRow: View {
     let user: User
     let onSelect: () -> Void
 
@@ -721,7 +708,7 @@ struct MatchPickerRow: View {
                     Circle()
                         .fill(
                             LinearGradient(
-                                colors: [.blue, .purple],
+                                colors: [.orange, .purple],
                                 startPoint: .topLeading,
                                 endPoint: .bottomTrailing
                             )
@@ -740,7 +727,11 @@ struct MatchPickerRow: View {
                         .font(.headline)
                         .foregroundColor(.primary)
 
-                    if user.age > 0 {
+                    if !user.instruments.isEmpty {
+                        Text(user.instruments.prefix(3).joined(separator: ", "))
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                    } else if user.age > 0 {
                         Text("\(user.age) years old")
                             .font(.subheadline)
                             .foregroundColor(.secondary)
@@ -758,6 +749,9 @@ struct MatchPickerRow: View {
         .buttonStyle(.plain)
     }
 }
+
+// Alias for backward compatibility
+typealias MatchPickerRow = MusicianPickerRow
 
 #Preview {
     NavigationStack {

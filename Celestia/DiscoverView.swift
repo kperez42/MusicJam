@@ -1,7 +1,8 @@
 //
 //  DiscoverView.swift
-//  Celestia
+//  MusicJam
 //
+//  Find Musicians Near You
 //  ACCESSIBILITY: Full VoiceOver support, Dynamic Type, Reduce Motion, and WCAG 2.1 AA compliant
 //
 
@@ -70,7 +71,7 @@ struct DiscoverView: View {
             .accessibilityIdentifier(AccessibilityIdentifier.discoverView)
             .task {
                 await viewModel.loadUsers()
-                VoiceOverAnnouncement.screenChanged(to: "Discover view. \(viewModel.users.count) potential matches available.")
+                VoiceOverAnnouncement.screenChanged(to: "Discover view. \(viewModel.users.count) musicians available to connect with.")
             }
             .refreshable {
                 HapticManager.shared.impact(.light)

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SafeDatingTipsView: View {
+struct CollaborationTipsView: View {
     @State private var selectedCategory: TipCategory = .beforeMeeting
 
     var body: some View {
@@ -473,8 +473,11 @@ struct SafetyTip: Identifiable {
     }
 }
 
+// Alias for backward compatibility
+typealias SafeDatingTipsView = CollaborationTipsView
+
 #Preview {
     NavigationStack {
-        SafeDatingTipsView()
+        CollaborationTipsView()
     }
 }

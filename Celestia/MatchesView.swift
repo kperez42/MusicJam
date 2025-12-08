@@ -1,8 +1,8 @@
 //
 //  MatchesView.swift
-//  Celestia
+//  MusicJam
 //
-//  ELITE MATCHES VIEW - Premium Dating Experience
+//  JAM PARTNERS VIEW - Your Musical Connections
 //  ACCESSIBILITY: Full VoiceOver support, Dynamic Type, Reduce Motion, and WCAG 2.1 AA compliant
 //
 
@@ -143,14 +143,14 @@ struct MatchesView: View {
             .task {
                 await loadMatches()
                 updateFilteredMatches()
-                VoiceOverAnnouncement.screenChanged(to: "Matches view. \(matchService.matches.count) matches available.")
+                VoiceOverAnnouncement.screenChanged(to: "Jam Partners view. \(matchService.matches.count) musician connections available.")
             }
             .refreshable {
                 HapticManager.shared.impact(.light)
                 await loadMatches()
                 updateFilteredMatches()
                 HapticManager.shared.notification(.success)
-                VoiceOverAnnouncement.announce("Matches refreshed. \(matchService.matches.count) matches available.")
+                VoiceOverAnnouncement.announce("Jam partners refreshed. \(matchService.matches.count) musician connections available.")
             }
             // PERFORMANCE: Update cached matches only when dependencies change
             .onChange(of: matchService.matches.count) { _, _ in

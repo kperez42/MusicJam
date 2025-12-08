@@ -291,7 +291,7 @@ struct SettingsView: View {
                         HStack {
                             Image(systemName: "shield.checkered")
                                 .foregroundColor(.orange)
-                            Text("Dating Safety Tips")
+                            Text("Collaboration Safety Tips")
                                 .foregroundColor(.primary)
                             Spacer()
                             Image(systemName: "chevron.right")

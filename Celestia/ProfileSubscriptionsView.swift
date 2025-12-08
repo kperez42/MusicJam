@@ -45,10 +45,10 @@ struct ProfileSubscriptionsView: View {
         FeatureCardItem(
             icon: "infinity",
             title: "Unlimited Likes",
-            description: "Like as many profiles as you want without daily limits. Never miss a potential match!",
+            description: "Connect with as many musicians as you want without daily limits. Never miss a potential collaborator!",
             color: .purple,
             gradient: [Color.purple, Color.indigo],
-            benefit: "No restrictions on your dating journey"
+            benefit: "No restrictions on finding musicians"
         ),
         FeatureCardItem(
             icon: "eye.fill",
@@ -61,7 +61,7 @@ struct ProfileSubscriptionsView: View {
         FeatureCardItem(
             icon: "star.fill",
             title: "Super Likes",
-            description: "Stand out from the crowd and show you're really interested. Get 3x more matches!",
+            description: "Stand out and show you're really interested in collaborating. Get 3x more connections!",
             color: .cyan,
             gradient: [Color.cyan, Color.teal],
             benefit: "Make a lasting impression"
@@ -69,7 +69,7 @@ struct ProfileSubscriptionsView: View {
         FeatureCardItem(
             icon: "bolt.fill",
             title: "Profile Boost",
-            description: "Be seen by 10x more people for 30 minutes. Get more matches faster!",
+            description: "Be seen by 10x more musicians for 30 minutes. Get more connections faster!",
             color: .orange,
             gradient: [Color.orange, Color.yellow],
             benefit: "Supercharge your visibility"

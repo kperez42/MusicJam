@@ -1,9 +1,9 @@
 //
 //  TestData.swift
-//  Celestia
+//  MusicJam
 //
 //  Created by Claude
-//  Test data for previews and development
+//  Test data for previews and development - Musician profiles
 //
 
 import Foundation
@@ -23,7 +23,7 @@ struct TestData {
             age: 24,
             gender: "Female",
             lookingFor: "Male",
-            bio: "Adventure seeker 🏔️ | Coffee enthusiast ☕ | Love hiking, photography, and spontaneous road trips. Always up for trying new restaurants!",
+            bio: "Singer/Songwriter 🎤 | Looking for bandmates to start an indie folk project | Guitar, ukulele, vocals | Love open mics and coffee shop gigs!",
             location: "San Francisco",
             country: "USA",
             latitude: 37.7749,
@@ -47,7 +47,7 @@ struct TestData {
             age: 28,
             gender: "Male",
             lookingFor: "Female",
-            bio: "Tech entrepreneur 💻 | Fitness junkie 💪 | Building the future one line of code at a time. Love cooking, gaming, and good conversations.",
+            bio: "Drummer 🥁 | Rock/Metal | 10+ years experience | Looking to join or form a serious gigging band | Own full kit and transport!",
             location: "San Francisco",
             country: "USA",
             latitude: 37.7849,
@@ -71,7 +71,7 @@ struct TestData {
             age: 26,
             gender: "Female",
             lookingFor: "Male",
-            bio: "Artist & dreamer 🎨 | Yoga instructor 🧘‍♀️ | Plant mom 🌱 | Looking for someone who appreciates art, nature, and deep conversations under the stars.",
+            bio: "Classically trained pianist 🎹 | Jazz & classical crossover | Session musician available | Looking for collaborators for original compositions!",
             location: "Oakland",
             country: "USA",
             latitude: 37.8044,
@@ -96,7 +96,7 @@ struct TestData {
             age: 30,
             gender: "Male",
             lookingFor: "Female",
-            bio: "Marketing director by day, DJ by night 🎧 | Music lover | Foodie | Looking for a partner in crime to explore the city's best hidden gems.",
+            bio: "DJ & Producer 🎧 | Electronic/House | Looking for vocalists and instrumentalists for studio collaborations | Ableton wizard!",
             location: "Berkeley",
             country: "USA",
             latitude: 37.8715,
@@ -122,7 +122,7 @@ struct TestData {
             age: 27,
             gender: "Female",
             lookingFor: "Male",
-            bio: "Doctor saving lives 👩‍⚕️ | Bookworm 📚 | Dog lover 🐕 | When I'm not at the hospital, you'll find me with a good book and my golden retriever.",
+            bio: "Bass player 🎸 | Funk, R&B, Soul | Weekend warrior looking for casual jam sessions | Own gear and practice space available!",
             location: "San Francisco",
             country: "USA",
             latitude: 37.7649,

@@ -1,8 +1,8 @@
 //
 //  LikesView.swift
-//  Celestia
+//  MusicJam
 //
-//  Likes view with three tabs: Liked Me, My Likes, Mutual Likes
+//  Interest view with three tabs: Want to Jam With Me, My Interests, Mutual Interests
 //
 
 import SwiftUI
@@ -72,7 +72,7 @@ struct LikesView: View {
         case nameAZ = "Name A-Z"
     }
 
-    private let tabs = ["Liked Me", "My Likes", "Mutual Likes"]
+    private let tabs = ["Want to Jam", "My Interests", "Mutual"]
 
     // Check if user has premium access
     private var isPremium: Bool {
