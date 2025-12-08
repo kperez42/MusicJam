@@ -1559,13 +1559,13 @@ struct MatchCelebrationOverlay: View {
                 }
 
             VStack(spacing: 24) {
-                // Animated hearts
+                // Animated icons
                 ZStack {
                     // Outer glow
                     Circle()
                         .fill(
                             RadialGradient(
-                                colors: [Color.pink.opacity(0.4), Color.clear],
+                                colors: [Color.orange.opacity(0.4), Color.clear],
                                 center: .center,
                                 startRadius: 40,
                                 endRadius: 120
@@ -1627,10 +1627,10 @@ struct MatchCelebrationOverlay: View {
                         }
                     }
 
-                    // Heart in center
-                    Image(systemName: "heart.fill")
+                    // Guitar icon in center
+                    Image(systemName: "guitars.fill")
                         .font(.system(size: 30))
-                        .foregroundColor(.pink)
+                        .foregroundColor(.orange)
                         .offset(y: 40)
                         .scaleEffect(heartScale)
                 }
@@ -1638,11 +1638,11 @@ struct MatchCelebrationOverlay: View {
 
                 // Text
                 VStack(spacing: 12) {
-                    Text("It's a Match!")
+                    Text("Jam Match Found! 🎸")
                         .font(.system(size: 36, weight: .bold))
                         .foregroundColor(.white)
 
-                    Text("You and \(user.fullName) liked each other")
+                    Text("You and \(user.fullName) want to jam together!")
                         .font(.subheadline)
                         .foregroundColor(.white.opacity(0.8))
                 }
@@ -1655,7 +1655,7 @@ struct MatchCelebrationOverlay: View {
                     } label: {
                         HStack(spacing: 8) {
                             Image(systemName: "message.fill")
-                            Text("Send a Message")
+                            Text("Start Chatting")
                                 .fontWeight(.semibold)
                         }
                         .foregroundColor(.white)
@@ -1663,7 +1663,7 @@ struct MatchCelebrationOverlay: View {
                         .padding(.vertical, 16)
                         .background(
                             LinearGradient(
-                                colors: [.pink, .purple],
+                                colors: [.orange, .purple],
                                 startPoint: .leading,
                                 endPoint: .trailing
                             )
@@ -1674,7 +1674,7 @@ struct MatchCelebrationOverlay: View {
                     Button {
                         onDismiss()
                     } label: {
-                        Text("Keep Browsing")
+                        Text("Keep Discovering")
                             .font(.subheadline)
                             .fontWeight(.medium)
                             .foregroundColor(.white.opacity(0.8))
