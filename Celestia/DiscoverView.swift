@@ -269,7 +269,7 @@ struct DiscoverView: View {
                     )
                     .disabled(viewModel.isProcessingAction)
 
-                    // Super Like button
+                    // Super Interest button
                     SwipeActionButton(
                         icon: "star.fill",
                         iconSize: .title2,
@@ -281,14 +281,14 @@ struct DiscoverView: View {
                     ) {
                         Task {
                             await viewModel.handleSuperLike()
-                            VoiceOverAnnouncement.announce("Super like sent!")
+                            VoiceOverAnnouncement.announce("Super interest sent!")
                         }
                     }
                     .accessibilityElement(
-                        label: "Super Like",
-                        hint: "Send a super like to stand out and increase your chances of matching",
+                        label: "Super Interest",
+                        hint: "Send a super interest to stand out and increase your chances of connecting",
                         traits: .isButton,
-                        identifier: AccessibilityIdentifier.superLikeButton
+                        identifier: AccessibilityIdentifier.superInterestButton
                     )
                     .disabled(viewModel.isProcessingAction)
 
@@ -579,7 +579,7 @@ struct DiscoverView: View {
                 AccessibilityCustomAction(name: "Pass") {
                     Task { await viewModel.handlePass() }
                 },
-                AccessibilityCustomAction(name: "Super Like") {
+                AccessibilityCustomAction(name: "Super Interest") {
                     Task { await viewModel.handleSuperLike() }
                 },
                 AccessibilityCustomAction(name: "View Profile") {

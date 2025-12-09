@@ -55,23 +55,23 @@
 
 // MARK: - Swipe
 
-"swipe.discover" = "Entdecken";
-"swipe.like" = "Gefällt mir";
+"swipe.discover" = "Musiker entdecken";
+"swipe.like" = "Jammen";
 "swipe.dislike" = "Überspringen";
-"swipe.super_like" = "Super Like";
-"swipe.its_a_match" = "Es ist ein Match!";
+"swipe.super_like" = "Super Interesse";
+"swipe.its_a_match" = "Jam-Verbindung!";
 "swipe.send_message" = "Nachricht senden";
-"swipe.keep_swiping" = "Weiter swipen";
-"swipe.no_more_profiles" = "Keine weiteren Profile verfügbar";
+"swipe.keep_swiping" = "Weiter entdecken";
+"swipe.no_more_profiles" = "Keine weiteren Musiker in deiner Nähe";
 
-// MARK: - Matches
+// MARK: - Connections
 
-"matches.matches" = "Matches";
-"matches.new_match" = "Neues Match!";
-"matches.no_matches" = "Noch keine Matches";
-"matches.unmatch" = "Match aufheben";
-"matches.unmatch_confirm" = "Möchten Sie dieses Match wirklich aufheben?";
-"matches.matched_with" = "Match mit %@";
+"matches.matches" = "Verbindungen";
+"matches.new_match" = "Neue Verbindung!";
+"matches.no_matches" = "Noch keine Verbindungen";
+"matches.unmatch" = "Verbindung aufheben";
+"matches.unmatch_confirm" = "Möchten Sie diese Verbindung wirklich aufheben?";
+"matches.matched_with" = "Verbindung mit %@";
 
 // MARK: - Messages
 

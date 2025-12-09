@@ -385,14 +385,14 @@ class TutorialManager: ObservableObject {
         case "super_like":
             return Tutorial(
                 id: "super_like",
-                title: "Super Like ⭐",
-                description: "Stand out from the crowd! Super Likes show you're really interested.",
+                title: "Super Interest ⭐",
+                description: "Stand out from the crowd! Super Interests show you're really interested in collaborating.",
                 icon: "star.circle.fill",
                 accentColor: .blue,
                 tips: [
-                    "You get 1 free Super Like per day",
+                    "You get 1 free Super Interest per day",
                     "Premium users get 5 per day",
-                    "Use them on profiles you really like!"
+                    "Use them on musicians you really want to jam with!"
                 ]
             )
 

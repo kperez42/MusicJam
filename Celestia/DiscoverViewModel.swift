@@ -35,9 +35,9 @@ class DiscoverViewModel: ObservableObject {
             case .general:
                 return ""
             case .likeLimitReached:
-                return "You've reached your daily like limit. Subscribe to continue liking!"
+                return "You've reached your daily interest limit. Subscribe to continue showing interest!"
             case .superLikesExhausted:
-                return "You're out of Super Likes. Subscribe to get more!"
+                return "You're out of Super Interests. Subscribe to get more!"
             }
         }
     }
@@ -444,7 +444,7 @@ class DiscoverViewModel: ObservableObject {
             isProcessingAction = false
             upgradeReason = .superLikesExhausted
             showingUpgradeSheet = true
-            Logger.shared.warning("No Super Likes remaining. User needs to purchase more", category: .payment)
+            Logger.shared.warning("No Super Interests remaining. User needs to purchase more", category: .payment)
             return
         }
 
@@ -484,14 +484,14 @@ class DiscoverViewModel: ObservableObject {
                     self.showingMatchAnimation = true
                     HapticManager.shared.notification(.success)
                 }
-                Logger.shared.info("Super Like resulted in a match with \(superLikedUser.fullName)", category: .matching)
+                Logger.shared.info("Super Interest resulted in a match with \(superLikedUser.fullName)", category: .matching)
             } else {
-                Logger.shared.info("Super Like sent to \(superLikedUser.fullName)", category: .matching)
+                Logger.shared.info("Super Interest sent to \(superLikedUser.fullName)", category: .matching)
             }
         } catch {
-            Logger.shared.error("Error sending super like", category: .matching, error: error)
+            Logger.shared.error("Error sending super interest", category: .matching, error: error)
             // Show error feedback to user
-            actionErrorMessage = "Failed to send super like. Please try again."
+            actionErrorMessage = "Failed to send super interest. Please try again."
             showActionError = true
             HapticManager.shared.notification(.error)
             // Auto-hide after 3 seconds
@@ -509,7 +509,7 @@ class DiscoverViewModel: ObservableObject {
 
         await userService.decrementSuperLikes(userId: userId)
         await authService.fetchUser()
-        Logger.shared.info("Super Like used. Remaining: \(authService.currentUser?.superLikesRemaining ?? 0)", category: .matching)
+        Logger.shared.info("Super Interest used. Remaining: \(authService.currentUser?.superLikesRemaining ?? 0)", category: .matching)
     }
 
     /// Apply filters

@@ -43,9 +43,9 @@ enum NotificationCategory: String, CaseIterable, Codable {
         case .profileView:
             return "Profile View"
         case .newLike:
-            return "Someone Likes You!"
+            return "Someone Wants to Jam!"
         case .superLike:
-            return "Super Like!"
+            return "Super Interest!"
         case .dailyDigest:
             return "Your Daily Update"
         case .premiumOffer:
@@ -145,12 +145,12 @@ enum NotificationCategory: String, CaseIterable, Codable {
                 ),
                 UNNotificationAction(
                     identifier: "LIKE_BACK",
-                    title: "Like Back",
+                    title: "Interest Back",
                     options: [.authenticationRequired]
                 ),
                 UNNotificationAction(
                     identifier: "SUPER_LIKE_BACK",
-                    title: "⭐ Super Like Back",
+                    title: "⭐ Super Interest Back",
                     options: [.authenticationRequired]
                 )
             ]
@@ -502,18 +502,18 @@ enum NotificationPayload {
             "\(name) SUPER interested! 🌟",
             "A musician really wants to connect!",
             "\(name) thinks you'd be perfect to jam with",
-            "You got a Super Like from \(name)!",
+            "You got a Super Interest from \(name)!",
             "\(name) is all in on collaborating!"
         ]
-        return titles.randomElement() ?? "\(name) Super Liked you!"
+        return titles.randomElement() ?? "\(name) showed Super Interest in you!"
     }
 
     private static func randomSuperLikeBody(name: String) -> String {
         let bodies = [
             "They really want to jam with you!",
-            "This is rare - \(name) saved their Super Like for you!",
+            "This is rare - \(name) saved their Super Interest for you!",
             "Your music profile stood out from everyone else!",
-            "Super Likes mean they're serious about collaborating",
+            "Super Interests mean they're serious about collaborating",
             "Out of all the musicians, they picked YOU!"
         ]
         return bodies.randomElement() ?? "They really want to jam!"

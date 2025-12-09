@@ -55,7 +55,7 @@ class OnboardingViewModel: ObservableObject {
 
             var displayName: String {
                 switch self {
-                case .superLikes: return "Super Likes"
+                case .superLikes: return "Super Interests"
                 case .boosts: return "Profile Boosts"
                 case .premiumTrial: return "Premium Trial"
                 }
@@ -92,7 +92,7 @@ class OnboardingViewModel: ObservableObject {
             completionIncentive = CompletionIncentive(
                 type: .superLikes,
                 amount: amount,
-                description: "Complete your profile to get \(amount) free Super Likes!",
+                description: "Complete your profile to get \(amount) free Super Interests!",
                 icon: "star.fill"
             )
 
@@ -215,7 +215,7 @@ class OnboardingViewModel: ObservableObject {
         switch incentive.type {
         case .superLikes:
             user.superLikesRemaining += incentive.amount
-            Logger.shared.info("Granted \(incentive.amount) Super Likes for profile completion", category: .onboarding)
+            Logger.shared.info("Granted \(incentive.amount) Super Interests for profile completion", category: .onboarding)
 
         case .boosts:
             user.boostsRemaining += incentive.amount

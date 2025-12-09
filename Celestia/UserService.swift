@@ -611,17 +611,17 @@ class UserService: ObservableObject, UserServiceProtocol {
         }
     }
 
-    // MARK: - Super Likes Management
+    // MARK: - Super Interests Management
 
-    /// Decrement super like count
+    /// Decrement super interest count
     func decrementSuperLikes(userId: String) async {
         do {
             try await db.collection("users").document(userId).updateData([
                 "superLikesRemaining": FieldValue.increment(Int64(-1))
             ])
-            Logger.shared.info("Super Like used", category: .user)
+            Logger.shared.info("Super Interest used", category: .user)
         } catch {
-            Logger.shared.error("Error decrementing super likes", category: .database, error: error)
+            Logger.shared.error("Error decrementing super interests", category: .database, error: error)
         }
     }
 

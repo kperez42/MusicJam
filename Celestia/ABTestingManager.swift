@@ -594,8 +594,8 @@ extension ABTestingManager {
                 ),
                 Variant(
                     id: "super_likes",
-                    name: "3 Free Super Likes",
-                    description: "Offer 3 free super likes for profile completion",
+                    name: "3 Free Super Interests",
+                    description: "Offer 3 free super interests for profile completion",
                     isControl: false,
                     trafficAllocation: 25,
                     featureOverrides: ["incentive": "super_likes", "amount": 3]
