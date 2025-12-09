@@ -292,7 +292,7 @@ struct ImageUploadServiceTests {
 
     @Test("Error types are properly defined")
     func testErrorTypes() async throws {
-        let errors: [CelestiaError] = [
+        let errors: [MusicJamError] = [
             .imageUploadFailed,
             .imageTooBig,
             .invalidImageFormat,
@@ -308,10 +308,10 @@ struct ImageUploadServiceTests {
 
     @Test("Error messages are user-friendly")
     func testErrorMessages() async throws {
-        let uploadError = CelestiaError.imageUploadFailed
-        let sizeError = CelestiaError.imageTooBig
-        let formatError = CelestiaError.invalidImageFormat
-        let limitError = CelestiaError.tooManyImages
+        let uploadError = MusicJamError.imageUploadFailed
+        let sizeError = MusicJamError.imageTooBig
+        let formatError = MusicJamError.invalidImageFormat
+        let limitError = MusicJamError.tooManyImages
 
         #expect(uploadError.errorDescription?.contains("upload") == true)
         #expect(sizeError.errorDescription?.contains("large") == true)
@@ -383,6 +383,6 @@ struct ImageUploadServiceTests {
     }
 
     private static func generateMockFirebaseUrl(userId: String) -> String {
-        return "https://storage.googleapis.com/celestia-40ce6/gallery_photos/\(userId)/\(UUID().uuidString).jpg"
+        return "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/\(userId)/\(UUID().uuidString).jpg"
     }
 }

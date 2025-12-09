@@ -78,7 +78,7 @@ struct StoreManagerTests {
 
     @Test("Consumable amounts default to 1")
     func testConsumableDefaultAmount() async throws {
-        let unknownProduct = "com.celestia.unknown.product"
+        let unknownProduct = "com.musicjam.unknown.product"
 
         // Should default to 1 if not recognized
         let defaultAmount = 1
@@ -342,7 +342,7 @@ struct StoreManagerTests {
 
     @Test("Unknown product type handled gracefully")
     func testUnknownProductTypeHandling() async throws {
-        let unknownProductId = "com.celestia.unknown.product"
+        let unknownProductId = "com.musicjam.unknown.product"
 
         #expect(!unknownProductId.isEmpty)
         // Should return nil or handle gracefully

@@ -390,10 +390,10 @@ struct ReferralFlowTests {
     func testShareableReferralLink() async throws {
         let userId = "user123"
         let referralCode = "ABC123"
-        let baseURL = "https://celestia.app"
+        let baseURL = "https://musicjam.app"
 
         let shareableLink = "\(baseURL)/signup?ref=\(referralCode)"
-        #expect(shareableLink == "https://celestia.app/signup?ref=ABC123")
+        #expect(shareableLink == "https://musicjam.app/signup?ref=ABC123")
 
         // Shareable message
         let shareMessage = "Join Celestia using my code \(referralCode) and get 2 free Super Likes! \(shareableLink)"

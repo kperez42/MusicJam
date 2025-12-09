@@ -220,7 +220,7 @@ struct MessageServiceTests {
         // This would test error handling
         // For now, verify error types exist
 
-        #expect(CelestiaError.messageNotSent != nil)
+        #expect(MusicJamError.messageNotSent != nil)
     }
 
     @Test("Invalid match ID handled")

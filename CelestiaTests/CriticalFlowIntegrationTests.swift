@@ -366,13 +366,13 @@ struct CriticalFlowIntegrationTests {
     func testRepositoryErrorHandling() async throws {
         let userRepo = MockUserRepository()
         userRepo.shouldFail = true
-        userRepo.failureError = CelestiaError.networkError
+        userRepo.failureError = MusicJamError.networkError
 
         do {
             _ = try await userRepo.fetchUser(id: "nonexistent")
             #expect(Bool(false), "Should have thrown error")
         } catch {
-            #expect(error is CelestiaError)
+            #expect(error is MusicJamError)
         }
     }
 

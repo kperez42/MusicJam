@@ -212,9 +212,9 @@ struct PhotoUploadFlowTests {
     @Test("Photo URLs are valid Firebase Storage URLs")
     func testPhotoUrlsAreValid() async throws {
         let validUrls = [
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/photo1.jpg",
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user456/photo2.jpg",
-            "https://firebasestorage.googleapis.com/v0/b/celestia-40ce6/o/photo3.jpg"
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/photo1.jpg",
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user456/photo2.jpg",
+            "https://firebasestorage.googleapis.com/v0/b/musicjam-40ce6/o/photo3.jpg"
         ]
 
         for url in validUrls {
@@ -307,7 +307,7 @@ struct PhotoUploadFlowTests {
             _ = try await mockUpload.uploadPhoto(testImage, userId: "test123", imageType: .gallery)
             #expect(Bool(false), "Expected upload to fail")
         } catch {
-            #expect(error is CelestiaError)
+            #expect(error is MusicJamError)
         }
 
         #expect(mockUpload.failureCount == 1)

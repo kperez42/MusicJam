@@ -191,9 +191,9 @@ struct AuthServiceTests {
                "Password error should mention length requirement")
     }
 
-    @Test("CelestiaError provides helpful descriptions")
-    func testCelestiaErrorDescriptions() async throws {
-        let errors: [CelestiaError] = [
+    @Test("MusicJamError provides helpful descriptions")
+    func testMusicJamErrorDescriptions() async throws {
+        let errors: [MusicJamError] = [
             .invalidCredentials,
             .weakPassword,
             .emailNotVerified,
@@ -234,7 +234,7 @@ struct AuthServiceTests {
     @Test("Email verification flow requirements")
     func testEmailVerificationRequirements() async throws {
         // Test that verification URL is properly configured
-        let verificationURL = "https://celestia-40ce6.firebaseapp.com"
+        let verificationURL = "https://musicjam-40ce6.firebaseapp.com"
         #expect(verificationURL.hasPrefix("https://"),
                "Verification URL should use HTTPS")
         #expect(verificationURL.contains("firebaseapp"),

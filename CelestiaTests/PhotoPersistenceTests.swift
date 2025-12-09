@@ -38,11 +38,11 @@ class MockFirebaseAuthService: AuthServiceProtocol {
     }
 
     func signIn(email: String, password: String) async throws -> User {
-        throw CelestiaError.notImplemented
+        throw MusicJamError.notImplemented
     }
 
     func signUp(email: String, password: String, name: String, age: Int) async throws -> User {
-        throw CelestiaError.notImplemented
+        throw MusicJamError.notImplemented
     }
 
     func signOut() async throws {}
@@ -64,9 +64,9 @@ struct PhotoPersistenceTests {
 
         // Simulate uploading 3 photos
         let uploadedUrls = [
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/photo1.jpg",
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/photo2.jpg",
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/photo3.jpg"
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/photo1.jpg",
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/photo2.jpg",
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/photo3.jpg"
         ]
 
         user.photos = uploadedUrls
@@ -88,8 +88,8 @@ struct PhotoPersistenceTests {
 
         // User already has 2 photos
         user.photos = [
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/existing1.jpg",
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/existing2.jpg"
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/existing1.jpg",
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/existing2.jpg"
         ]
         mockAuth.currentUser = user
         try await mockAuth.updateUser(user)
@@ -99,8 +99,8 @@ struct PhotoPersistenceTests {
 
         // Upload 2 MORE photos (should ADD, not replace)
         let newPhotos = [
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/new1.jpg",
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/new2.jpg"
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/new1.jpg",
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/new2.jpg"
         ]
 
         user.photos.append(contentsOf: newPhotos)
@@ -126,21 +126,21 @@ struct PhotoPersistenceTests {
 
         // Save 1: Add 2 photos
         user.photos = [
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/photo1.jpg",
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/photo2.jpg"
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/photo1.jpg",
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/photo2.jpg"
         ]
         try await mockAuth.updateUser(user)
         #expect(mockAuth.currentUser?.photos.count == 2, "First save: should have 2 photos")
 
         // Save 2: Add 2 more photos
-        user.photos.append("https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/photo3.jpg")
-        user.photos.append("https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/photo4.jpg")
+        user.photos.append("https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/photo3.jpg")
+        user.photos.append("https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/photo4.jpg")
         try await mockAuth.updateUser(user)
         #expect(mockAuth.currentUser?.photos.count == 4, "Second save: should have 4 photos")
 
         // Save 3: Add 2 more photos (total 6)
-        user.photos.append("https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/photo5.jpg")
-        user.photos.append("https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/photo6.jpg")
+        user.photos.append("https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/photo5.jpg")
+        user.photos.append("https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/photo6.jpg")
         try await mockAuth.updateUser(user)
         #expect(mockAuth.currentUser?.photos.count == 6, "Third save: should have 6 photos")
 
@@ -159,9 +159,9 @@ struct PhotoPersistenceTests {
 
         // User has 3 photos
         user.photos = [
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/photo1.jpg",
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/photo2.jpg",
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/photo3.jpg"
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/photo1.jpg",
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/photo2.jpg",
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/photo3.jpg"
         ]
         mockAuth.currentUser = user
         try await mockAuth.updateUser(user)
@@ -184,8 +184,8 @@ struct PhotoPersistenceTests {
 
         // User has 2 existing photos
         user.photos = [
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/existing1.jpg",
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/existing2.jpg"
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/existing1.jpg",
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/existing2.jpg"
         ]
         mockAuth.currentUser = user
         try await mockAuth.updateUser(user)
@@ -340,9 +340,9 @@ struct PhotoPersistenceTests {
         var user = createTestUser()
 
         let validUrls = [
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/abc123.jpg",
-            "https://firebasestorage.googleapis.com/v0/b/celestia-40ce6/o/def456.jpg",
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user456/xyz789.jpg"
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/abc123.jpg",
+            "https://firebasestorage.googleapis.com/v0/b/musicjam-40ce6/o/def456.jpg",
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user456/xyz789.jpg"
         ]
 
         user.photos = validUrls
@@ -366,10 +366,10 @@ struct PhotoPersistenceTests {
         var user = createTestUser()
 
         let orderedPhotos = [
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/photo1.jpg",
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/photo2.jpg",
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/photo3.jpg",
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/photo4.jpg"
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/photo1.jpg",
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/photo2.jpg",
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/photo3.jpg",
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/photo4.jpg"
         ]
 
         user.photos = orderedPhotos
@@ -390,7 +390,7 @@ struct PhotoPersistenceTests {
         var user = createTestUser()
 
         // Accidentally add same photo twice
-        let photoUrl = "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/photo1.jpg"
+        let photoUrl = "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/photo1.jpg"
         user.photos = [photoUrl, photoUrl, photoUrl]
 
         mockAuth.currentUser = user
@@ -408,7 +408,7 @@ struct PhotoPersistenceTests {
         var user = createTestUser()
 
         // Try to add 10 photos
-        var photos = (1...10).map { "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/photo\($0).jpg" }
+        var photos = (1...10).map { "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/photo\($0).jpg" }
 
         // Enforce limit
         if photos.count > 6 {
@@ -432,8 +432,8 @@ struct PhotoPersistenceTests {
         var user = createTestUser()
 
         user.photos = [
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/photo1.jpg",
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/photo2.jpg"
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/photo1.jpg",
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/photo2.jpg"
         ]
 
         mockAuth.currentUser = user
@@ -456,9 +456,9 @@ struct PhotoPersistenceTests {
         var user = createTestUser()
 
         user.photos = [
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/photo1.jpg",
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/photo2.jpg",
-            "https://storage.googleapis.com/celestia-40ce6/gallery_photos/user123/photo3.jpg"
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/photo1.jpg",
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/photo2.jpg",
+            "https://storage.googleapis.com/musicjam-40ce6/gallery_photos/user123/photo3.jpg"
         ]
 
         mockAuth.currentUser = user

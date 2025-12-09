@@ -27,7 +27,7 @@ class MockUserRepository: UserRepository {
     var lastSearchQuery: String?
     var lastUpdatedFields: [String: Any]?
     var shouldFail = false
-    var failureError: Error = CelestiaError.networkError
+    var failureError: Error = MusicJamError.networkError
 
     func fetchUser(id: String) async throws -> User? {
         fetchUserCalled = true
@@ -142,7 +142,7 @@ class MockMatchRepository: MatchRepository {
 
     var lastCreatedMatch: Match?
     var shouldFail = false
-    var failureError: Error = CelestiaError.networkError
+    var failureError: Error = MusicJamError.networkError
 
     func fetchMatches(userId: String) async throws -> [Match] {
         fetchMatchesCalled = true
@@ -244,7 +244,7 @@ class MockMessageRepository: MessageRepository {
 
     var lastSentMessage: Message?
     var shouldFail = false
-    var failureError: Error = CelestiaError.networkError
+    var failureError: Error = MusicJamError.networkError
 
     func fetchMessages(matchId: String, limit: Int, before: Date?) async throws -> [Message] {
         fetchMessagesCalled = true
@@ -337,7 +337,7 @@ class MockInterestRepository: InterestRepository {
 
     var lastSentInterest: Interest?
     var shouldFail = false
-    var failureError: Error = CelestiaError.networkError
+    var failureError: Error = MusicJamError.networkError
 
     func fetchInterest(fromUserId: String, toUserId: String) async throws -> Interest? {
         fetchInterestCalled = true
@@ -436,7 +436,7 @@ class MockSwipeRepository: SwipeRepository {
 
     // Failure simulation
     var shouldFail = false
-    var failureError: Error = CelestiaError.networkError
+    var failureError: Error = MusicJamError.networkError
     var shouldFailOnCreateLike = false
     var shouldFailOnCreatePass = false
     var shouldFailOnCheckMutualLike = false

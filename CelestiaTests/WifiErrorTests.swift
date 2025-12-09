@@ -183,7 +183,7 @@ class MockWifiImageUploadService {
         while retryCount < maxRetries {
             do {
                 guard let imageData = image.jpegData(compressionQuality: 0.8) else {
-                    throw CelestiaError.invalidImageFormat
+                    throw MusicJamError.invalidImageFormat
                 }
 
                 let documentId = try await networkService.upload(data: imageData, path: path)

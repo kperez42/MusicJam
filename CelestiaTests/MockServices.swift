@@ -36,7 +36,7 @@ class MockAuthService: AuthServiceProtocol {
         }
 
         if shouldFail {
-            throw CelestiaError.invalidCredentials
+            throw MusicJamError.invalidCredentials
         }
 
         isEmailVerified = true
@@ -46,7 +46,7 @@ class MockAuthService: AuthServiceProtocol {
         createUserCalled = true
 
         if shouldFail {
-            throw CelestiaError.emailAlreadyExists
+            throw MusicJamError.emailAlreadyExists
         }
 
         currentUser = User(
@@ -281,7 +281,7 @@ class MockImageUploadService: ImageUploadServiceProtocol {
         uploadCalled = true
 
         if shouldFail {
-            throw CelestiaError.imageUploadFailed
+            throw MusicJamError.imageUploadFailed
         }
 
         return "https://mock-image-url.com/image.jpg"
@@ -343,7 +343,7 @@ class MockInterestService {
         sentInterestToUserId = toUserId
 
         if shouldFail {
-            throw CelestiaError.networkError
+            throw MusicJamError.networkError
         }
     }
 
