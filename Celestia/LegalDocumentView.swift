@@ -14,7 +14,7 @@ enum LegalDocumentType: String, CaseIterable {
     case privacyPolicy = "Privacy Policy"
     case termsOfService = "Terms of Service"
     case communityGuidelines = "Community Guidelines"
-    case safetyTips = "Dating Safety Tips"
+    case safetyTips = "Collaboration Safety Tips"
     case cookiePolicy = "Cookie & Data Policy"
     case eula = "End User License Agreement"
     case accessibility = "Accessibility Statement"
@@ -168,7 +168,7 @@ extension LegalDocumentView {
 
             LegalSection(title: "How We Use Your Information") {
                 VStack(alignment: .leading, spacing: 8) {
-                    SimpleBulletPoint("To provide and maintain our dating services")
+                    SimpleBulletPoint("To provide and maintain our musician collaboration services")
                     SimpleBulletPoint("To match you with other users based on your preferences")
                     SimpleBulletPoint("To process transactions and send related information")
                     SimpleBulletPoint("To send you technical notices and support messages")
@@ -234,7 +234,7 @@ extension LegalDocumentView {
                 VStack(alignment: .leading, spacing: 8) {
                     Text("We process your personal data under the following legal bases:")
                         .font(.subheadline)
-                    SimpleBulletPoint("Contract: To provide our dating services as agreed in our Terms of Service")
+                    SimpleBulletPoint("Contract: To provide our musician collaboration services as agreed in our Terms of Service")
                     SimpleBulletPoint("Consent: For marketing communications and optional features")
                     SimpleBulletPoint("Legitimate Interests: For fraud prevention, security, and service improvement")
                     SimpleBulletPoint("Legal Obligation: To comply with applicable laws and regulations")

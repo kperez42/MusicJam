@@ -94,7 +94,7 @@ class HapticManager {
         impact(.heavy)
     }
 
-    // MARK: - Dating App Specific
+    // MARK: - MusicJam App Specific
 
     func swipeLeft() {
         impact(.light)
