@@ -337,10 +337,10 @@ struct SearchFilterView: View {
         }
     }
 
-    // MARK: - Relationship Section
+    // MARK: - Musical Goals Section
 
     private var relationshipSection: some View {
-        FilterSection(title: "Relationship Goals", icon: "heart.circle.fill") {
+        FilterSection(title: "Musical Goals", icon: "music.note.list") {
             VStack(spacing: 16) {
                 MultiSelectMenu(
                     title: "Looking for",

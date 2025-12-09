@@ -33,22 +33,22 @@ struct PromptLibrary {
     static let allPrompts: [String] = [
         // Lifestyle & Personality
         "My ideal Sunday is...",
-        "The key to my heart is...",
+        "The key to my sound is...",
         "Don't judge me, but I love...",
-        "I'm the type of person who...",
+        "I'm the type of musician who...",
         "My perfect day includes...",
-        "You'll know I like you if...",
+        "You'll know I like your playing if...",
         "My greatest passion is...",
-        "I find it attractive when...",
+        "I find it inspiring when...",
 
-        // Relationship & Dating
-        "I'm looking for someone who...",
-        "The way to win me over is...",
-        "My love language is...",
-        "A relationship deal-breaker for me is...",
-        "I know I'm dating the right person when...",
-        "In a relationship, I value...",
-        "My idea of a perfect date is...",
+        // Music & Collaboration
+        "I'm looking for musicians who...",
+        "The best way to collaborate with me is...",
+        "My musical language is...",
+        "A collaboration deal-breaker for me is...",
+        "I know I've found the right band when...",
+        "In a collaboration, I value...",
+        "My idea of a perfect jam session is...",
 
         // Quirks & Fun
         "An unpopular opinion I have is...",
@@ -99,7 +99,7 @@ struct PromptLibrary {
         "Two truths and a lie...",
         "Let's debate...",
         "Change my mind about...",
-        "I'll fall for you if...",
+        "I'll jam with you if...",
         "Together we could...",
         "We'll get along if...",
 
@@ -159,10 +159,10 @@ struct PromptLibrary {
         // Return a curated mix of prompts
         return [
             "My ideal Sunday is...",
-            "I'm looking for someone who...",
+            "I'm looking for musicians who...",
             "Don't judge me, but I love...",
             "My perfect day includes...",
-            "The key to my heart is..."
+            "The key to my sound is..."
         ]
     }
 }

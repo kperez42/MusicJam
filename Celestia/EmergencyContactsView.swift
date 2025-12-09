@@ -59,7 +59,7 @@ struct EmergencyContactsView: View {
                 Text("No Emergency Contacts")
                     .font(.title2.bold())
 
-                Text("Add trusted friends or family who can check on you during dates.")
+                Text("Add trusted friends or family who can check on you during meetups.")
                     .font(.body)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
@@ -128,7 +128,7 @@ struct EmergencyContactsView: View {
                     .font(.headline)
             }
 
-            Text("These contacts can receive your date details and check-in notifications. They won't see your normal app activity.")
+            Text("These contacts can receive your meetup details and check-in notifications. They won't see your normal app activity.")
                 .font(.caption)
                 .foregroundColor(.secondary)
         }
@@ -226,7 +226,7 @@ struct EmergencyContactCard: View {
                 HStack {
                     Image(systemName: "calendar.badge.clock")
                         .foregroundColor(.blue)
-                    Text("Receive Date Updates")
+                    Text("Receive Meetup Updates")
                         .font(.subheadline)
                 }
             }
@@ -282,9 +282,9 @@ struct AddEmergencyContactView: View {
                 }
 
                 Section {
-                    Toggle("Can receive date updates", isOn: .constant(true))
+                    Toggle("Can receive meetup updates", isOn: .constant(true))
                 } footer: {
-                    Text("This contact will be able to receive your date details and check-in notifications.")
+                    Text("This contact will be able to receive your meetup details and check-in notifications.")
                 }
             }
             .navigationTitle("Add Contact")
@@ -363,7 +363,7 @@ struct EditEmergencyContactView: View {
                             .foregroundColor(.secondary)
                     }
                 } footer: {
-                    Text("Emergency contact information is securely stored and only shared when you explicitly share your date details.")
+                    Text("Emergency contact information is securely stored and only shared when you explicitly share your meetup details.")
                 }
             }
             .navigationTitle("Edit Contact")

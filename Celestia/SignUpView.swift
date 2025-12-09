@@ -1343,9 +1343,9 @@ struct SignUpView: View {
                 )
 
                 detailsDropdown(
-                    label: "Looking for",
+                    label: "Musical Goal",
                     selection: relationshipGoal.isEmpty ? "Select" : relationshipGoal,
-                    options: relationshipGoalOptions,
+                    options: musicianGoalOptions,
                     onSelect: { relationshipGoal = $0 }
                 )
             }

@@ -78,7 +78,7 @@ struct OnboardingView: View {
     let totalSteps = 8
 
     // Step 6 options
-    let relationshipGoalOptions = ["Prefer not to say", "Casual Dating", "Long-term Relationship", "Marriage", "Friendship", "Not Sure Yet"]
+    let relationshipGoalOptions = ["Prefer not to say", "Find Band Members", "Start a Band", "Join a Band", "Casual Jam Sessions", "Studio Collaboration", "Songwriting Partner", "Session Musician", "Open to All"]
     let heightOptions: [Int] = Array(140...220) // cm range
 
     // Step 7 & 8 options (Lifestyle)
@@ -1369,7 +1369,7 @@ struct OnboardingView: View {
                         HStack(spacing: 8) {
                             Image(systemName: "heart.text.square.fill")
                                 .foregroundColor(.pink)
-                            Text("What are you looking for?")
+                            Text("What's your musical goal?")
                                 .font(.headline)
                         }
 

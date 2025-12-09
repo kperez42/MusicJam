@@ -23,7 +23,11 @@ class DiscoveryFilters: ObservableObject {
     @Published var minHeight: Int? = nil // cm
     @Published var maxHeight: Int? = nil // cm
     @Published var religions: Set<String> = []
-    @Published var relationshipGoals: Set<String> = []
+    @Published var musicianGoals: Set<String> = []       // MusicianGoal values
+    @Published var instruments: Set<String> = []          // Instrument values
+    @Published var genres: Set<String> = []               // MusicGenre values
+    @Published var experienceLevels: Set<String> = []     // ExperienceLevel values
+    @Published var commitmentLevels: Set<String> = []     // CommitmentLevel values
     @Published var smokingPreferences: Set<String> = []
     @Published var drinkingPreferences: Set<String> = []
     @Published var petPreferences: Set<String> = []
@@ -109,12 +113,48 @@ class DiscoveryFilters: ObservableObject {
             }
         }
 
-        // Relationship goal filter
-        if !relationshipGoals.isEmpty {
-            guard let userGoal = user.relationshipGoal else {
+        // Musician goal filter
+        if !musicianGoals.isEmpty {
+            guard let userGoal = user.musicianGoal else {
                 return false
             }
-            if !relationshipGoals.contains(userGoal) {
+            if !musicianGoals.contains(userGoal) {
+                return false
+            }
+        }
+
+        // Instruments filter (user must play at least one matching instrument)
+        if !instruments.isEmpty {
+            let userInstruments = Set(user.instruments)
+            if instruments.intersection(userInstruments).isEmpty {
+                return false
+            }
+        }
+
+        // Genres filter (user must play at least one matching genre)
+        if !genres.isEmpty {
+            let userGenres = Set(user.genres)
+            if genres.intersection(userGenres).isEmpty {
+                return false
+            }
+        }
+
+        // Experience level filter
+        if !experienceLevels.isEmpty {
+            guard let userExperience = user.experienceLevel else {
+                return false
+            }
+            if !experienceLevels.contains(userExperience) {
+                return false
+            }
+        }
+
+        // Commitment level filter
+        if !commitmentLevels.isEmpty {
+            guard let userCommitment = user.commitmentLevel else {
+                return false
+            }
+            if !commitmentLevels.contains(userCommitment) {
                 return false
             }
         }
@@ -226,7 +266,11 @@ class DiscoveryFilters: ObservableObject {
         UserDefaults.standard.set(minHeight, forKey: "minHeight")
         UserDefaults.standard.set(maxHeight, forKey: "maxHeight")
         UserDefaults.standard.set(Array(religions), forKey: "religions")
-        UserDefaults.standard.set(Array(relationshipGoals), forKey: "relationshipGoals")
+        UserDefaults.standard.set(Array(musicianGoals), forKey: "musicianGoals")
+        UserDefaults.standard.set(Array(instruments), forKey: "filterInstruments")
+        UserDefaults.standard.set(Array(genres), forKey: "filterGenres")
+        UserDefaults.standard.set(Array(experienceLevels), forKey: "experienceLevels")
+        UserDefaults.standard.set(Array(commitmentLevels), forKey: "commitmentLevels")
         UserDefaults.standard.set(Array(smokingPreferences), forKey: "smokingPreferences")
         UserDefaults.standard.set(Array(drinkingPreferences), forKey: "drinkingPreferences")
         UserDefaults.standard.set(Array(petPreferences), forKey: "petPreferences")
@@ -258,8 +302,20 @@ class DiscoveryFilters: ObservableObject {
         if let religionArray = UserDefaults.standard.array(forKey: "religions") as? [String] {
             religions = Set(religionArray)
         }
-        if let goals = UserDefaults.standard.array(forKey: "relationshipGoals") as? [String] {
-            relationshipGoals = Set(goals)
+        if let goals = UserDefaults.standard.array(forKey: "musicianGoals") as? [String] {
+            musicianGoals = Set(goals)
+        }
+        if let instrumentArray = UserDefaults.standard.array(forKey: "filterInstruments") as? [String] {
+            instruments = Set(instrumentArray)
+        }
+        if let genreArray = UserDefaults.standard.array(forKey: "filterGenres") as? [String] {
+            genres = Set(genreArray)
+        }
+        if let experienceArray = UserDefaults.standard.array(forKey: "experienceLevels") as? [String] {
+            experienceLevels = Set(experienceArray)
+        }
+        if let commitmentArray = UserDefaults.standard.array(forKey: "commitmentLevels") as? [String] {
+            commitmentLevels = Set(commitmentArray)
         }
         if let smoking = UserDefaults.standard.array(forKey: "smokingPreferences") as? [String] {
             smokingPreferences = Set(smoking)
@@ -290,7 +346,11 @@ class DiscoveryFilters: ObservableObject {
         minHeight = nil
         maxHeight = nil
         religions.removeAll()
-        relationshipGoals.removeAll()
+        musicianGoals.removeAll()
+        instruments.removeAll()
+        genres.removeAll()
+        experienceLevels.removeAll()
+        commitmentLevels.removeAll()
         smokingPreferences.removeAll()
         drinkingPreferences.removeAll()
         petPreferences.removeAll()
@@ -304,7 +364,9 @@ class DiscoveryFilters: ObservableObject {
         // Removed distance from active filters check - not using location-based filtering
         return minAge > 18 || maxAge < 65 || showVerifiedOnly || !selectedInterests.isEmpty ||
                !educationLevels.isEmpty || minHeight != nil || maxHeight != nil ||
-               !religions.isEmpty || !relationshipGoals.isEmpty ||
+               !religions.isEmpty || !musicianGoals.isEmpty ||
+               !instruments.isEmpty || !genres.isEmpty ||
+               !experienceLevels.isEmpty || !commitmentLevels.isEmpty ||
                !smokingPreferences.isEmpty || !drinkingPreferences.isEmpty ||
                !petPreferences.isEmpty || !exercisePreferences.isEmpty || !dietPreferences.isEmpty
     }
