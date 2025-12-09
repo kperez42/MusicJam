@@ -313,25 +313,25 @@ class TutorialManager: ObservableObject {
             Tutorial(
                 id: "scrolling",
                 title: "Discover & Scroll",
-                description: "Scroll through profiles one by one. Tap the heart to like or tap the profile card for more details!",
+                description: "Scroll through profiles one by one. Tap the star to show interest or tap the profile card for more details!",
                 icon: "arrow.up.arrow.down",
-                accentColor: .pink,
+                accentColor: .orange,
                 tips: [
                     "Scroll up and down to browse profiles",
-                    "Tap the heart button to like someone",
-                    "Tap the star to save profiles for later"
+                    "Tap the star button to show interest",
+                    "Tap save to bookmark profiles for later"
                 ],
                 interactiveDemo: AnyView(ScrollBrowseDemo())
             ),
 
             Tutorial(
                 id: "matching",
-                title: "Make Matches",
-                description: "When someone you liked also likes you back, you'll both be notified and can start chatting!",
-                icon: "heart.fill",
-                accentColor: .red,
+                title: "Make Connections",
+                description: "When someone you showed interest in shows interest back, you're connected and can start chatting!",
+                icon: "star.fill",
+                accentColor: .orange,
                 tips: [
-                    "Matches appear in your Matches tab",
+                    "Connections appear in your Matches tab",
                     "Send the first message to break the ice",
                     "Be respectful and genuine"
                 ]

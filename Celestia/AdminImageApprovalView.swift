@@ -783,7 +783,7 @@ struct AdminPendingUserDetailView: View {
                     DetailRowView(icon: "sparkles", label: "Religion", value: religion)
                 }
                 if let goal = user.relationshipGoal, goal != "Prefer not to say", !goal.isEmpty {
-                    DetailRowView(icon: "heart.circle", label: "Looking for", value: goal)
+                    DetailRowView(icon: "music.note.list", label: "Jam Goals", value: goal)
                 }
             }
         }

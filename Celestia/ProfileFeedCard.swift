@@ -60,7 +60,7 @@ struct ProfileFeedCard: View {
                 // Age and Location
                 locationRow
 
-                // Seeking preferences
+                // Collaboration preferences
                 seekingRow
 
                 // Last active
@@ -219,9 +219,9 @@ struct ProfileFeedCard: View {
         HStack(spacing: 4) {
             Image(systemName: "person.2.fill")
                 .font(.caption)
-                .foregroundColor(.pink)
+                .foregroundColor(.orange)
 
-            Text("Seeking \(user.lookingFor), \(user.ageRangeMin)-\(user.ageRangeMax)")
+            Text("Looking to jam with \(user.lookingFor), \(user.ageRangeMin)-\(user.ageRangeMax)")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
 

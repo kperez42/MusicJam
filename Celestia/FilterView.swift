@@ -210,8 +210,8 @@ struct FilterView: View {
                 Spacer()
             }
 
-            // Gender picker
-            Picker("Looking for", selection: $lookingFor) {
+            // Jam style picker
+            Picker("Jam Style", selection: $lookingFor) {
                 ForEach(lookingForOptions, id: \.self) { option in
                     Text(option).tag(option)
                 }

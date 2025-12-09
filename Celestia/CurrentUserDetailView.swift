@@ -191,7 +191,7 @@ struct CurrentUserDetailView: View {
                                     DetailRow(icon: "graduationcap.fill", label: "Education", value: education)
                                 }
                                 if let goal = user.relationshipGoal, goal != "Prefer not to say" {
-                                    DetailRow(icon: "heart.circle", label: "Looking for", value: goal)
+                                    DetailRow(icon: "music.note.list", label: "Jam Goals", value: goal)
                                 }
                                 if let religion = user.religion, religion != "Prefer not to say" {
                                     DetailRow(icon: "sparkles", label: "Religion", value: religion)
@@ -228,11 +228,11 @@ struct CurrentUserDetailView: View {
                         }
                     }
 
-                    // Looking for section
+                    // Jam Goals section
                     ProfileSectionCard(
-                        icon: "heart.fill",
-                        title: "Looking for",
-                        iconColors: [.purple, .pink],
+                        icon: "music.note.list",
+                        title: "Jam Goals",
+                        iconColors: [.purple, .orange],
                         borderColor: .purple
                     ) {
                         Text("\(user.lookingFor), ages \(user.ageRangeMin)-\(user.ageRangeMax)")

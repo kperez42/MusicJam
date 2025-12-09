@@ -517,7 +517,7 @@ struct BoostProfileSheet: View {
         VStack(spacing: 12) {
             BenefitRow(icon: "eye.fill", text: "Be one of the top profiles in your area")
             BenefitRow(icon: "chart.line.uptrend.xyaxis", text: "Get up to 15x more profile views")
-            BenefitRow(icon: "heart.fill", text: "Increase your chances of matching")
+            BenefitRow(icon: "star.fill", text: "Increase your chances of connecting")
             BenefitRow(icon: "timer", text: "Instant activation")
         }
         .padding(16)

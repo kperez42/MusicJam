@@ -1042,7 +1042,7 @@ struct ProfileView: View {
         VStack(spacing: 16) {
             detailRow(icon: "person.fill", label: "Gender", value: user.gender)
             Divider()
-            detailRow(icon: "heart.circle.fill", label: "Looking for", value: user.lookingFor)
+            detailRow(icon: "music.note.list", label: "Jam Goals", value: user.lookingFor)
 
             // Height
             if let height = user.height {

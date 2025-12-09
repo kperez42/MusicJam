@@ -454,21 +454,21 @@ struct WelcomeAwarenessSlidesView: View {
         AwarenessSlide(
             icon: "scroll.fill",
             title: "Browse & Discover",
-            description: "Scroll through profiles in your feed. Tap the heart to like someone, or keep scrolling to see more!",
-            color: .pink,
+            description: "Scroll through musician profiles in your feed. Tap the star to show interest, or keep scrolling to discover more!",
+            color: .orange,
             tips: [
                 "Scroll up and down to browse profiles",
                 "Tap any card to view full profile details",
-                "Like profiles that interest you"
+                "Show interest in musicians you want to jam with"
             ]
         ),
         AwarenessSlide(
-            icon: "heart.fill",
-            title: "Likes & Matches",
-            description: "Tap the heart on profiles you like. When they like you back, it's a match and you can start chatting!",
-            color: .red,
+            icon: "star.fill",
+            title: "Interests & Connections",
+            description: "Tap the star on profiles you want to jam with. When they show interest back, you're connected and can start chatting!",
+            color: .orange,
             tips: [
-                "Your matches appear in the Matches tab",
+                "Your connections appear in the Matches tab",
                 "Send a message to start the conversation",
                 "Be genuine and respectful"
             ]

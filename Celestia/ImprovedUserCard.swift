@@ -267,10 +267,10 @@ struct ImprovedUserCard: View {
                             .accessibilityLabel("Height: \(height) centimeters")
                     }
 
-                    // Relationship Goal
+                    // Jam Goals
                     if let goal = user.relationshipGoal, goal != "Prefer not to say" {
-                        InfoChip(icon: "heart.circle", text: goal)
-                            .accessibilityLabel("Looking for: \(goal)")
+                        InfoChip(icon: "music.note.list", text: goal)
+                            .accessibilityLabel("Jam goals: \(goal)")
                     }
 
                     // Religion
@@ -399,7 +399,7 @@ struct ImprovedUserCard: View {
         }
 
         if let goal = user.relationshipGoal, goal != "Prefer not to say" {
-            components.append("Looking for: \(goal)")
+            components.append("Jam goals: \(goal)")
         }
 
         if let religion = user.religion, religion != "Prefer not to say" {

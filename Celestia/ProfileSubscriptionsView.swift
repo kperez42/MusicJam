@@ -307,7 +307,7 @@ struct ProfileSubscriptionsView: View {
             // Plan details
             VStack(spacing: 12) {
                 planDetailRow(icon: "calendar", label: "Status", value: authService.currentUser?.isPremium == true ? "Active" : "Free Tier")
-                planDetailRow(icon: "heart.fill", label: "Daily Likes", value: authService.currentUser?.isPremium == true ? "Unlimited" : "Limited")
+                planDetailRow(icon: "star.fill", label: "Daily Interests", value: authService.currentUser?.isPremium == true ? "Unlimited" : "Limited")
                 planDetailRow(icon: "eye.fill", label: "See Who Wants to Jam", value: authService.currentUser?.isPremium == true ? "Yes" : "No")
             }
         }
@@ -449,7 +449,7 @@ struct ProfileSubscriptionsView: View {
 
             VStack(spacing: 12) {
                 benefitRow(icon: "flame.fill", text: "Daily profile discovery", included: true)
-                benefitRow(icon: "heart.fill", text: "Unlimited likes", included: authService.currentUser?.isPremium == true)
+                benefitRow(icon: "star.fill", text: "Unlimited interests", included: authService.currentUser?.isPremium == true)
                 benefitRow(icon: "eye.fill", text: "See who wants to jam", included: authService.currentUser?.isPremium == true)
                 benefitRow(icon: "star.fill", text: "Super interests", included: authService.currentUser?.isPremium == true)
                 benefitRow(icon: "bolt.fill", text: "Profile boost", included: authService.currentUser?.isPremium == true)

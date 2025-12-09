@@ -3,7 +3,7 @@
 //  MusicJam
 //
 //  Real-time profile quality scoring with actionable tips
-//  Helps users create high-quality profiles that get more matches
+//  Helps users create high-quality profiles that get more connections
 //
 
 import Foundation
@@ -97,7 +97,7 @@ class ProfileQualityScorer: ObservableObject {
             tips.append(ProfileQualityTip(
                 category: .completeness,
                 title: "Add Your Name",
-                message: "Profiles with names get 3x more matches",
+                message: "Profiles with names get 3x more connections",
                 impact: .critical,
                 isCompleted: false,
                 points: 5,
@@ -112,7 +112,7 @@ class ProfileQualityScorer: ObservableObject {
             tips.append(ProfileQualityTip(
                 category: .completeness,
                 title: "Add Your Age",
-                message: "Required to help find age-appropriate matches",
+                message: "Required to help find age-appropriate collaborators",
                 impact: .critical,
                 isCompleted: false,
                 points: 5,
@@ -184,7 +184,7 @@ class ProfileQualityScorer: ObservableObject {
             tips.append(ProfileQualityTip(
                 category: .bio,
                 title: "Add a Bio",
-                message: "Profiles with bios get 5x more matches. Share what makes you unique!",
+                message: "Profiles with bios get 5x more connections. Share what makes you unique!",
                 impact: .critical,
                 isCompleted: false,
                 points: 20,
@@ -216,7 +216,7 @@ class ProfileQualityScorer: ObservableObject {
                 tips.append(ProfileQualityTip(
                     category: .photos,
                     title: "Add More Photos",
-                    message: "4-6 photos get 40% more likes. Show different sides of you!",
+                    message: "4-6 photos get 40% more interest. Show different sides of you!",
                     impact: .high,
                     isCompleted: false,
                     points: 15,
@@ -253,7 +253,7 @@ class ProfileQualityScorer: ObservableObject {
             tips.append(ProfileQualityTip(
                 category: .completeness,
                 title: "Add Your Location",
-                message: "Help us find matches near you",
+                message: "Help us find musicians near you",
                 impact: .high,
                 isCompleted: false,
                 points: 10,
@@ -270,7 +270,7 @@ class ProfileQualityScorer: ObservableObject {
                 tips.append(ProfileQualityTip(
                     category: .interests,
                     title: "Add More Interests",
-                    message: "5+ interests help find better matches",
+                    message: "5+ interests help find better collaborators",
                     impact: .medium,
                     isCompleted: false,
                     points: 5,
@@ -292,7 +292,7 @@ class ProfileQualityScorer: ObservableObject {
             tips.append(ProfileQualityTip(
                 category: .interests,
                 title: "Add Interests",
-                message: "Share your hobbies to find like-minded matches",
+                message: "Share your hobbies to find like-minded musicians",
                 impact: .medium,
                 isCompleted: false,
                 points: 15,
@@ -307,7 +307,7 @@ class ProfileQualityScorer: ObservableObject {
             tips.append(ProfileQualityTip(
                 category: .completeness,
                 title: "Add Languages",
-                message: "Connect with people who speak your language",
+                message: "Connect with musicians who speak your language",
                 impact: .low,
                 isCompleted: false,
                 points: 5,
@@ -322,7 +322,7 @@ class ProfileQualityScorer: ObservableObject {
             tips.append(ProfileQualityTip(
                 category: .verification,
                 title: "Verify Your Profile",
-                message: "Verified profiles get 2x more matches and build trust",
+                message: "Verified profiles get 2x more connections and build trust",
                 impact: .medium,
                 isCompleted: false,
                 points: 5,
@@ -376,9 +376,9 @@ class ProfileQualityScorer: ObservableObject {
     func getQualityLevel(for score: Int) -> (level: String, color: Color, message: String) {
         switch score {
         case 0..<30:
-            return ("Incomplete", .red, "Complete your profile to start matching")
+            return ("Incomplete", .red, "Complete your profile to start connecting")
         case 30..<50:
-            return ("Basic", .orange, "Add more details to improve your matches")
+            return ("Basic", .orange, "Add more details to improve your connections")
         case 50..<70:
             return ("Good", .yellow, "You're on the right track!")
         case 70..<85:

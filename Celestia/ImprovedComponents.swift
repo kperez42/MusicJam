@@ -319,7 +319,7 @@ struct ImprovedUserDetailSheet: View {
     private var detailsSection: some View {
         VStack(spacing: 16) {
             detailRow(icon: "person.fill", label: "Gender", value: user.gender)
-            detailRow(icon: "heart.circle.fill", label: "Looking for", value: user.lookingFor)
+            detailRow(icon: "music.note.list", label: "Jam Goals", value: user.lookingFor)
         }
         .padding(20)
         .background(Color(.systemGray6))

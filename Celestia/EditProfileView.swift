@@ -192,12 +192,12 @@ struct EditProfileView: View {
                         // Bio - self expression
                         aboutMeSection
 
-                        // SECTION 4: Dating Preferences
-                        // Looking For, Age Range - what they want
+                        // SECTION 4: Collaboration Preferences
+                        // Jam Style, Age Range - who they want to collaborate with
                         preferencesSection
 
                         // SECTION 5: Personal Details
-                        // Height, Education, Religion, Relationship Goal
+                        // Height, Education, Religion, Jam Goals
                         personalDetailsSection
 
                         // SECTION 6: Lifestyle Habits
@@ -1220,15 +1220,15 @@ struct EditProfileView: View {
 
     private var preferencesSection: some View {
         VStack(spacing: 20) {
-            SectionHeader(icon: "heart.fill", title: "Dating Preferences", color: .pink)
+            SectionHeader(icon: "music.note.list", title: "Collaboration Preferences", color: .orange)
 
             VStack(alignment: .leading, spacing: 8) {
-                Text("Looking for")
+                Text("Jam Style")
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .foregroundColor(.secondary)
 
-                Picker("Looking for", selection: $lookingFor) {
+                Picker("Jam Style", selection: $lookingFor) {
                     ForEach(lookingForOptions, id: \.self) { option in
                         Text(option).tag(option)
                     }
@@ -1253,7 +1253,7 @@ struct EditProfileView: View {
                         Text("Age Preference")
                             .font(.subheadline)
                             .fontWeight(.semibold)
-                        Text("Who would you like to meet?")
+                        Text("Who would you like to jam with?")
                             .font(.caption)
                             .foregroundColor(.secondary)
                     }
