@@ -76,8 +76,8 @@ struct ProfileSubscriptionsView: View {
         ),
         FeatureCardItem(
             icon: "sparkles",
-            title: "Priority Matching",
-            description: "Get matched with compatible profiles first. Our algorithm works harder for you!",
+            title: "Priority Discovery",
+            description: "Get connected with compatible musicians first. Our algorithm works harder for you!",
             color: .green,
             gradient: [Color.green, Color.mint],
             benefit: "Quality over quantity"

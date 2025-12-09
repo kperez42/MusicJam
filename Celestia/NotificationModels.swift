@@ -37,7 +37,7 @@ enum NotificationCategory: String, CaseIterable, Codable {
     var defaultTitle: String {
         switch self {
         case .newMatch:
-            return "New Match!"
+            return "Jam Connection!"
         case .newMessage:
             return "New Message"
         case .profileView:

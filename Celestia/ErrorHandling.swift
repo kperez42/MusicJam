@@ -164,13 +164,13 @@ enum MusicJamError: LocalizedError, Identifiable {
         case .serviceTemporarilyUnavailable:
             return "Service temporarily unavailable. Please try again in a few moments."
 
-        // Match
+        // Connection
         case .alreadyMatched:
-            return "You're already matched with this user."
+            return "You're already connected with this musician."
         case .matchNotFound:
-            return "Match not found."
+            return "Connection not found."
         case .cannotMatchWithSelf:
-            return "You cannot match with yourself."
+            return "You cannot connect with yourself."
         case .userBlocked:
             return "This user has blocked you or you've blocked them."
 

@@ -404,8 +404,8 @@ class ActivationMetrics: ObservableObject {
         case .firstMatch:
             return ActivationMilestone(
                 id: milestone.rawValue,
-                title: "First Match! 🌟",
-                description: "Someone likes you back!",
+                title: "First Connection! 🌟",
+                description: "A musician wants to jam with you!",
                 achievedDate: Date(),
                 category: .matching,
                 rewardPoints: 50

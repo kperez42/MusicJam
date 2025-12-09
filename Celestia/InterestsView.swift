@@ -148,36 +148,36 @@ struct InterestsView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
-    // MARK: - Match Animation
-    
+    // MARK: - Jam Connection Animation
+
     private var matchCelebrationView: some View {
         ZStack {
             Color.black.opacity(0.8)
                 .ignoresSafeArea()
-            
+
             VStack(spacing: 30) {
-                Image(systemName: "sparkles")
+                Image(systemName: "guitars.fill")
                     .font(.system(size: 80))
-                    .foregroundColor(.yellow)
-                
-                Text("It's a Match! 🎉")
+                    .foregroundColor(.orange)
+
+                Text("Jam Connection! 🎸")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
-                
+
                 if let user = matchedUser {
-                    Text("You and \(user.fullName) liked each other!")
+                    Text("You and \(user.fullName) want to jam together!")
                         .font(.title3)
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                 }
-                
+
                 Button("Send Message") {
                     showMatchAnimation = false
                 }
                 .buttonStyle(.borderedProminent)
-                .tint(.purple)
-                
+                .tint(.orange)
+
                 Button("Keep Browsing") {
                     showMatchAnimation = false
                 }

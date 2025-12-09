@@ -526,7 +526,7 @@ struct MatchesView: View {
                     .dynamicTypeSize(min: .large, max: .accessibility2)
                     .accessibilityAddTraits(.isHeader)
 
-                Text("Head to the Discover tab to start swiping and finding your perfect match!")
+                Text("Head to the Discover tab to find musicians and your perfect jam partner!")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)

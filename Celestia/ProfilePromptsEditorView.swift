@@ -95,7 +95,7 @@ struct ProfilePromptsEditorView: View {
                     .font(.headline)
             }
 
-            Text("Answer up to 3 prompts to help others get to know you better. Profiles with prompts get 2x more matches!")
+            Text("Answer up to 3 prompts to help others get to know you better. Profiles with prompts get 2x more connections!")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
                 .fixedSize(horizontal: false, vertical: true)

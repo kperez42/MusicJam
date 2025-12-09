@@ -300,17 +300,17 @@ struct InterestsViewEnhanced: View {
                 .ignoresSafeArea()
 
             VStack(spacing: 30) {
-                Image(systemName: "sparkles")
+                Image(systemName: "guitars.fill")
                     .font(.system(size: 80))
-                    .foregroundColor(.yellow)
+                    .foregroundColor(.orange)
 
-                Text("It's a Match! 🎉")
+                Text("Jam Connection! 🎸")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
 
                 if let user = matchedUser {
-                    Text("You and \(user.fullName) liked each other!")
+                    Text("You and \(user.fullName) want to jam together!")
                         .font(.title3)
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)

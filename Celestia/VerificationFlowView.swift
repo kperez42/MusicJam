@@ -52,7 +52,7 @@ struct VerificationFlowView: View {
                 .font(.title2)
                 .fontWeight(.bold)
 
-            Text("Build trust with other users by verifying your identity")
+            Text("Build trust with other musicians by verifying your identity")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)

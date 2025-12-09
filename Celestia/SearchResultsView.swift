@@ -60,7 +60,7 @@ struct SearchResultsView: View {
     private var loadingView: some View {
         ScrollView {
             VStack(spacing: 16) {
-                Text("Searching for matches...")
+                Text("Searching for musicians...")
                     .font(.headline)
                     .foregroundColor(.secondary)
                     .padding()
@@ -85,11 +85,11 @@ struct SearchResultsView: View {
                 .foregroundColor(.gray)
 
             VStack(spacing: 12) {
-                Text("No matches found")
+                Text("No musicians found")
                     .font(.title2)
                     .fontWeight(.bold)
 
-                Text("Try adjusting your filters to see more results")
+                Text("Try adjusting your filters to discover more musicians")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
@@ -127,7 +127,7 @@ struct SearchResultsView: View {
 
     private var resultsHeader: some View {
         HStack {
-            Text("\(searchManager.totalResultsCount) matches")
+            Text("\(searchManager.totalResultsCount) musicians")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
 

@@ -197,7 +197,7 @@ struct SeeWhoLikesYouView: View {
                     .font(.title2)
                     .fontWeight(.bold)
 
-                Text("Keep swiping to find your perfect match!")
+                Text("Keep discovering musicians to find your perfect jam partner!")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
