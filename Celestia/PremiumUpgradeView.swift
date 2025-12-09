@@ -350,13 +350,13 @@ struct PremiumUpgradeView: View {
     private func previewCardLabel(for index: Int) -> String {
         switch index {
         case 0: return "Unlimited"
-        case 1: return "See Likes"
+        case 1: return "See Interest"
         case 2: return "Message"
         default: return "Premium"
         }
     }
 
-    // MARK: - Context Banner (Like Limit / Super Like Limit)
+    // MARK: - Context Banner (Interest Limit / Super Interest Limit)
 
     private var contextBanner: some View {
         HStack(spacing: 14) {
@@ -508,7 +508,7 @@ struct PremiumUpgradeView: View {
         .shadow(color: .orange.opacity(0.1), radius: 8, y: 4)
     }
 
-    // MARK: - Who Liked You Preview (FOMO Section)
+    // MARK: - Musicians Who Want to Jam Preview (FOMO Section)
 
     private var whoLikedYouPreview: some View {
         VStack(spacing: 16) {
@@ -516,7 +516,7 @@ struct PremiumUpgradeView: View {
             HStack {
                 VStack(alignment: .leading, spacing: 4) {
                     HStack(spacing: 8) {
-                        Text("People Who Like You")
+                        Text("Musicians Who Want to Jam")
                             .font(.title3.weight(.bold))
                             .foregroundColor(.primary)
 
@@ -530,7 +530,7 @@ struct PremiumUpgradeView: View {
                             .clipShape(Capsule())
                     }
 
-                    Text("Unlock to see who's interested in you")
+                    Text("Unlock to see who wants to jam with you")
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }
@@ -597,7 +597,7 @@ struct PremiumUpgradeView: View {
                 HStack {
                     Image(systemName: "eye.fill")
                         .font(.subheadline)
-                    Text("See Who Likes You")
+                    Text("See Who Wants to Jam")
                         .font(.subheadline.weight(.semibold))
                 }
                 .foregroundColor(.white)
@@ -746,10 +746,10 @@ struct PremiumUpgradeView: View {
 
     private var showcaseCard: some View {
         let showcases = [
-            ("23 people liked you today", "heart.circle.fill", Color.pink, "See who they are with Premium"),
+            ("23 musicians want to jam with you", "guitars.fill", Color.orange, "See who they are with Premium"),
             ("You're missing 15+ profiles", "eye.slash.fill", Color.purple, "Get unlimited browsing"),
-            ("Unlimited likes available", "heart.fill", Color.red, "Like as many profiles as you want"),
-            ("Send unlimited messages", "message.circle.fill", Color.blue, "Connect with anyone you like")
+            ("Unlimited interests available", "star.fill", Color.pink, "Show interest to as many musicians as you want"),
+            ("Send unlimited messages", "message.circle.fill", Color.blue, "Connect with any musician")
         ]
 
         let current = showcases[currentShowcaseIndex]
@@ -865,8 +865,8 @@ struct PremiumUpgradeView: View {
 
                 VStack(spacing: 0) {
                     comparisonRow(feature: "Send Messages", free: "10/day", premium: "Unlimited", icon: "message.fill")
-                    comparisonRow(feature: "Daily Likes", free: "10/day", premium: "Unlimited", icon: "heart.fill")
-                    comparisonRow(feature: "See Who Likes You", free: "Hidden", premium: "Full Access", icon: "eye.fill")
+                    comparisonRow(feature: "Daily Interests", free: "10/day", premium: "Unlimited", icon: "star.fill")
+                    comparisonRow(feature: "See Who Wants to Jam", free: "Hidden", premium: "Full Access", icon: "eye.fill")
                     comparisonRow(feature: "Advanced Filters", free: "Basic", premium: "All Filters", icon: "slider.horizontal.3")
                     comparisonRow(feature: "Read Receipts", free: "No", premium: "Yes", icon: "checkmark.message.fill")
                     comparisonRow(feature: "Priority in Feed", free: "Standard", premium: "Top Priority", icon: "arrow.up.circle.fill")

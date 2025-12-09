@@ -93,7 +93,7 @@ struct SeeWhoLikesYouView: View {
                     .foregroundColor(.primary)
             }
 
-            Text(viewModel.usersWhoLiked.count == 1 ? "person likes you" : "people like you")
+            Text(viewModel.usersWhoLiked.count == 1 ? "musician wants to jam" : "musicians want to jam")
                 .font(.title3)
                 .foregroundColor(.secondary)
         }
@@ -118,7 +118,7 @@ struct SeeWhoLikesYouView: View {
                         .font(.headline)
                         .foregroundColor(.primary)
 
-                    Text("See who likes you without limits")
+                    Text("See who wants to jam with you")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }

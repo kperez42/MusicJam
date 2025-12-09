@@ -52,15 +52,15 @@ struct ProfileSubscriptionsView: View {
         ),
         FeatureCardItem(
             icon: "eye.fill",
-            title: "See Who Likes You",
-            description: "Know who's interested in you before you swipe. Make confident decisions!",
+            title: "See Who Wants to Jam",
+            description: "Know which musicians want to collaborate before you decide. Make confident choices!",
             color: .pink,
             gradient: [Color.pink, Color.red.opacity(0.8)],
             benefit: "Skip the guessing game"
         ),
         FeatureCardItem(
             icon: "star.fill",
-            title: "Super Likes",
+            title: "Super Interests",
             description: "Stand out and show you're really interested in collaborating. Get 3x more connections!",
             color: .cyan,
             gradient: [Color.cyan, Color.teal],
@@ -308,7 +308,7 @@ struct ProfileSubscriptionsView: View {
             VStack(spacing: 12) {
                 planDetailRow(icon: "calendar", label: "Status", value: authService.currentUser?.isPremium == true ? "Active" : "Free Tier")
                 planDetailRow(icon: "heart.fill", label: "Daily Likes", value: authService.currentUser?.isPremium == true ? "Unlimited" : "Limited")
-                planDetailRow(icon: "eye.fill", label: "See Who Likes You", value: authService.currentUser?.isPremium == true ? "Yes" : "No")
+                planDetailRow(icon: "eye.fill", label: "See Who Wants to Jam", value: authService.currentUser?.isPremium == true ? "Yes" : "No")
             }
         }
         .padding(20)
@@ -450,8 +450,8 @@ struct ProfileSubscriptionsView: View {
             VStack(spacing: 12) {
                 benefitRow(icon: "flame.fill", text: "Daily profile discovery", included: true)
                 benefitRow(icon: "heart.fill", text: "Unlimited likes", included: authService.currentUser?.isPremium == true)
-                benefitRow(icon: "eye.fill", text: "See who likes you", included: authService.currentUser?.isPremium == true)
-                benefitRow(icon: "star.fill", text: "Super likes", included: authService.currentUser?.isPremium == true)
+                benefitRow(icon: "eye.fill", text: "See who wants to jam", included: authService.currentUser?.isPremium == true)
+                benefitRow(icon: "star.fill", text: "Super interests", included: authService.currentUser?.isPremium == true)
                 benefitRow(icon: "bolt.fill", text: "Profile boost", included: authService.currentUser?.isPremium == true)
             }
         }

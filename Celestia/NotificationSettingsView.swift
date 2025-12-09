@@ -64,9 +64,9 @@ struct NotificationSettingsView: View {
             // Core Notifications
             Section {
                 NotificationToggle(
-                    icon: "heart.circle.fill",
-                    title: "Matches & Likes",
-                    description: "When someone matches or likes you",
+                    icon: "guitars.fill",
+                    title: "Jam Matches & Interests",
+                    description: "When a musician matches or wants to jam with you",
                     isOn: $preferences.newMatchesEnabled
                 )
 

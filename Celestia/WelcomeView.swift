@@ -180,7 +180,7 @@ struct WelcomeView: View {
                     .foregroundColor(.white)
                     .shadow(color: .black.opacity(0.2), radius: 5)
 
-                Text("Find friends, dates, and musical collaborations")
+                Text("Find Your Sound, Find Your Band")
                     .font(.headline)
                     .foregroundColor(.white.opacity(0.95))
                     .multilineTextAlignment(.center)
@@ -512,7 +512,7 @@ struct WelcomeAwarenessSlidesView: View {
             description: "Your safety is our priority. We review all profiles and provide tools to report inappropriate behavior.",
             color: .orange,
             tips: [
-                "Meet in public places for first dates",
+                "Meet in public places for first jam sessions",
                 "Tell a friend about your plans",
                 "Trust your instincts always",
                 "Report and block suspicious accounts"

@@ -67,12 +67,12 @@ struct UserDetailView: View {
             // BUGFIX: Use effectiveId for reliable user identification (handles @DocumentID edge cases)
             isSaved = savedProfilesVM.savedProfiles.contains(where: { $0.user.effectiveId == user.effectiveId })
         }
-        .alert("Like Sent! 💫", isPresented: $showingInterestSent) {
+        .alert("Interest Sent! 🎸", isPresented: $showingInterestSent) {
             Button("OK") { dismiss() }
         } message: {
-            Text("If \(user.fullName) likes you back, you'll be matched!")
+            Text("If \(user.fullName) wants to jam with you too, you'll be matched!")
         }
-        .alert("It's a Match! 🎉", isPresented: $showingMatched) {
+        .alert("Jam Match! 🎉", isPresented: $showingMatched) {
             Button("Send Message") {
                 NotificationCenter.default.post(
                     name: .navigateToMessages,
@@ -83,7 +83,7 @@ struct UserDetailView: View {
             }
             Button("Keep Browsing") { dismiss() }
         } message: {
-            Text("You and \(user.fullName) liked each other!")
+            Text("You and \(user.fullName) both want to jam together!")
         }
         .alert("Error", isPresented: $showingError) {
             Button("OK", role: .cancel) { }
