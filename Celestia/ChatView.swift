@@ -1227,8 +1227,8 @@ struct ChatView: View {
 
                 // Determine appropriate error message based on error type
                 let errorMessage: String
-                if let celestiaError = error as? MusicJamError {
-                    switch celestiaError {
+                if let musicJamError = error as? MusicJamError {
+                    switch musicJamError {
                     case .networkError, .noInternetConnection:
                         errorMessage = "No internet connection. Check your WiFi and tap retry."
                     case .timeout, .requestTimeout:

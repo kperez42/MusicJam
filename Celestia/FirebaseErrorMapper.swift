@@ -486,7 +486,7 @@ enum FirebaseErrorMapper {
         case .userNotFound:
             return "Check your email or create a new account."
         case .accountDisabled:
-            return "Contact support at help@celestia.app for assistance."
+            return "Contact support at help@musicjam.app for assistance."
         case .emailAlreadyInUse:
             return "Sign in with this email or use a different one."
         case .weakPassword:
@@ -563,7 +563,7 @@ enum FirebaseErrorMapper {
             return "Please check your input and try again."
 
         default:
-            return "If the problem persists, contact support at help@celestia.app"
+            return "If the problem persists, contact support at help@musicjam.app"
         }
     }
 

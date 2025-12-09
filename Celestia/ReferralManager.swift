@@ -1058,7 +1058,7 @@ class ReferralManager: ObservableObject {
 
         Use my code \(code) when you sign up and we'll both get 3 days of Premium free!
 
-        Download now: https://celestia.app/join/\(code)
+        Download now: https://musicjam.app/join/\(code)
         """
     }
 
@@ -1089,7 +1089,7 @@ class ReferralManager: ObservableObject {
     }
 
     func getReferralURL(code: String) -> URL? {
-        return URL(string: "https://celestia.app/join/\(code)")
+        return URL(string: "https://musicjam.app/join/\(code)")
     }
 
     // MARK: - Analytics (Enhanced)

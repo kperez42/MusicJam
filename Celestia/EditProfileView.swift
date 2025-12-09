@@ -2350,8 +2350,8 @@ struct EditProfileView: View {
                         case .uploadTimeout:
                             errorMessage = "Upload timed out. Please check your connection and try again."
                         }
-                    } else if let celestiaError = error as? MusicJamError {
-                        switch celestiaError {
+                    } else if let musicJamError = error as? MusicJamError {
+                        switch musicJamError {
                         case .networkError:
                             errorMessage = "Network error. Please check your connection and try again."
                         case .imageUploadFailed:

@@ -735,7 +735,7 @@ class ReferralABTestManager: ObservableObject {
 
         Use my code \(code) when you sign up and we'll both get 3 days of Premium free!
 
-        Download now: https://celestia.app/join/\(code)
+        Download now: https://musicjam.app/join/\(code)
         """
     }
 

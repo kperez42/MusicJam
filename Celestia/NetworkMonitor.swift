@@ -90,7 +90,7 @@ class NetworkMonitor: ObservableObject {
     // MARK: - Properties
 
     private let monitor = NWPathMonitor()
-    private let monitorQueue = DispatchQueue(label: "com.celestia.networkmonitor")
+    private let monitorQueue = DispatchQueue(label: "com.musicjam.networkmonitor")
     private var lastConnectivityChange = Date()
 
     // MARK: - Initialization

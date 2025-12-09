@@ -406,7 +406,7 @@ struct ProfileView: View {
                     // Share button - only show if user ID exists and URL is valid
                     if let userId = user.id,
                        !userId.isEmpty,
-                       let shareURL = URL(string: "https://celestia.app/profile/\(userId)"),
+                       let shareURL = URL(string: "https://musicjam.app/profile/\(userId)"),
                        shareURL.scheme == "https" {
                         ShareLink(item: shareURL, subject: Text("Check out \(user.fullName)'s profile"), message: Text("See \(user.fullName) on MusicJam!")) {
                             Image(systemName: "square.and.arrow.up")
@@ -1501,7 +1501,7 @@ struct ProfileView: View {
                 color: .blue,
                 accessibilityHint: "Contact MusicJam support team for assistance"
             ) {
-                guard let url = URL(string: "mailto:support@celestia.app"),
+                guard let url = URL(string: "mailto:support@musicjam.app"),
                       UIApplication.shared.canOpenURL(url) else {
                     Logger.shared.error("Cannot open mail client - email URL invalid or no mail app configured", category: .general)
                     return

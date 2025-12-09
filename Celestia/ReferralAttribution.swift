@@ -281,7 +281,7 @@ class ReferralAttribution: ObservableObject {
         let link = DeferredDeepLink(
             linkId: linkId,
             referralCode: referralCode,
-            originalURL: "https://celestia.app/join/\(referralCode)",
+            originalURL: "https://musicjam.app/join/\(referralCode)",
             source: source,
             medium: medium,
             campaign: campaign,
