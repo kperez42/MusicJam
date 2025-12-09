@@ -205,7 +205,7 @@ struct SavedProfilesView: View {
     private var viewedTab: some View {
         Group {
             if viewModel.viewedProfiles.isEmpty {
-                emptyStateView(message: "No one viewed you yet", hint: "When someone views your profile, they'll appear here")
+                emptyStateView(message: "No musicians viewed you yet", hint: "When a musician views your profile, they'll appear here")
             } else {
                 viewedProfilesGrid(profiles: viewModel.viewedProfiles)
             }
@@ -215,7 +215,7 @@ struct SavedProfilesView: View {
     private var savedYouTab: some View {
         Group {
             if viewModel.savedYouProfiles.isEmpty {
-                emptyStateView(message: "No one saved you yet", hint: "When someone saves your profile, they'll appear here")
+                emptyStateView(message: "No musicians saved you yet", hint: "When a musician saves your profile, they'll appear here")
             } else {
                 savedYouGrid(profiles: viewModel.savedYouProfiles)
             }
