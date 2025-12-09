@@ -1056,10 +1056,10 @@ struct FeedDiscoverView: View {
             return
         }
 
-        // Prevent liking yourself
+        // Prevent sending interest to yourself
         guard currentUserId != userId else {
             showToast(
-                message: "You can't like your own profile!",
+                message: "You can't send interest to yourself!",
                 icon: "exclamationmark.triangle.fill",
                 color: .orange
             )
@@ -1067,12 +1067,12 @@ struct FeedDiscoverView: View {
             return
         }
 
-        // Check daily like limit for free users (premium gets unlimited)
+        // Check daily interest limit for free users (premium gets unlimited)
         let isPremium = authService.currentUser?.isPremium ?? false
         if !isPremium {
             guard RateLimiter.shared.canSendLike() else {
                 // Show upgrade sheet with context message instead of toast
-                upgradeContextMessage = "You've reached your daily like limit. Subscribe to continue liking!"
+                upgradeContextMessage = "You've reached your daily interest limit. Subscribe to continue showing interest!"
                 showPremiumUpgrade = true
                 completion(false)
                 return

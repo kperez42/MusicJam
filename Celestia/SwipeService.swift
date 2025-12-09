@@ -56,8 +56,8 @@ class SwipeService: ObservableObject, SwipeServiceProtocol {
         }
 
         guard fromUserId != toUserId else {
-            Logger.shared.warning("Attempted self-like prevented: \(fromUserId)", category: .matching)
-            throw MusicJamError.invalidOperation("Cannot like yourself")
+            Logger.shared.warning("Attempted self-interest prevented: \(fromUserId)", category: .matching)
+            throw MusicJamError.invalidOperation("Cannot send interest to yourself")
         }
 
         // Create unique operation ID for tracking
@@ -65,8 +65,8 @@ class SwipeService: ObservableObject, SwipeServiceProtocol {
 
         // Prevent duplicate concurrent operations
         guard !pendingLikes.contains(operationId) else {
-            Logger.shared.warning("Like operation already in progress: \(operationId)", category: .matching)
-            throw MusicJamError.invalidOperation("Like already in progress")
+            Logger.shared.warning("Interest operation already in progress: \(operationId)", category: .matching)
+            throw MusicJamError.invalidOperation("Interest already in progress")
         }
 
         pendingLikes.insert(operationId)

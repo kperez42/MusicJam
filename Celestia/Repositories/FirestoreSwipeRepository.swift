@@ -22,8 +22,8 @@ class FirestoreSwipeRepository: SwipeRepository {
         }
 
         guard fromUserId != toUserId else {
-            Logger.shared.error("Repository received self-like attempt", category: .matching)
-            throw MusicJamError.invalidOperation("Cannot like yourself")
+            Logger.shared.error("Repository received self-interest attempt", category: .matching)
+            throw MusicJamError.invalidOperation("Cannot send interest to yourself")
         }
 
         let likeData: [String: Any] = [
