@@ -731,7 +731,7 @@ struct SignUpView: View {
             }
             .padding(.top, 8)
 
-            Text("Your location helps connect you with people nearby and around the world")
+            Text("Your location helps connect you with musicians nearby and around the world")
                 .font(.caption)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
@@ -1780,11 +1780,11 @@ struct SignUpView: View {
     var stepSubtitle: String {
         switch currentStep {
         case 0: return "Let's get started with your account"
-        case 1: return "This helps us find your perfect match"
-        case 2: return "Connect with people near and far"
+        case 1: return "This helps us find your perfect jam partner"
+        case 2: return "Connect with musicians near and far"
         case 3: return "Photos help you make musical collaborations"
         case 4: return "Let others know what makes you unique"
-        case 5: return "Help us find people with similar vibes"
+        case 5: return "Help us find musicians with similar vibes"
         case 6: return "Optional info to complete your profile"
         default: return ""
         }

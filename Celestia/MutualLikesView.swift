@@ -116,11 +116,11 @@ struct MutualLikesView: View {
                 .foregroundColor(.gray.opacity(0.5))
 
             VStack(spacing: 8) {
-                Text("No Mutual Likes Yet")
+                Text("No Mutual Interests Yet")
                     .font(.title2)
                     .fontWeight(.bold)
 
-                Text("Keep swiping to find people who like you back!")
+                Text("Keep discovering musicians who want to jam with you!")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)

@@ -412,8 +412,8 @@ struct DiscoverView: View {
                     .accessibilityAddTraits(.isHeader)
 
                 Text(viewModel.hasActiveFilters ?
-                     "Try adjusting your filters to see more people" :
-                     "Check back later for new people nearby")
+                     "Try adjusting your filters to see more musicians" :
+                     "Check back later for new musicians nearby")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
