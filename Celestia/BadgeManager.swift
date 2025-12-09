@@ -1,6 +1,6 @@
 //
 //  BadgeManager.swift
-//  Celestia
+//  MusicJam
 //
 //  Manages app icon badge count across different notification types
 //

@@ -1,6 +1,6 @@
 //
 //  AdminUserInvestigationView.swift
-//  Celestia
+//  MusicJam
 //
 //  Admin tool for investigating user profiles
 //

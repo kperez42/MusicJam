@@ -1,6 +1,6 @@
 //
 //  PhoneVerificationView.swift
-//  Celestia
+//  MusicJam
 //
 //  Full phone number verification flow with SMS OTP
 //

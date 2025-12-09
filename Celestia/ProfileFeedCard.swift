@@ -1,6 +1,6 @@
 //
 //  ProfileFeedCard.swift
-//  Celestia
+//  MusicJam
 //
 //  Feed-style profile card for vertical scrolling discovery
 //

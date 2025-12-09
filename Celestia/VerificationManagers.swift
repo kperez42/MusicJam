@@ -1,6 +1,6 @@
 //
 //  VerificationManagers.swift
-//  Celestia
+//  MusicJam
 //
 //  Manages verification data structures
 //  NOTE: Face verification has been removed. ID verification is now manual review only.

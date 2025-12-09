@@ -1,6 +1,6 @@
 //
 //  ImprovedComponents.swift
-//  Celestia
+//  MusicJam
 //
 //  Reusable improved UI components
 //

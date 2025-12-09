@@ -1,6 +1,6 @@
 //
 //  AdminMigrationView.swift
-//  Celestia
+//  MusicJam
 //
 //  Admin interface for migrating images to CDN
 //

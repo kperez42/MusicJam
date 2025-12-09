@@ -1,6 +1,6 @@
 //
 //  ProfileViewersView.swift
-//  Celestia
+//  MusicJam
 //
 //  Shows who viewed your profile (Premium feature)
 //

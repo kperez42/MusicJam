@@ -1,6 +1,6 @@
 //
 //  ProfileRejectionFeedbackView.swift
-//  Celestia
+//  MusicJam
 //
 //  Shows rejection feedback to users whose profiles need corrections
 //

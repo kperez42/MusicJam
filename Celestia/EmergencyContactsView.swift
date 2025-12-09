@@ -1,6 +1,6 @@
 //
 //  EmergencyContactsView.swift
-//  Celestia
+//  MusicJam
 //
 //  Manage emergency contacts for date safety
 //

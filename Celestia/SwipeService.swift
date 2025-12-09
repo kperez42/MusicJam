@@ -1,8 +1,9 @@
 //
 //  SwipeService.swift
-//  Celestia
+//  MusicJam
 //
-//  Service for handling swipes (likes/passes) and creating matches
+//  Service for handling musician discovery interactions (interests/passes) and creating collaborations
+//  Find Your Sound, Find Your Band
 //
 
 import Foundation
@@ -51,12 +52,12 @@ class SwipeService: ObservableObject, SwipeServiceProtocol {
         // SECURITY: Validate input parameters
         guard !fromUserId.isEmpty, !toUserId.isEmpty else {
             Logger.shared.error("Invalid user IDs: fromUserId='\(fromUserId)', toUserId='\(toUserId)'", category: .matching)
-            throw CelestiaError.invalidInput("User IDs cannot be empty")
+            throw MusicJamError.invalidInput("User IDs cannot be empty")
         }
 
         guard fromUserId != toUserId else {
             Logger.shared.warning("Attempted self-like prevented: \(fromUserId)", category: .matching)
-            throw CelestiaError.invalidOperation("Cannot like yourself")
+            throw MusicJamError.invalidOperation("Cannot like yourself")
         }
 
         // Create unique operation ID for tracking
@@ -65,7 +66,7 @@ class SwipeService: ObservableObject, SwipeServiceProtocol {
         // Prevent duplicate concurrent operations
         guard !pendingLikes.contains(operationId) else {
             Logger.shared.warning("Like operation already in progress: \(operationId)", category: .matching)
-            throw CelestiaError.invalidOperation("Like already in progress")
+            throw MusicJamError.invalidOperation("Like already in progress")
         }
 
         pendingLikes.insert(operationId)
@@ -110,10 +111,10 @@ class SwipeService: ObservableObject, SwipeServiceProtocol {
                 Logger.shared.warning("Backend rate limit exceeded for swipes", category: .matching)
 
                 if let retryAfter = rateLimitResponse.retryAfter {
-                    throw CelestiaError.rateLimitExceededWithTime(retryAfter)
+                    throw MusicJamError.rateLimitExceededWithTime(retryAfter)
                 }
 
-                throw CelestiaError.rateLimitExceeded
+                throw MusicJamError.rateLimitExceeded
             }
 
             Logger.shared.debug("✅ Backend rate limit check passed for swipe (remaining: \(rateLimitResponse.remaining))", category: .matching)
@@ -125,10 +126,10 @@ class SwipeService: ObservableObject, SwipeServiceProtocol {
             // Client-side rate limiting fallback
             if !isSuperLike {
                 guard RateLimiter.shared.canSendLike() else {
-                    throw CelestiaError.rateLimitExceeded
+                    throw MusicJamError.rateLimitExceeded
                 }
             }
-        } catch let error as CelestiaError {
+        } catch let error as MusicJamError {
             // Re-throw rate limit errors
             throw error
         } catch {
@@ -162,7 +163,7 @@ class SwipeService: ObservableObject, SwipeServiceProtocol {
 
         // All retries failed
         Logger.shared.error("Like failed after \(LikeRetryConfig.maxRetries) attempts", category: .matching, error: lastError)
-        throw lastError ?? CelestiaError.networkError
+        throw lastError ?? MusicJamError.networkError
     }
 
     /// Check mutual like with retry logic - never miss a match!
@@ -250,10 +251,10 @@ class SwipeService: ObservableObject, SwipeServiceProtocol {
                 Logger.shared.warning("Backend rate limit exceeded for passes", category: .matching)
 
                 if let retryAfter = rateLimitResponse.retryAfter {
-                    throw CelestiaError.rateLimitExceededWithTime(retryAfter)
+                    throw MusicJamError.rateLimitExceededWithTime(retryAfter)
                 }
 
-                throw CelestiaError.rateLimitExceeded
+                throw MusicJamError.rateLimitExceeded
             }
 
             Logger.shared.debug("✅ Backend rate limit check passed for pass (remaining: \(rateLimitResponse.remaining))", category: .matching)
@@ -264,7 +265,7 @@ class SwipeService: ObservableObject, SwipeServiceProtocol {
 
             // Client-side rate limiting fallback
             guard RateLimiter.shared.canSendLike() else {
-                throw CelestiaError.rateLimitExceeded
+                throw MusicJamError.rateLimitExceeded
             }
         } catch {
             // Re-throw rate limit errors

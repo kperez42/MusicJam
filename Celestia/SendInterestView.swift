@@ -1,6 +1,6 @@
 //
 //  SendInterestView.swift
-//  Celestia
+//  MusicJam
 //
 //  Created by Kevin Perez on 10/29/25.
 //

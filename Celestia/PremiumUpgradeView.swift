@@ -1,6 +1,6 @@
 //
 //  PremiumUpgradeView.swift
-//  Celestia
+//  MusicJam
 //
 //  PREMIUM UPGRADE - Immersive Conversion Experience
 //

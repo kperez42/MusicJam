@@ -1,6 +1,6 @@
 //
 //  TypingStatusService.swift
-//  Celestia
+//  MusicJam
 //
 //  Service for managing real-time typing indicators synced to Firestore
 //

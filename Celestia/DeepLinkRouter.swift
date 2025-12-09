@@ -1,6 +1,6 @@
 //
 //  DeepLinkRouter.swift
-//  Celestia
+//  MusicJam
 //
 //  Deep link routing system for Universal Links and URL schemes
 //  Handles navigation from external sources (emails, web, referrals)

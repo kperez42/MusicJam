@@ -1,6 +1,6 @@
 //
 //  ImprovedUserCard.swift
-//  Celestia
+//  MusicJam
 //
 //  Enhanced profile card with depth, shadows, and smooth gestures
 //  ACCESSIBILITY: Full VoiceOver support, Dynamic Type, Reduce Motion, and WCAG 2.1 AA compliant

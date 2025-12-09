@@ -1,6 +1,6 @@
 //
 //  ProfileInsights.swift
-//  Celestia
+//  MusicJam
 //
 //  Profile analytics and insights data model
 //

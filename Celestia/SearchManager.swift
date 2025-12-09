@@ -1,6 +1,6 @@
 //
 //  SearchManager.swift
-//  Celestia
+//  MusicJam
 //
 //  Manages user search and filtering functionality
 //  Filter types are defined in FilterModels.swift

@@ -1,6 +1,6 @@
 //
 //  NetworkManager.swift
-//  Celestia
+//  MusicJam
 //
 //  Centralized networking layer with retry logic, interceptors, and monitoring
 //  Provides robust network communication with automatic error handling

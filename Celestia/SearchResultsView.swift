@@ -1,6 +1,6 @@
 //
 //  SearchResultsView.swift
-//  Celestia
+//  MusicJam
 //
 //  Search results display with profile cards
 //

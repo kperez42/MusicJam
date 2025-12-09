@@ -1,6 +1,6 @@
 //
 //  ReferralAttribution.swift
-//  Celestia
+//  MusicJam
 //
 //  Advanced attribution system for referral tracking
 //  Features: Multi-touch attribution, deferred deep linking, cross-platform tracking

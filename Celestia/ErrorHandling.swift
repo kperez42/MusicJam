@@ -1,9 +1,9 @@
 //
 //  ErrorHandling.swift
-//  Celestia
+//  MusicJam
 //
 //  Created by Claude
-//  Comprehensive error handling system
+//  Comprehensive error handling system for musician collaboration platform
 //
 
 import Foundation
@@ -11,7 +11,7 @@ import SwiftUI
 
 // MARK: - App Errors
 
-enum CelestiaError: LocalizedError, Identifiable {
+enum MusicJamError: LocalizedError, Identifiable {
     var id: String { errorDescription ?? "unknown_error" }
 
     // Authentication Errors
@@ -148,7 +148,7 @@ enum CelestiaError: LocalizedError, Identifiable {
         case .invalidProfileData:
             return "Some profile information is invalid. Please check and try again."
         case .ageRestriction:
-            return "You must be 18 or older to use Celestia."
+            return "You must be 18 or older to use MusicJam."
         case .validationError(let field, let reason):
             return "Validation error for \(field): \(reason)"
 
@@ -223,7 +223,7 @@ enum CelestiaError: LocalizedError, Identifiable {
 
         // Premium
         case .premiumRequired:
-            return "This feature requires Celestia Premium."
+            return "This feature requires MusicJam Premium."
         case .subscriptionExpired:
             return "Your premium subscription has expired."
         case .purchaseFailed:
@@ -337,9 +337,9 @@ enum CelestiaError: LocalizedError, Identifiable {
         }
     }
 
-    static func from(_ error: Error) -> CelestiaError {
-        if let celestiaError = error as? CelestiaError {
-            return celestiaError
+    static func from(_ error: Error) -> MusicJamError {
+        if let musicJamError = error as? MusicJamError {
+            return musicJamError
         }
 
         let nsError = error as NSError
@@ -385,7 +385,7 @@ enum CelestiaError: LocalizedError, Identifiable {
 // MARK: - Error Alert Modifier
 
 struct ErrorAlert: ViewModifier {
-    @Binding var error: CelestiaError?
+    @Binding var error: MusicJamError?
 
     func body(content: Content) -> some View {
         content
@@ -398,7 +398,7 @@ struct ErrorAlert: ViewModifier {
             }
     }
 
-    private func errorMessage(for error: CelestiaError) -> String {
+    private func errorMessage(for error: MusicJamError) -> String {
         var message = error.errorDescription ?? "An error occurred"
         if let suggestion = error.recoverySuggestion {
             message += "\n\n\(suggestion)"
@@ -408,7 +408,7 @@ struct ErrorAlert: ViewModifier {
 }
 
 extension View {
-    func errorAlert(_ error: Binding<CelestiaError?>) -> some View {
+    func errorAlert(_ error: Binding<MusicJamError?>) -> some View {
         modifier(ErrorAlert(error: error))
     }
 }
@@ -416,7 +416,7 @@ extension View {
 // MARK: - Error Banner
 
 struct ErrorBanner: View {
-    let error: CelestiaError
+    let error: MusicJamError
     let onDismiss: () -> Void
 
     var body: some View {
@@ -457,10 +457,10 @@ struct ErrorBanner: View {
 // MARK: - Error View
 
 struct ErrorView: View {
-    let error: CelestiaError
+    let error: MusicJamError
     let retryAction: (() -> Void)?
 
-    init(error: CelestiaError, retryAction: (() -> Void)? = nil) {
+    init(error: MusicJamError, retryAction: (() -> Void)? = nil) {
         self.error = error
         self.retryAction = retryAction
     }

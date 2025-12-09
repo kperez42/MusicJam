@@ -1,6 +1,6 @@
 //
 //  SeeWhoLikesYouView.swift
-//  Celestia
+//  MusicJam
 //
 //  Premium feature: See who has liked you
 //

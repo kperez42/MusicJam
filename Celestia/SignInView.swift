@@ -1,6 +1,6 @@
 //
 //  SignInView.swift
-//  Celestia
+//  MusicJam
 //
 //  Sign in screen
 //

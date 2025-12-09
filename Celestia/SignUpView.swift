@@ -1,6 +1,6 @@
 //
 //  SignUpView.swift
-//  Celestia
+//  MusicJam
 //
 //  Multi-step sign up flow
 //
@@ -581,7 +581,7 @@ struct SignUpView: View {
                             HStack(spacing: 6) {
                                 Image(systemName: "exclamationmark.circle.fill")
                                     .foregroundColor(.red)
-                                Text("You must be 18 or older to use Celestia")
+                                Text("You must be 18 or older to use MusicJam")
                                     .font(.caption)
                                     .foregroundColor(.red)
                             }
@@ -1782,7 +1782,7 @@ struct SignUpView: View {
         case 0: return "Let's get started with your account"
         case 1: return "This helps us find your perfect match"
         case 2: return "Connect with people near and far"
-        case 3: return "Photos help you make meaningful connections"
+        case 3: return "Photos help you make musical collaborations"
         case 4: return "Let others know what makes you unique"
         case 5: return "Help us find people with similar vibes"
         case 6: return "Optional info to complete your profile"

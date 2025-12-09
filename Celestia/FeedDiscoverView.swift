@@ -621,7 +621,7 @@ struct FeedDiscoverView: View {
                         )
                     )
 
-                Text("Welcome to Celestia!")
+                Text("Welcome to MusicJam!")
                     .font(.title2)
                     .fontWeight(.bold)
 
@@ -722,7 +722,7 @@ struct FeedDiscoverView: View {
                     )
 
                 VStack(spacing: 12) {
-                    Text("Welcome to Celestia!")
+                    Text("Welcome to MusicJam!")
                         .font(.title2)
                         .fontWeight(.bold)
 

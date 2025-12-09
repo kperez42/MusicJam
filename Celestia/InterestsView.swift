@@ -1,6 +1,6 @@
 //
 //  InterestsView.swift
-//  Celestia
+//  MusicJam
 //
 
 import SwiftUI

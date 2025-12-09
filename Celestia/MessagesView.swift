@@ -1,6 +1,6 @@
 //
 //  MessagesView.swift
-//  Celestia
+//  MusicJam
 //
 //  ELITE MESSAGES VIEW - Premium Chat Experience
 //

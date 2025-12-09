@@ -1,6 +1,6 @@
 //
 //  CameraView.swift
-//  Celestia
+//  MusicJam
 //
 //  Camera view for selfie capture with verification
 //

@@ -1,6 +1,6 @@
 //
 //  TypingIndicator.swift
-//  Celestia
+//  MusicJam
 //
 //  Typing indicator animation for chat
 //

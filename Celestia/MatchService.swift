@@ -1,6 +1,6 @@
 //
 //  MatchService.swift
-//  Celestia
+//  MusicJam
 //
 //  Service for match-related operations
 //

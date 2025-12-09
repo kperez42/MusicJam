@@ -1,6 +1,6 @@
 //
 //  CircuitBreaker.swift
-//  Celestia
+//  MusicJam
 //
 //  Circuit breaker pattern to prevent cascading failures
 //  Protects backend services from overload and provides graceful degradation

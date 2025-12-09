@@ -1,6 +1,6 @@
 //
 //  AdminImageApprovalView.swift
-//  Celestia
+//  MusicJam
 //
 //  Admin view for reviewing and approving user profile photos
 //

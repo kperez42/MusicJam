@@ -1,6 +1,6 @@
 //
 //  RetryManager.swift
-//  Celestia
+//  MusicJam
 //
 //  Retry logic with exponential backoff for failed operations
 //
@@ -94,7 +94,7 @@ class RetryManager {
             }
         }
 
-        throw lastError ?? CelestiaError.unknown("All retry attempts failed")
+        throw lastError ?? MusicJamError.unknown("All retry attempts failed")
     }
 
     /// Retry with a completion handler

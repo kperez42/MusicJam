@@ -1,6 +1,6 @@
 //
 //  PhoneVerificationService.swift
-//  Celestia
+//  MusicJam
 //
 //  Phone number verification using Firebase Auth
 //

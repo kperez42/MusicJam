@@ -1,6 +1,6 @@
 //
 //  StoreModels.swift
-//  Celestia
+//  MusicJam
 //
 //  Product models and types for In-App Purchases
 //

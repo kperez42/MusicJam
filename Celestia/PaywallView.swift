@@ -1,6 +1,6 @@
 //
 //  PaywallView.swift
-//  Celestia
+//  MusicJam
 //
 //  Subscription paywall with tiered pricing
 //

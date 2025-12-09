@@ -1,6 +1,6 @@
 //
 //  ImageCache.swift
-//  Celestia
+//  MusicJam
 //
 //  Created by Claude
 //  High-performance image caching with memory and disk storage

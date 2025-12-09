@@ -1,6 +1,6 @@
 //
 //  Utilities.swift
-//  Celestia
+//  MusicJam
 //
 //  Created by Claude
 //  General utility functions and helpers
@@ -153,17 +153,17 @@ enum ImageValidator {
 
     static func validate(_ data: Data) throws {
         guard data.count <= maxImageSize else {
-            throw CelestiaError.imageTooBig
+            throw MusicJamError.imageTooBig
         }
 
         guard let image = UIImage(data: data) else {
-            throw CelestiaError.invalidImageFormat
+            throw MusicJamError.invalidImageFormat
         }
 
         // Additional validation
         let maxDimension: CGFloat = 4096
         if image.size.width > maxDimension || image.size.height > maxDimension {
-            throw CelestiaError.imageTooBig
+            throw MusicJamError.imageTooBig
         }
     }
 
@@ -229,7 +229,7 @@ struct AppInfo {
     }
 
     static var appName: String {
-        Bundle.main.infoDictionary?["CFBundleName"] as? String ?? "Celestia"
+        Bundle.main.infoDictionary?["CFBundleName"] as? String ?? "MusicJam"
     }
 }
 

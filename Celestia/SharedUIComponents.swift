@@ -1,6 +1,6 @@
 //
 //  SharedUIComponents.swift
-//  Celestia
+//  MusicJam
 //
 //  Shared UI components used across the app
 //

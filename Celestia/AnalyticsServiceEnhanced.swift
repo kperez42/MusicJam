@@ -1,6 +1,6 @@
 //
 //  AnalyticsServiceEnhanced.swift
-//  Celestia
+//  MusicJam
 //
 //  Advanced analytics with profile heatmaps, match quality scoring,
 //  time-to-match trends, and A/B testing

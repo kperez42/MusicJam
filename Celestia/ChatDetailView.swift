@@ -1,6 +1,6 @@
 //
 //  ChatDetailView.swift
-//  Celestia
+//  MusicJam
 //
 //  Chat conversation view
 //

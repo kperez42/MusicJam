@@ -1,6 +1,6 @@
 //
 //  ProfileTip.swift
-//  Celestia
+//  MusicJam
 //
 //  Model for profile completion tips
 //

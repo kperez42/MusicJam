@@ -1,6 +1,6 @@
 //
 //  ReferralABTestManager.swift
-//  Celestia
+//  MusicJam
 //
 //  A/B Testing system for referral program optimization
 //  Features: Experiment management, variant assignment, statistical analysis
@@ -731,7 +731,7 @@ class ReferralABTestManager: ObservableObject {
 
         // Return default message
         return """
-        Hey! Join me on Celestia, the best dating app for meaningful connections! 💜
+        Hey! Join me on MusicJam, the musician collaboration platform! 💜
 
         Use my code \(code) when you sign up and we'll both get 3 days of Premium free!
 

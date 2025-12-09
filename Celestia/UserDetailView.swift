@@ -1,6 +1,6 @@
 //
 //  UserDetailView.swift
-//  Celestia
+//  MusicJam
 //
 //  Detailed view of a user's profile
 //

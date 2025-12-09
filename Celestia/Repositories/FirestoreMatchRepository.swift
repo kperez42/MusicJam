@@ -1,6 +1,6 @@
 //
 //  FirestoreMatchRepository.swift
-//  Celestia
+//  MusicJam
 //
 //  Concrete implementation of MatchRepository using Firestore
 //  Separates data access logic from business logic

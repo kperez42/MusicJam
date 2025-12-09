@@ -1,6 +1,6 @@
 //
 //  FilterPresetManager.swift
-//  Celestia
+//  MusicJam
 //
 //  Manages saved filter presets and search history
 //

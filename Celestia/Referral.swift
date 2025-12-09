@@ -1,6 +1,6 @@
 //
 //  Referral.swift
-//  Celestia
+//  MusicJam
 //
 //  Referral system models
 //

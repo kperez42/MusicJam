@@ -1,6 +1,6 @@
 //
 //  ManualIDVerificationView.swift
-//  Celestia
+//  MusicJam
 //
 //  Manual ID verification - user submits photos for admin review
 //  Clean, smooth step-by-step flow

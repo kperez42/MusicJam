@@ -1,6 +1,6 @@
 //
 //  PhotoUploadService.swift
-//  Celestia
+//  MusicJam
 //
 //  Photo upload service for gallery and profile photos
 //  Includes network connectivity checks for reliable uploads
@@ -67,7 +67,7 @@ class PhotoUploadService {
 
         guard !userId.isEmpty else {
             Logger.shared.error("📸 Upload failed: Empty userId", category: .networking)
-            throw CelestiaError.invalidData
+            throw MusicJamError.invalidData
         }
 
         // Log image details
@@ -126,8 +126,8 @@ class PhotoUploadService {
             Logger.shared.error("❌ Photo upload FAILED - Error: \(error.localizedDescription)", category: .networking, error: error)
 
             // Provide more context about the failure
-            if let celestiaError = error as? CelestiaError {
-                Logger.shared.error("❌ CelestiaError type: \(celestiaError)", category: .networking)
+            if let celestiaError = error as? MusicJamError {
+                Logger.shared.error("❌ MusicJamError type: \(celestiaError)", category: .networking)
             }
             if let nsError = error as NSError? {
                 Logger.shared.error("❌ NSError domain: \(nsError.domain), code: \(nsError.code)", category: .networking)
@@ -146,7 +146,7 @@ class PhotoUploadService {
     /// - Returns: URL string of the uploaded image
     func uploadPhotoWithQualityCheck(_ image: UIImage, userId: String, imageType: ImageType, requireHighQuality: Bool = false) async throws -> String {
         guard !userId.isEmpty else {
-            throw CelestiaError.invalidData
+            throw MusicJamError.invalidData
         }
 
         // Check network status

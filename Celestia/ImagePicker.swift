@@ -1,6 +1,6 @@
 //
 //  ImagePicker.swift
-//  Celestia
+//  MusicJam
 //
 //  Photo picker component for profile pictures
 //

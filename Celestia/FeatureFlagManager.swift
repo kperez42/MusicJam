@@ -1,6 +1,6 @@
 //
 //  FeatureFlagManager.swift
-//  Celestia
+//  MusicJam
 //
 //  Feature flags system for A/B testing and gradual rollouts
 //  Supports remote configuration via Firebase Remote Config

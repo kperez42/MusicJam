@@ -1,6 +1,6 @@
 //
 //  EditProfileView.swift
-//  Celestia
+//  MusicJam
 //
 //  Enhanced profile editing with beautiful UI and better UX
 //
@@ -2350,7 +2350,7 @@ struct EditProfileView: View {
                         case .uploadTimeout:
                             errorMessage = "Upload timed out. Please check your connection and try again."
                         }
-                    } else if let celestiaError = error as? CelestiaError {
+                    } else if let celestiaError = error as? MusicJamError {
                         switch celestiaError {
                         case .networkError:
                             errorMessage = "Network error. Please check your connection and try again."

@@ -1,6 +1,6 @@
 //
 //  ProfileBoostButton.swift
-//  Celestia
+//  MusicJam
 //
 //  UI component for activating profile boost
 //

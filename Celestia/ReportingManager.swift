@@ -1,6 +1,6 @@
 //
 //  ReportingManager.swift
-//  Celestia
+//  MusicJam
 //
 //  User reporting system for inappropriate behavior, scams, harassment
 //  Integrates with moderation workflow and automated detection

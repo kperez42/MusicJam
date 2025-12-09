@@ -1,6 +1,6 @@
 //
 //  PrivacySettingsView.swift
-//  Celestia
+//  MusicJam
 //
 //  Privacy controls for user safety
 //

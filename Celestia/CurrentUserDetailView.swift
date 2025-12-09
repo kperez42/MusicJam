@@ -1,6 +1,6 @@
 //
 //  CurrentUserDetailView.swift
-//  Celestia
+//  MusicJam
 //
 //  Detail view for viewing own profile (similar to how other users see you)
 //

@@ -1,6 +1,6 @@
 //
 //  NotificationPreferencesView.swift
-//  Celestia
+//  MusicJam
 //
 //  SwiftUI view for managing notification preferences
 //

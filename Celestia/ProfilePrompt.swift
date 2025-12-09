@@ -1,6 +1,6 @@
 //
 //  ProfilePrompt.swift
-//  Celestia
+//  MusicJam
 //
 //  Personality prompts for engaging profiles
 //

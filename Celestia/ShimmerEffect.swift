@@ -1,6 +1,6 @@
 //
 //  ShimmerEffect.swift
-//  Celestia
+//  MusicJam
 //
 //  Beautiful shimmer loading effects for skeleton placeholders
 //

@@ -1,6 +1,6 @@
 //
 //  ConversationStartersView.swift
-//  Celestia
+//  MusicJam
 //
 //  Beautiful UI for conversation starter suggestions
 //

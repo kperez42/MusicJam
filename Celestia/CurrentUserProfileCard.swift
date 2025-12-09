@@ -1,6 +1,6 @@
 //
 //  CurrentUserProfileCard.swift
-//  Celestia
+//  MusicJam
 //
 //  Current user's profile card for display at top of discover feed
 //  Tappable to navigate to full ProfileView for viewing and editing

@@ -1,6 +1,6 @@
 //
 //  MutualLikesView.swift
-//  Celestia
+//  MusicJam
 //
 //  Shows people you both liked (mutual likes that haven't matched yet)
 //

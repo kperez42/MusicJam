@@ -1,6 +1,6 @@
 //
 //  BlockReportService.swift
-//  Celestia
+//  MusicJam
 //
 //  Service for managing blocked and reported users
 //

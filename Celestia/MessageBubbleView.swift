@@ -1,6 +1,6 @@
 //
 //  MessageBubbleView.swift
-//  Celestia
+//  MusicJam
 //
 //  Shared message bubble component for chat views
 //

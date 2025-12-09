@@ -1,6 +1,6 @@
 //
 //  MessageQueueManager.swift
-//  Celestia
+//  MusicJam
 //
 //  Handles message queueing for offline support
 //  Automatically sends messages when connection is restored

@@ -1,6 +1,6 @@
 //
 //  FirestoreUserRepository.swift
-//  Celestia
+//  MusicJam
 //
 //  Concrete implementation of UserRepository using Firestore
 //  Separates data access logic from business logic

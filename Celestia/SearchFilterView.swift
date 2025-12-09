@@ -1,6 +1,6 @@
 //
 //  SearchFilterView.swift
-//  Celestia
+//  MusicJam
 //
 //  Comprehensive search filter interface
 //

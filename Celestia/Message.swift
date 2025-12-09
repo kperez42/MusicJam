@@ -1,6 +1,6 @@
 //
 //  Message.swift
-//  Celestia
+//  MusicJam
 //
 //  Message model for chat functionality
 //

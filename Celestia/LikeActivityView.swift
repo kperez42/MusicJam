@@ -1,6 +1,6 @@
 //
 //  LikeActivityView.swift
-//  Celestia
+//  MusicJam
 //
 //  Timeline of like activity (received and sent)
 //

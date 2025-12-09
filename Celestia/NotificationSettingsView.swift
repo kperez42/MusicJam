@@ -1,6 +1,6 @@
 //
 //  NotificationSettingsView.swift
-//  Celestia
+//  MusicJam
 //
 //  Notification preferences and settings
 //

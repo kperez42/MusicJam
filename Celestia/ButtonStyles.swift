@@ -1,6 +1,6 @@
 //
 //  ButtonStyles.swift
-//  Celestia
+//  MusicJam
 //
 //  Unified button styles for consistent interactive feedback
 //

@@ -1,6 +1,6 @@
 //
 //  ScreenshotDetectionService.swift
-//  Celestia
+//  MusicJam
 //
 //  Service for detecting screenshots and notifying users
 //

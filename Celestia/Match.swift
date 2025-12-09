@@ -1,6 +1,6 @@
 //
 //  Match.swift
-//  Celestia
+//  MusicJam
 //
 //  Match model for tracking user matches
 //

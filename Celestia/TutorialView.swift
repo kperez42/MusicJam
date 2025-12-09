@@ -1,6 +1,6 @@
 //
 //  TutorialView.swift
-//  Celestia
+//  MusicJam
 //
 //  Interactive tutorials for core features
 //  Guides new users through swiping, matching, and messaging
@@ -299,8 +299,8 @@ class TutorialManager: ObservableObject {
         return [
             Tutorial(
                 id: "welcome",
-                title: "Welcome to Celestia! 🌟",
-                description: "Your journey to meaningful connections starts here. Let's show you around!",
+                title: "Welcome to MusicJam! 🌟",
+                description: "Your journey to musical collaborations starts here. Let's show you around!",
                 icon: "star.fill",
                 accentColor: .purple,
                 tips: [

@@ -1,6 +1,6 @@
 //
 //  StripeIdentityVerificationView.swift
-//  Celestia
+//  MusicJam
 //
 //  SwiftUI view for Stripe Identity verification flow
 //  This is the primary and recommended method for ID verification

@@ -1,6 +1,6 @@
 //
 //  UserService.swift
-//  Celestia
+//  MusicJam
 //
 //  Service for user-related operations
 //

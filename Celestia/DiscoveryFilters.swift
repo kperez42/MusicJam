@@ -1,6 +1,6 @@
 //
 //  DiscoveryFilters.swift
-//  Celestia
+//  MusicJam
 //
 //  Discovery filter preferences
 //

@@ -1,6 +1,6 @@
 //
 //  DeepLinkManager.swift
-//  Celestia
+//  MusicJam
 //
 //  Manages deep linking for referral codes
 //

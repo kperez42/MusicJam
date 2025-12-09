@@ -1,6 +1,6 @@
 //
 //  ProfileApprovedCelebrationView.swift
-//  Celestia
+//  MusicJam
 //
 //  Celebrates user profile approval with confetti and animations
 //
@@ -100,7 +100,7 @@ struct ProfileApprovedCelebrationView: View {
                         )
                         .scaleEffect(appearAnimation ? 1.0 : 0.8)
 
-                    Text("Welcome to Celestia")
+                    Text("Welcome to MusicJam")
                         .font(.title2)
                         .foregroundColor(.secondary)
                 }

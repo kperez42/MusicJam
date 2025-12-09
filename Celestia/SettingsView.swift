@@ -1,6 +1,6 @@
 //
 //  SettingsView.swift
-//  Celestia
+//  MusicJam
 //
 //  Created by Kevin Perez on 10/29/25.
 //
@@ -399,7 +399,7 @@ struct SettingsView: View {
                         isDeleting = true
                         do {
                             try await authService.deleteAccount()
-                        } catch let error as CelestiaError {
+                        } catch let error as MusicJamError {
                             isDeleting = false
                             switch error {
                             case .requiresRecentLogin:

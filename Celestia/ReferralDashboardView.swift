@@ -1,6 +1,6 @@
 //
 //  ReferralDashboardView.swift
-//  Celestia
+//  MusicJam
 //
 //  Referral program dashboard with stats and sharing
 //

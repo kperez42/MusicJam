@@ -1,6 +1,6 @@
 //
 //  RateLimiter.swift
-//  Celestia
+//  MusicJam
 //
 //  Client-side rate limiting to prevent abuse
 //

@@ -1,6 +1,6 @@
 //
 //  FirebaseErrorMapper.swift
-//  Celestia
+//  MusicJam
 //
 //  Centralized Firebase error mapping to eliminate code duplication
 //  Converts Firebase error codes to user-friendly messages
@@ -20,14 +20,14 @@ import FirebaseStorage
 import FirebaseFirestore
 
 /// Centralized Firebase error mapping utility
-/// Converts Firebase NSError codes to user-friendly CelestiaError types and messages
+/// Converts Firebase NSError codes to user-friendly MusicJamError types and messages
 enum FirebaseErrorMapper {
 
     // MARK: - Main Error Mapping
 
     /// Map any Firebase NSError to a user-friendly error
     /// Automatically detects error domain and delegates to appropriate handler
-    static func mapError(_ error: NSError) -> CelestiaError {
+    static func mapError(_ error: NSError) -> MusicJamError {
         switch error.domain {
         case "FIRAuthErrorDomain":
             return mapAuthError(error)
@@ -41,7 +41,7 @@ enum FirebaseErrorMapper {
     }
 
     /// Get user-friendly error message from NSError
-    /// Use this when you don't need the CelestiaError type
+    /// Use this when you don't need the MusicJamError type
     static func getUserFriendlyMessage(for error: NSError) -> String {
         return mapError(error).userMessage
     }
@@ -112,8 +112,8 @@ enum FirebaseErrorMapper {
         static let emailChangeNeedsVerification = 17090
     }
 
-    /// Map Firebase Authentication errors to CelestiaError
-    private static func mapAuthError(_ error: NSError) -> CelestiaError {
+    /// Map Firebase Authentication errors to MusicJamError
+    private static func mapAuthError(_ error: NSError) -> MusicJamError {
         switch error.code {
         // Email/Password errors
         case AuthErrorCodes.invalidEmail:
@@ -233,9 +233,9 @@ enum FirebaseErrorMapper {
 
     // MARK: - Firebase Storage Error Mapping
 
-    /// Map Firebase Storage errors to CelestiaError
+    /// Map Firebase Storage errors to MusicJamError
     /// Reference: https://firebase.google.com/docs/storage/ios/handle-errors
-    private static func mapStorageError(_ error: NSError) -> CelestiaError {
+    private static func mapStorageError(_ error: NSError) -> MusicJamError {
         switch error.code {
         // Object/Path errors
         case StorageErrorCode.objectNotFound.rawValue:
@@ -311,9 +311,9 @@ enum FirebaseErrorMapper {
         static let unauthenticated = 16
     }
 
-    /// Map Firebase Firestore errors to CelestiaError
+    /// Map Firebase Firestore errors to MusicJamError
     /// Covers all FirestoreErrorCode cases for comprehensive error handling
-    private static func mapFirestoreError(_ error: NSError) -> CelestiaError {
+    private static func mapFirestoreError(_ error: NSError) -> MusicJamError {
         switch error.code {
         // Success (shouldn't normally reach error handling)
         case FirestoreErrorCodes.ok:
@@ -475,8 +475,8 @@ enum FirebaseErrorMapper {
         return getRecoverySuggestion(for: mappedError, originalError: error)
     }
 
-    /// Get recovery suggestion for CelestiaError with optional original NSError context
-    static func getRecoverySuggestion(for error: CelestiaError, originalError: NSError? = nil) -> String {
+    /// Get recovery suggestion for MusicJamError with optional original NSError context
+    static func getRecoverySuggestion(for error: MusicJamError, originalError: NSError? = nil) -> String {
         switch error {
         // Auth recovery suggestions
         case .invalidEmail:
@@ -605,9 +605,9 @@ enum FirebaseErrorMapper {
     }
 }
 
-// MARK: - CelestiaError Extension
+// MARK: - MusicJamError Extension
 
-extension CelestiaError {
+extension MusicJamError {
     /// User-friendly message for display in Firebase error contexts
     /// This extends the base errorDescription with Firebase-specific messaging
     var userMessage: String {

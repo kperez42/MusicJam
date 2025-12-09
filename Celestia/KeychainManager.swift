@@ -1,6 +1,6 @@
 //
 //  KeychainManager.swift
-//  Celestia
+//  MusicJam
 //
 //  Secure storage for sensitive data using iOS Keychain
 //  Provides encrypted storage for tokens, passwords, and other sensitive information

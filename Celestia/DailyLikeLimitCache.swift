@@ -1,16 +1,17 @@
 //
 //  DailyLikeLimitCache.swift
-//  Celestia
+//  MusicJam
 //
-//  Persistent cache for daily like limits to prevent double reads from Firestore
+//  Persistent cache for daily interest limits to prevent double reads from Firestore
 //  Automatically resets at midnight and persists across app restarts
+//  Find Your Sound, Find Your Band
 //
 
 import Foundation
 
-/// Cached daily like limit data
+/// Cached daily interest limit data (how many musicians you can express interest in per day)
 struct DailyLikeLimitData: Codable {
-    var likesRemaining: Int
+    var likesRemaining: Int  // number of remaining daily interests
     var lastResetDate: Date
 
     /// Check if this data needs to be reset (new day)
@@ -19,13 +20,13 @@ struct DailyLikeLimitData: Codable {
     }
 }
 
-/// Thread-safe cache for daily like limits with UserDefaults persistence
+/// Thread-safe cache for daily interest limits with UserDefaults persistence
 actor DailyLikeLimitCache {
     static let shared = DailyLikeLimitCache()
 
     private let defaults = UserDefaults.standard
-    private let cacheKeyPrefix = "daily_like_limit_"
-    private let defaultDailyLimit = 50
+    private let cacheKeyPrefix = "daily_interest_limit_"
+    private let defaultDailyLimit = 50  // Free tier: 50 musician interests per day
 
     // In-memory cache for fast access
     private var memoryCache: [String: DailyLikeLimitData] = [:]
@@ -81,12 +82,12 @@ actor DailyLikeLimitCache {
         // Persist to UserDefaults
         saveToUserDefaults(userId: userId, data: data)
 
-        Logger.shared.debug("Daily like limit cached: \(likesRemaining) remaining for user \(userId)", category: .performance)
+        Logger.shared.debug("Daily interest limit cached: \(likesRemaining) remaining for user \(userId)", category: .performance)
     }
 
-    /// Decrement likes for a user (updates both memory and UserDefaults)
+    /// Decrement interests for a user (updates both memory and UserDefaults)
     /// - Parameter userId: User ID
-    /// - Returns: New likes remaining count, or nil if cache miss
+    /// - Returns: New interests remaining count, or nil if cache miss
     func decrementLikes(userId: String) -> Int? {
         guard var data = getRemainingLikes(userId: userId) else {
             return nil
@@ -101,7 +102,7 @@ actor DailyLikeLimitCache {
         return data.likesRemaining
     }
 
-    /// Reset daily likes to default limit
+    /// Reset daily interests to default limit
     /// - Parameter userId: User ID
     func resetToDefault(userId: String) {
         setRemainingLikes(userId: userId, likesRemaining: defaultDailyLimit, lastResetDate: Date())
@@ -124,7 +125,7 @@ actor DailyLikeLimitCache {
             defaults.removeObject(forKey: key)
         }
 
-        Logger.shared.info("Daily like limit cache cleared", category: .performance)
+        Logger.shared.info("Daily interest limit cache cleared", category: .performance)
     }
 
     /// Get cache statistics

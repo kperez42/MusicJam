@@ -1,6 +1,6 @@
 //
 //  SafetyCenter.swift
-//  Celestia
+//  MusicJam
 //
 //  Safety features: reporting and blocking
 //

@@ -1,6 +1,6 @@
 //
 //  VerificationFlowView.swift
-//  Celestia
+//  MusicJam
 //
 //  Complete verification flow UI (Photo, ID, Background Check)
 //

@@ -1,6 +1,6 @@
 //
 //  ReferralManager.swift
-//  Celestia
+//  MusicJam
 //
 //  Manages referral system logic
 //  Optimized for 10k+ users with caching, rate limiting, and efficient queries
@@ -1054,7 +1054,7 @@ class ReferralManager: ObservableObject {
 
     func getReferralShareMessage(code: String, userName: String) -> String {
         return """
-        Hey! Join me on Celestia, the best dating app for meaningful connections! 💜
+        Hey! Join me on MusicJam, the musician collaboration platform! 💜
 
         Use my code \(code) when you sign up and we'll both get 3 days of Premium free!
 

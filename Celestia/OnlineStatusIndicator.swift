@@ -1,6 +1,6 @@
 //
 //  OnlineStatusIndicator.swift
-//  Celestia
+//  MusicJam
 //
 //  Reusable online status indicator component
 //  Shows real-time online status with elegant animations

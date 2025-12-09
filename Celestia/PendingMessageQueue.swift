@@ -1,6 +1,6 @@
 //
 //  PendingMessageQueue.swift
-//  Celestia
+//  MusicJam
 //
 //  Queue service for messages awaiting server-side validation
 //  Provides security by preventing client-side validation bypass

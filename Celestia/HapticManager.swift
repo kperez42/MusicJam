@@ -1,6 +1,6 @@
 //
 //  HapticManager.swift
-//  Celestia
+//  MusicJam
 //
 //  Created by Claude
 //  Centralized haptic feedback management

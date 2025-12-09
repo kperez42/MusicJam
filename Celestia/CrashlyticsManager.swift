@@ -1,6 +1,6 @@
 //
 //  CrashlyticsManager.swift
-//  Celestia
+//  MusicJam
 //
 //  Manages Firebase Crashlytics and Performance Monitoring
 //  Provides crash reporting, custom logging, and performance tracking
@@ -107,8 +107,8 @@ class CrashlyticsManager {
         Logger.shared.error("Custom error recorded: \(message)", category: .analytics)
     }
 
-    /// Record Celestia-specific errors
-    func recordCelestiaError(_ error: CelestiaError, context: [String: Any] = [:]) {
+    /// Record MusicJam-specific errors
+    func recordMusicJamError(_ error: MusicJamError, context: [String: Any] = [:]) {
         var userInfo = context
         userInfo["errorType"] = String(describing: error)
         userInfo["errorDescription"] = error.errorDescription ?? "Unknown"
@@ -124,7 +124,7 @@ class CrashlyticsManager {
         )
 
         crashlytics.record(error: nsError)
-        Logger.shared.error("Celestia error recorded: \(error)", category: .analytics)
+        Logger.shared.error("MusicJam error recorded: \(error)", category: .analytics)
     }
 
     // MARK: - Breadcrumbs

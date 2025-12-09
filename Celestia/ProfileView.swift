@@ -1,6 +1,6 @@
 //
 //  ProfileView.swift
-//  Celestia
+//  MusicJam
 //
 //  ELITE PROFILE VIEW - Your Digital Identity
 //  ACCESSIBILITY: Full VoiceOver support, Dynamic Type, Reduce Motion, and WCAG 2.1 AA compliant
@@ -408,7 +408,7 @@ struct ProfileView: View {
                        !userId.isEmpty,
                        let shareURL = URL(string: "https://celestia.app/profile/\(userId)"),
                        shareURL.scheme == "https" {
-                        ShareLink(item: shareURL, subject: Text("Check out \(user.fullName)'s profile"), message: Text("See \(user.fullName) on Celestia!")) {
+                        ShareLink(item: shareURL, subject: Text("Check out \(user.fullName)'s profile"), message: Text("See \(user.fullName) on MusicJam!")) {
                             Image(systemName: "square.and.arrow.up")
                                 .font(.title3)
                                 .foregroundColor(.white)
@@ -420,7 +420,7 @@ struct ProfileView: View {
                             HapticManager.shared.impact(.light)
                         })
                         .accessibilityLabel("Share profile")
-                        .accessibilityHint("Share your Celestia profile with others")
+                        .accessibilityHint("Share your MusicJam profile with others")
                     }
 
                     Spacer()
@@ -1499,7 +1499,7 @@ struct ProfileView: View {
                 icon: "questionmark.circle.fill",
                 title: "Help & Support",
                 color: .blue,
-                accessibilityHint: "Contact Celestia support team for assistance"
+                accessibilityHint: "Contact MusicJam support team for assistance"
             ) {
                 guard let url = URL(string: "mailto:support@celestia.app"),
                       UIApplication.shared.canOpenURL(url) else {
@@ -1522,7 +1522,7 @@ struct ProfileView: View {
                 icon: "arrow.right.square.fill",
                 title: "Sign Out",
                 color: .red,
-                accessibilityHint: "Sign out of your Celestia account"
+                accessibilityHint: "Sign out of your MusicJam account"
             ) {
                 showingLogoutConfirmation = true
             }

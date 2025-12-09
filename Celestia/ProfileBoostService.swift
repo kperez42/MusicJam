@@ -1,6 +1,6 @@
 //
 //  ProfileBoostService.swift
-//  Celestia
+//  MusicJam
 //
 //  Profile Boost functionality - temporarily increases profile visibility
 //

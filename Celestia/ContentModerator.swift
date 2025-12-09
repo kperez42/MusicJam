@@ -1,6 +1,6 @@
 //
 //  ContentModerator.swift
-//  Celestia
+//  MusicJam
 //
 //  Content moderation service to filter inappropriate content
 //

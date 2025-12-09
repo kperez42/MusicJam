@@ -1,6 +1,6 @@
 //
 //  Logger.swift
-//  Celestia
+//  MusicJam
 //
 //  Comprehensive logging system to replace print statements
 //  Provides structured logging with levels, categories, and persistence

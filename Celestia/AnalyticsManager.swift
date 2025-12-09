@@ -1,6 +1,6 @@
 //
 //  AnalyticsManager.swift
-//  Celestia
+//  MusicJam
 //
 //  Analytics tracking and event logging
 //  Integrates with Firebase Analytics

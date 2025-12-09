@@ -1,6 +1,6 @@
 //
 //  ImagePerformanceDashboard.swift
-//  Celestia
+//  MusicJam
 //
 //  Admin dashboard for monitoring image optimization performance
 //

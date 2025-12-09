@@ -1,6 +1,6 @@
 //
 //  AdvancedFiltersSheet.swift
-//  Celestia
+//  MusicJam
 //
 //  Advanced filtering options for user discovery
 //

@@ -1,6 +1,6 @@
 //
 //  ProfileSubscriptionsView.swift
-//  Celestia
+//  MusicJam
 //
 //  Shows subscription management with swipeable tabs - consistent with LikesView and SavedProfilesView
 //  Features tab now uses Tinder-style card swiping for better UX

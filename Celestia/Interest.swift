@@ -1,6 +1,6 @@
 //
 //  Interest.swift
-//  Celestia
+//  MusicJam
 //
 //  Model for user interests/likes
 //

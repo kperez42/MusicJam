@@ -1,6 +1,6 @@
 //
 //  FlaggedAccountView.swift
-//  Celestia
+//  MusicJam
 //
 //  Shows feedback to users whose profiles are under moderator review (flagged status).
 //

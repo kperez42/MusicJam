@@ -1,6 +1,6 @@
 //
 //  LoginView.swift
-//  Celestia
+//  MusicJam
 //
 //  Login view (wrapper for SignInView)
 //

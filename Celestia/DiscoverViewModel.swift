@@ -1,6 +1,6 @@
 //
 //  DiscoverViewModel.swift
-//  Celestia
+//  MusicJam
 //
 //  Handles user discovery and browsing
 //

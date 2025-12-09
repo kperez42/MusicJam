@@ -1,6 +1,6 @@
 //
 //  ReviewPromptManager.swift
-//  Celestia
+//  MusicJam
 //
 //  Smart app review prompt manager that shows review prompts at optimal times
 //  Uses iOS StoreKit to request reviews when users have positive experiences
@@ -304,7 +304,7 @@ struct ReviewPromptButton: View {
             HStack {
                 Image(systemName: "star.fill")
                     .foregroundColor(.yellow)
-                Text("Rate Celestia")
+                Text("Rate MusicJam")
                     .font(.body)
                 Spacer()
                 Image(systemName: "chevron.right")
@@ -363,7 +363,7 @@ extension ReviewPromptManager {
  To integrate with AppDelegate or App struct:
 
  @main
- struct CelestiaApp: App {
+ struct MusicJamApp: App {
      @StateObject private var reviewManager = ReviewPromptManager.shared
 
      init() {

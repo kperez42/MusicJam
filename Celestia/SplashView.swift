@@ -1,6 +1,6 @@
 //
 //  SplashView.swift
-//  Celestia
+//  MusicJam
 //
 //  Professional splash screen with brand animation
 //
@@ -63,7 +63,7 @@ struct SplashView: View {
                 .opacity(logoOpacity)
 
                 // App name
-                Text("Celestia")
+                Text("MusicJam")
                     .font(.system(size: 48, weight: .bold, design: .rounded))
                     .foregroundColor(.white)
                     .opacity(logoOpacity)

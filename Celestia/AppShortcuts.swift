@@ -1,8 +1,9 @@
 //
 //  AppShortcuts.swift
-//  Celestia
+//  MusicJam
 //
 //  App Shortcuts and Siri integration for quick actions
+//  Find Your Sound, Find Your Band
 //  Requires iOS 16+ for App Intents framework
 //
 
@@ -12,27 +13,27 @@ import AppIntents
 // MARK: - App Shortcuts Provider
 
 @available(iOS 16.0, *)
-struct CelestiaAppShortcuts: AppShortcutsProvider {
+struct MusicJamAppShortcuts: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
         AppShortcut(
             intent: ViewMatchesIntent(),
             phrases: [
-                "View my \(.applicationName) matches",
-                "Show my matches in \(.applicationName)",
-                "Check matches on \(.applicationName)"
+                "View my \(.applicationName) jam partners",
+                "Show my collaborations in \(.applicationName)",
+                "Check my band connections on \(.applicationName)"
             ],
-            shortTitle: "View Matches",
-            systemImageName: "heart.circle.fill"
+            shortTitle: "View Jam Partners",
+            systemImageName: "guitars.fill"
         )
 
         AppShortcut(
             intent: StartSwipingIntent(),
             phrases: [
-                "Start swiping on \(.applicationName)",
-                "Discover people on \(.applicationName)",
-                "Show me profiles on \(.applicationName)"
+                "Find musicians on \(.applicationName)",
+                "Discover musicians on \(.applicationName)",
+                "Show me musicians on \(.applicationName)"
             ],
-            shortTitle: "Start Swiping",
+            shortTitle: "Find Musicians",
             systemImageName: "person.2.circle.fill"
         )
 
@@ -61,11 +62,11 @@ struct CelestiaAppShortcuts: AppShortcutsProvider {
         AppShortcut(
             intent: ShareDateDetailsIntent(),
             phrases: [
-                "Share my date on \(.applicationName)",
-                "Share date details in \(.applicationName)",
-                "Tell someone about my date on \(.applicationName)"
+                "Share my jam session on \(.applicationName)",
+                "Share rehearsal details in \(.applicationName)",
+                "Tell someone about my jam session on \(.applicationName)"
             ],
-            shortTitle: "Share Date",
+            shortTitle: "Share Jam Session",
             systemImageName: "location.circle.fill"
         )
 
@@ -85,7 +86,7 @@ struct CelestiaAppShortcuts: AppShortcutsProvider {
             phrases: [
                 "Check in on \(.applicationName)",
                 "I'm safe on \(.applicationName)",
-                "Mark date as safe in \(.applicationName)"
+                "Mark jam session as safe in \(.applicationName)"
             ],
             shortTitle: "Safety Check-In",
             systemImageName: "checkmark.shield.fill"
@@ -97,8 +98,8 @@ struct CelestiaAppShortcuts: AppShortcutsProvider {
 
 @available(iOS 16.0, *)
 struct ViewMatchesIntent: AppIntent {
-    static var title: LocalizedStringResource = "View Matches"
-    static var description = IntentDescription("View your current matches in Celestia")
+    static var title: LocalizedStringResource = "View Jam Partners"
+    static var description = IntentDescription("View your current jam partners and collaborations in MusicJam")
     static var openAppWhenRun: Bool = true
 
     @MainActor
@@ -118,8 +119,8 @@ struct ViewMatchesIntent: AppIntent {
 
 @available(iOS 16.0, *)
 struct StartSwipingIntent: AppIntent {
-    static var title: LocalizedStringResource = "Start Swiping"
-    static var description = IntentDescription("Start discovering new people on Celestia")
+    static var title: LocalizedStringResource = "Find Musicians"
+    static var description = IntentDescription("Start discovering musicians to collaborate with on MusicJam")
     static var openAppWhenRun: Bool = true
 
     @MainActor
@@ -138,7 +139,7 @@ struct StartSwipingIntent: AppIntent {
 @available(iOS 16.0, *)
 struct CheckMessagesIntent: AppIntent {
     static var title: LocalizedStringResource = "Check Messages"
-    static var description = IntentDescription("Check your messages on Celestia")
+    static var description = IntentDescription("Check your messages from fellow musicians on MusicJam")
     static var openAppWhenRun: Bool = true
 
     @MainActor
@@ -180,21 +181,21 @@ struct ViewPremiumIntent: AppIntent {
 
 @available(iOS 16.0, *)
 struct ShareDateDetailsIntent: AppIntent {
-    static var title: LocalizedStringResource = "Share Date Details"
-    static var description = IntentDescription("Share your date location and time with emergency contacts")
+    static var title: LocalizedStringResource = "Share Jam Session Details"
+    static var description = IntentDescription("Share your jam session location and time with emergency contacts")
     static var openAppWhenRun: Bool = true
 
-    @Parameter(title: "Match Name")
+    @Parameter(title: "Musician Name")
     var matchName: String?
 
     @Parameter(title: "Location")
     var location: String?
 
-    @Parameter(title: "Date Time")
+    @Parameter(title: "Session Time")
     var dateTime: Date?
 
     static var parameterSummary: some ParameterSummary {
-        Summary("Share date with \(\.$matchName) at \(\.$location)")
+        Summary("Share jam session with \(\.$matchName) at \(\.$location)")
     }
 
     @MainActor
@@ -208,16 +209,16 @@ struct ShareDateDetailsIntent: AppIntent {
             throw AppShortcutError.notAuthenticated
         }
 
-        // If parameters provided, create share date automatically
+        // If parameters provided, create share jam session automatically
         if let matchName = matchName, let location = location, let dateTime = dateTime {
-            // This would integrate with ShareDateView functionality
+            // This would integrate with JamSessionView functionality
             return .result(
-                dialog: IntentDialog("Date details shared with your emergency contacts")
+                dialog: IntentDialog("Jam session details shared with your emergency contacts")
             )
         } else {
-            // Open app to share date screen
+            // Open app to share jam session screen
             return .result(
-                dialog: IntentDialog("Opening Celestia to share your date details")
+                dialog: IntentDialog("Opening MusicJam to share your jam session details")
             )
         }
     }
@@ -262,7 +263,7 @@ struct AddEmergencyContactIntent: AppIntent {
             )
         } else {
             return .result(
-                dialog: IntentDialog("Opening Celestia to add emergency contact")
+                dialog: IntentDialog("Opening MusicJam to add emergency contact")
             )
         }
     }
@@ -273,7 +274,7 @@ struct AddEmergencyContactIntent: AppIntent {
 @available(iOS 16.0, *)
 struct CheckInIntent: AppIntent {
     static var title: LocalizedStringResource = "Safety Check-In"
-    static var description = IntentDescription("Check in to confirm you're safe during a date")
+    static var description = IntentDescription("Check in to confirm you're safe during a jam session")
 
     @Parameter(title: "Status Message")
     var statusMessage: String?
@@ -289,11 +290,11 @@ struct CheckInIntent: AppIntent {
             throw AppShortcutError.notAuthenticated
         }
 
-        // This would integrate with DateCheckInManager
+        // This would integrate with JamSessionCheckInManager
         let message = statusMessage ?? "I'm safe"
 
-        // Mark current date as checked in
-        // DateCheckInManager.shared.checkIn(message: message)
+        // Mark current jam session as checked in
+        // JamSessionCheckInManager.shared.checkIn(message: message)
 
         return .result(
             dialog: IntentDialog("Check-in recorded. Your emergency contacts have been notified you're safe.")
@@ -307,9 +308,9 @@ struct CheckInIntent: AppIntent {
 enum EmergencyContactRelationship: String, AppEnum {
     case friend = "Friend"
     case family = "Family"
-    case partner = "Partner"
+    case bandmate = "Bandmate"
     case roommate = "Roommate"
-    case coworker = "Coworker"
+    case musicTeacher = "MusicTeacher"
     case other = "Other"
 
     static var typeDisplayRepresentation: TypeDisplayRepresentation = "Relationship"
@@ -318,9 +319,9 @@ enum EmergencyContactRelationship: String, AppEnum {
         [
             .friend: "Friend",
             .family: "Family Member",
-            .partner: "Partner",
+            .bandmate: "Bandmate",
             .roommate: "Roommate",
-            .coworker: "Coworker",
+            .musicTeacher: "Music Teacher",
             .other: "Other"
         ]
     }

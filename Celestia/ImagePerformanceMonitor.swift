@@ -1,6 +1,6 @@
 //
 //  ImagePerformanceMonitor.swift
-//  Celestia
+//  MusicJam
 //
 //  Performance monitoring for image optimization system
 //  Tracks load times, CDN usage, bandwidth savings, and user engagement

@@ -131,19 +131,19 @@ struct User: Identifiable, Codable, Equatable {
     var maxDistance: Int
     var showMeInSearch: Bool = true
     
-    // Stats
-    var likesGiven: Int = 0
-    var likesReceived: Int = 0
-    var matchCount: Int = 0
-    var profileViews: Int = 0
+    // Stats (Musician Collaboration Metrics)
+    var likesGiven: Int = 0              // Interests expressed to other musicians
+    var likesReceived: Int = 0           // Interests received from other musicians
+    var matchCount: Int = 0              // Active jam partnerships
+    var profileViews: Int = 0            // Musicians who viewed your profile
 
     // Consumables (Premium Features)
-    var superLikesRemaining: Int = 0
-    var boostsRemaining: Int = 0
-    var rewindsRemaining: Int = 0
+    var superLikesRemaining: Int = 0     // Super interests for standout musicians
+    var boostsRemaining: Int = 0         // Profile visibility boosts
+    var rewindsRemaining: Int = 0        // Undo last decision
 
     // Daily Limits (Free Users)
-    var likesRemainingToday: Int = 50  // Free users get 50 likes/day
+    var likesRemainingToday: Int = 50    // Free users: 50 musician interests/day
     var lastLikeResetDate: Date = Date()
 
     // Boost Status

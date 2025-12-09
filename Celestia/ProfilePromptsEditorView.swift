@@ -1,6 +1,6 @@
 //
 //  ProfilePromptsEditorView.swift
-//  Celestia
+//  MusicJam
 //
 //  Editor for selecting and answering profile prompts
 //

@@ -1,6 +1,6 @@
 //
 //  SmartRetryManager.swift
-//  Celestia
+//  MusicJam
 //
 //  Smart retry logic with circuit breaker integration and exponential backoff
 //  Provides intelligent retry strategies based on error type and service health
@@ -230,7 +230,7 @@ class SmartRetryManager: ObservableObject {
 
         // All attempts failed
         activeRetries.removeValue(forKey: serviceName)
-        let finalError = lastError ?? CelestiaError.unknown("Max retry attempts exceeded")
+        let finalError = lastError ?? MusicJamError.unknown("Max retry attempts exceeded")
         return .failure(finalError, attempts: attempt)
     }
 

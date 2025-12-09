@@ -12,11 +12,11 @@ import CoreLocation
 // MARK: - Jam Session Check-In Manager
 
 @MainActor
-class DateCheckInManager: ObservableObject {
+class JamSessionCheckInManager: ObservableObject {
 
     // MARK: - Singleton
 
-    static let shared = DateCheckInManager()
+    static let shared = JamSessionCheckInManager()
 
     // MARK: - Published Properties
 
@@ -53,11 +53,11 @@ class DateCheckInManager: ObservableObject {
 
         // Validate times
         guard scheduledTime > Date() else {
-            throw CelestiaError.invalidData
+            throw MusicJamError.invalidData
         }
 
         guard checkInTime > scheduledTime else {
-            throw CelestiaError.invalidData
+            throw MusicJamError.invalidData
         }
 
         // Create check-in
@@ -93,7 +93,7 @@ class DateCheckInManager: ObservableObject {
     /// Start an active check-in
     func startCheckIn(checkInId: String) async throws {
         guard let index = scheduledCheckIns.firstIndex(where: { $0.id == checkInId }) else {
-            throw CelestiaError.checkInNotFound
+            throw MusicJamError.checkInNotFound
         }
 
         var checkIn = scheduledCheckIns.remove(at: index)
@@ -121,7 +121,7 @@ class DateCheckInManager: ObservableObject {
     /// Complete a check-in (user is safe)
     func completeCheckIn(checkInId: String) async throws {
         guard let index = activeCheckIns.firstIndex(where: { $0.id == checkInId }) else {
-            throw CelestiaError.checkInNotFound
+            throw MusicJamError.checkInNotFound
         }
 
         var checkIn = activeCheckIns.remove(at: index)
@@ -176,13 +176,13 @@ class DateCheckInManager: ObservableObject {
             return
         }
 
-        throw CelestiaError.checkInNotFound
+        throw MusicJamError.checkInNotFound
     }
 
     /// Trigger emergency alert
     func triggerEmergency(checkInId: String) async throws {
         guard let index = activeCheckIns.firstIndex(where: { $0.id == checkInId }) else {
-            throw CelestiaError.checkInNotFound
+            throw MusicJamError.checkInNotFound
         }
 
         var checkIn = activeCheckIns[index]
@@ -293,7 +293,7 @@ class DateCheckInManager: ObservableObject {
 }
 
 // Alias for backward compatibility
-typealias JamSessionCheckInManager = DateCheckInManager
+typealias DateCheckInManager = JamSessionCheckInManager
 
 // MARK: - Jam Session Check-In Model
 

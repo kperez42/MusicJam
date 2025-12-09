@@ -1,6 +1,6 @@
 //
 //  ProfileEnhancementView.swift
-//  Celestia
+//  MusicJam
 //
 //  Additional profile information collection view
 //  Shown after sign-up to help users get better matches

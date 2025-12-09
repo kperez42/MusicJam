@@ -1,6 +1,6 @@
 //
 //  InterestsViewEnhanced.swift
-//  Celestia
+//  MusicJam
 //
 //  Enhanced version with swipe gestures, filters, batch actions, and undo
 //

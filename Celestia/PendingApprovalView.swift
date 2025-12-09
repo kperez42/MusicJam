@@ -1,6 +1,6 @@
 //
 //  PendingApprovalView.swift
-//  Celestia
+//  MusicJam
 //
 //  Shows pending approval status to users whose profiles are under review
 //

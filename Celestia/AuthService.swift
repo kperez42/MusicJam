@@ -1,6 +1,6 @@
 //
 //  AuthService.swift
-//  Celestia
+//  MusicJam
 //
 //  Created by Kevin Perez on 10/29/25.
 //
@@ -158,14 +158,14 @@ class AuthService: ObservableObject, AuthServiceProtocol {
         guard emailValidation.isValid else {
             isLoading = false
             errorMessage = emailValidation.errorMessage ?? AppConstants.ErrorMessages.invalidEmail
-            throw CelestiaError.invalidCredentials
+            throw MusicJamError.invalidCredentials
         }
 
         // Validate password is not empty
         guard !sanitizedPassword.isEmpty else {
             isLoading = false
             errorMessage = "Password cannot be empty."
-            throw CelestiaError.invalidCredentials
+            throw MusicJamError.invalidCredentials
         }
 
         // SECURITY FIX: Never log email addresses
@@ -223,7 +223,7 @@ class AuthService: ObservableObject, AuthServiceProtocol {
         let emailValidation = ValidationHelper.validateEmail(sanitizedEmail)
         guard emailValidation.isValid else {
             errorMessage = emailValidation.errorMessage ?? AppConstants.ErrorMessages.invalidEmail
-            throw CelestiaError.invalidCredentials
+            throw MusicJamError.invalidCredentials
         }
 
         do {
@@ -261,21 +261,21 @@ class AuthService: ObservableObject, AuthServiceProtocol {
             isLoading = false
             errorMessage = signUpValidation.errorMessage ?? "Invalid sign up information."
 
-            // Map validation errors to appropriate CelestiaError types
+            // Map validation errors to appropriate MusicJamError types
             if let errorMsg = signUpValidation.errorMessage {
                 if errorMsg.contains("email") {
-                    throw CelestiaError.invalidCredentials
+                    throw MusicJamError.invalidCredentials
                 } else if errorMsg.contains("password") || errorMsg.contains("Password") {
-                    throw CelestiaError.weakPassword
+                    throw MusicJamError.weakPassword
                 } else if errorMsg.contains("18") {
-                    throw CelestiaError.ageRestriction
+                    throw MusicJamError.ageRestriction
                 } else if errorMsg.contains("Name") || errorMsg.contains("name") {
-                    throw CelestiaError.invalidProfileData
+                    throw MusicJamError.invalidProfileData
                 } else {
-                    throw CelestiaError.validationError(field: "signup", reason: errorMsg)
+                    throw MusicJamError.validationError(field: "signup", reason: errorMsg)
                 }
             }
-            throw CelestiaError.validationError(field: "signup", reason: "Invalid sign up information")
+            throw MusicJamError.validationError(field: "signup", reason: "Invalid sign up information")
         }
 
         // SECURITY FIX: Never log email addresses
@@ -325,7 +325,7 @@ class AuthService: ObservableObject, AuthServiceProtocol {
 
             // Step 3: Save to Firestore
             guard let userId = user.id else {
-                throw CelestiaError.invalidData
+                throw MusicJamError.invalidData
             }
 
             let encodedUser = try Firestore.Encoder().encode(user)
@@ -339,7 +339,7 @@ class AuthService: ObservableObject, AuthServiceProtocol {
                 let isConnected = await MainActor.run { NetworkMonitor.shared.isConnected }
                 guard isConnected else {
                     Logger.shared.auth("❌ Photo upload blocked: No network connection", level: .error)
-                    throw CelestiaError.networkError
+                    throw MusicJamError.networkError
                 }
 
                 Logger.shared.auth("📶 Network OK - Starting upload of \(photos.count) photos (parallel with retries)", level: .info)
@@ -651,7 +651,7 @@ class AuthService: ObservableObject, AuthServiceProtocol {
     @MainActor
     func deleteAccount() async throws {
         guard let user = Auth.auth().currentUser else {
-            throw CelestiaError.notAuthenticated
+            throw MusicJamError.notAuthenticated
         }
         let uid = user.uid
 
@@ -741,7 +741,7 @@ class AuthService: ObservableObject, AuthServiceProtocol {
                 Logger.shared.auth("Account deletion requires re-authentication", level: .warning)
                 self.requiresReauthentication = true
                 // Note: Firestore data may be partially deleted, but user can re-auth and retry
-                throw CelestiaError.requiresRecentLogin
+                throw MusicJamError.requiresRecentLogin
             }
             // For other errors, log but continue - Firestore data is already deleted
             Logger.shared.auth("Auth deletion failed: \(error.localizedDescription)", level: .error)
@@ -1343,13 +1343,13 @@ class AuthService: ObservableObject, AuthServiceProtocol {
     func reauthenticate(withPassword password: String) async throws {
         guard let user = Auth.auth().currentUser,
               let email = user.email else {
-            throw CelestiaError.notAuthenticated
+            throw MusicJamError.notAuthenticated
         }
 
         // Sanitize password input
         let sanitizedPassword = InputSanitizer.basic(password)
         guard !sanitizedPassword.isEmpty else {
-            throw CelestiaError.invalidCredentials
+            throw MusicJamError.invalidCredentials
         }
 
         Logger.shared.auth("Re-authenticating user for sensitive operation", level: .info)
@@ -1389,7 +1389,7 @@ class AuthService: ObservableObject, AuthServiceProtocol {
     @MainActor
     func changePassword(currentPassword: String, newPassword: String) async throws {
         guard let user = Auth.auth().currentUser else {
-            throw CelestiaError.notAuthenticated
+            throw MusicJamError.notAuthenticated
         }
 
         // Validate new password
@@ -1397,7 +1397,7 @@ class AuthService: ObservableObject, AuthServiceProtocol {
         let passwordValidation = ValidationHelper.validatePassword(sanitizedNewPassword)
         guard passwordValidation.isValid else {
             errorMessage = passwordValidation.errorMessage ?? "Invalid password."
-            throw CelestiaError.weakPassword
+            throw MusicJamError.weakPassword
         }
 
         Logger.shared.auth("Changing user password", level: .info)
@@ -1413,7 +1413,7 @@ class AuthService: ObservableObject, AuthServiceProtocol {
         } catch let error as NSError {
             if error.domain == "FIRAuthErrorDomain" && error.code == 17014 {
                 self.requiresReauthentication = true
-                throw CelestiaError.requiresRecentLogin
+                throw MusicJamError.requiresRecentLogin
             }
             FirebaseErrorMapper.logError(error, context: "Change Password")
             errorMessage = FirebaseErrorMapper.getUserFriendlyMessage(for: error)
@@ -1427,7 +1427,7 @@ class AuthService: ObservableObject, AuthServiceProtocol {
     @MainActor
     func changeEmail(currentPassword: String, newEmail: String) async throws {
         guard let user = Auth.auth().currentUser else {
-            throw CelestiaError.notAuthenticated
+            throw MusicJamError.notAuthenticated
         }
 
         // Validate new email
@@ -1435,7 +1435,7 @@ class AuthService: ObservableObject, AuthServiceProtocol {
         let emailValidation = ValidationHelper.validateEmail(sanitizedNewEmail)
         guard emailValidation.isValid else {
             errorMessage = emailValidation.errorMessage ?? "Invalid email address."
-            throw CelestiaError.invalidEmail
+            throw MusicJamError.invalidEmail
         }
 
         Logger.shared.auth("Changing user email", level: .info)
@@ -1454,7 +1454,7 @@ class AuthService: ObservableObject, AuthServiceProtocol {
         } catch let error as NSError {
             if error.domain == "FIRAuthErrorDomain" && error.code == 17014 {
                 self.requiresReauthentication = true
-                throw CelestiaError.requiresRecentLogin
+                throw MusicJamError.requiresRecentLogin
             }
             FirebaseErrorMapper.logError(error, context: "Change Email")
             errorMessage = FirebaseErrorMapper.getUserFriendlyMessage(for: error)
@@ -1468,7 +1468,7 @@ class AuthService: ObservableObject, AuthServiceProtocol {
     @MainActor
     func sendEmailVerification() async throws {
         guard let user = Auth.auth().currentUser else {
-            throw CelestiaError.notAuthenticated
+            throw MusicJamError.notAuthenticated
         }
 
         guard !user.isEmailVerified else {
@@ -1497,7 +1497,7 @@ class AuthService: ObservableObject, AuthServiceProtocol {
     @MainActor
     func reloadUser() async throws {
         guard let user = Auth.auth().currentUser else {
-            throw CelestiaError.notAuthenticated
+            throw MusicJamError.notAuthenticated
         }
 
         try await user.reload()
@@ -1516,13 +1516,13 @@ class AuthService: ObservableObject, AuthServiceProtocol {
     @MainActor
     func requireEmailVerification() async throws {
         guard let user = Auth.auth().currentUser else {
-            throw CelestiaError.notAuthenticated
+            throw MusicJamError.notAuthenticated
         }
 
         try await user.reload()
 
         guard user.isEmailVerified else {
-            throw CelestiaError.emailNotVerified
+            throw MusicJamError.emailNotVerified
         }
     }
 
@@ -1552,9 +1552,9 @@ class AuthService: ObservableObject, AuthServiceProtocol {
             if error.domain == "FIRAuthErrorDomain" {
                 switch error.code {
                 case 17045: // Invalid action code (expired or already used)
-                    throw CelestiaError.invalidData
+                    throw MusicJamError.invalidData
                 case 17999: // Network error
-                    throw CelestiaError.networkError
+                    throw MusicJamError.networkError
                 default:
                     throw error
                 }

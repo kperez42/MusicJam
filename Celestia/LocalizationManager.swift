@@ -1,6 +1,6 @@
 //
 //  LocalizationManager.swift
-//  Celestia
+//  MusicJam
 //
 //  Centralized localization management
 //  Provides type-safe string access and language switching
