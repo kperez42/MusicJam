@@ -1,6 +1,6 @@
 //
 //  NotificationModels.swift
-//  Celestia
+//  MusicJam
 //
 //  Models and types for notification system
 //  NotificationData is defined in NotificationSettingsView.swift
@@ -455,22 +455,22 @@ enum NotificationPayload {
 
     private static func randomMatchTitle(name: String) -> String {
         let titles = [
-            "It's a match with \(name)!",
-            "You matched with \(name)!",
-            "\(name) likes you too!",
-            "New match: \(name)",
-            "Sparks flying with \(name)!"
+            "Jam match with \(name)! 🎸",
+            "You connected with \(name)!",
+            "\(name) wants to jam too!",
+            "New connection: \(name)",
+            "Musical chemistry with \(name)!"
         ]
-        return titles.randomElement() ?? "New Match with \(name)!"
+        return titles.randomElement() ?? "New Jam Match with \(name)!"
     }
 
     private static func randomMatchBody(name: String) -> String {
         let bodies = [
-            "Say hi before someone else does!",
-            "Start chatting now - don't keep \(name) waiting!",
-            "Your next conversation could change everything.",
-            "The first message matters - make it count!",
-            "Break the ice and say hello!"
+            "Start talking music before someone else does!",
+            "Start chatting now - \(name) is ready to jam!",
+            "Your next collaboration could start here.",
+            "The first message matters - talk music!",
+            "Break the ice and start the conversation!"
         ]
         return bodies.randomElement() ?? "Start a conversation now!"
     }
@@ -488,9 +488,9 @@ enum NotificationPayload {
 
     private static func randomProfileViewBody(name: String) -> String {
         let bodies = [
-            "Like them back before they move on!",
-            "See if you're a match - tap to view",
-            "Could this be the one? Check out their profile",
+            "Connect back before they move on!",
+            "See if you're a musical match - tap to view",
+            "Check out their music profile",
             "They made the first move. Your turn!",
             "Don't miss your chance - see their profile now"
         ]
@@ -499,24 +499,24 @@ enum NotificationPayload {
 
     private static func randomSuperLikeTitle(name: String) -> String {
         let titles = [
-            "\(name) SUPER Liked you!",
-            "Someone really likes you!",
-            "\(name) thinks you're special",
+            "\(name) SUPER interested! 🌟",
+            "A musician really wants to connect!",
+            "\(name) thinks you'd be perfect to jam with",
             "You got a Super Like from \(name)!",
-            "\(name) went all in on you!"
+            "\(name) is all in on collaborating!"
         ]
         return titles.randomElement() ?? "\(name) Super Liked you!"
     }
 
     private static func randomSuperLikeBody(name: String) -> String {
         let bodies = [
-            "They really wanted you to notice. Will you?",
+            "They really want to jam with you!",
             "This is rare - \(name) saved their Super Like for you!",
-            "You stood out from everyone else!",
-            "Super Likes mean they're serious about you",
-            "Out of everyone, they picked YOU!"
+            "Your music profile stood out from everyone else!",
+            "Super Likes mean they're serious about collaborating",
+            "Out of all the musicians, they picked YOU!"
         ]
-        return bodies.randomElement() ?? "They really like you!"
+        return bodies.randomElement() ?? "They really want to jam!"
     }
 
     private static func randomMatchReminderTitle(name: String) -> String {
@@ -532,13 +532,13 @@ enum NotificationPayload {
 
     private static func randomMatchReminderBody(name: String) -> String {
         let bodies = [
-            "Matches fade fast - send a message now!",
+            "Connections fade fast - send a message now!",
             "The longer you wait, the harder it gets",
-            "A simple 'hey' could lead to something great",
+            "A simple 'hey' could lead to your next band",
             "Don't let this connection slip away",
-            "They swiped right on you for a reason!"
+            "They wanted to jam with you for a reason!"
         ]
-        return bodies.randomElement() ?? "Don't let this match expire"
+        return bodies.randomElement() ?? "Don't let this connection expire"
     }
 
     private static func randomMessageReminderTitle(name: String) -> String {
@@ -567,32 +567,32 @@ enum NotificationPayload {
         if let name = name {
             // Premium users see who liked them
             let titles = [
-                "\(name) likes you!",
-                "\(name) is interested in you",
+                "\(name) wants to jam! 🎸",
+                "\(name) is interested in collaborating",
                 "You caught \(name)'s attention!",
-                "\(name) wants to meet you",
-                "Someone special likes you: \(name)"
+                "\(name) wants to connect",
+                "A musician wants to jam: \(name)"
             ]
-            return titles.randomElement() ?? "\(name) likes you!"
+            return titles.randomElement() ?? "\(name) wants to jam!"
         } else {
             // Free users see mystery notification
             if count > 1 {
                 let titles = [
-                    "You have \(count) new likes!",
-                    "\(count) people like you!",
-                    "\(count) new admirers are waiting",
-                    "You're getting noticed! \(count) new likes"
+                    "\(count) musicians want to jam!",
+                    "\(count) musicians are interested!",
+                    "\(count) new musicians want to connect",
+                    "You're getting noticed! \(count) new interests"
                 ]
-                return titles.randomElement() ?? "You have \(count) new likes!"
+                return titles.randomElement() ?? "You have \(count) new interests!"
             } else {
                 let titles = [
-                    "Someone likes you!",
-                    "You have a secret admirer",
-                    "Someone swiped right on you!",
+                    "A musician wants to jam!",
+                    "Someone wants to collaborate",
+                    "A musician is interested in you!",
                     "You're being noticed!",
-                    "A new admirer is waiting"
+                    "A new musician wants to connect"
                 ]
-                return titles.randomElement() ?? "Someone likes you!"
+                return titles.randomElement() ?? "Someone wants to jam!"
             }
         }
     }
@@ -600,40 +600,40 @@ enum NotificationPayload {
     private static func randomNewLikeBody(name: String?, count: Int) -> String {
         if name != nil {
             let bodies = [
-                "Like them back to start chatting!",
-                "Will you match with them?",
-                "Open the app to see their profile",
-                "Tap to see if you're a match!",
+                "Connect back to start chatting!",
+                "Will you jam with them?",
+                "Open the app to see their music profile",
+                "Tap to see if you're a musical match!",
                 "Don't keep them waiting!"
             ]
-            return bodies.randomElement() ?? "Like them back to start chatting!"
+            return bodies.randomElement() ?? "Connect back to start chatting!"
         } else {
             let bodies = [
-                "Upgrade to see who likes you!",
-                "Go Premium to reveal your admirers",
-                "Find out who's interested in you",
-                "Your next match could be waiting!",
-                "See who's crushing on you"
+                "Upgrade to see who wants to jam!",
+                "Go Premium to reveal interested musicians",
+                "Find out who wants to collaborate",
+                "Your next jam partner could be waiting!",
+                "See who wants to make music with you"
             ]
-            return bodies.randomElement() ?? "Upgrade to see who likes you!"
+            return bodies.randomElement() ?? "Upgrade to see who wants to jam!"
         }
     }
 
     private static func dailyDigestTitle(likes: Int, matches: Int, messages: Int) -> String {
         if matches > 0 {
-            return matches == 1 ? "You got a new match!" : "You got \(matches) new matches!"
+            return matches == 1 ? "New jam connection!" : "You got \(matches) new connections!"
         } else if likes > 0 {
-            return likes == 1 ? "Someone new likes you!" : "\(likes) people like you!"
+            return likes == 1 ? "A musician wants to jam!" : "\(likes) musicians want to jam!"
         } else if messages > 0 {
             return messages == 1 ? "You have an unread message" : "You have \(messages) unread messages"
         } else {
             let titles = [
-                "Your dating life awaits!",
-                "New people are nearby",
-                "Time to find your match!",
-                "Ready to meet someone new?"
+                "Find your next jam partner!",
+                "New musicians are nearby",
+                "Time to find your bandmates!",
+                "Ready to make some music?"
             ]
-            return titles.randomElement() ?? "Your dating life awaits!"
+            return titles.randomElement() ?? "Find your next jam partner!"
         }
     }
 
@@ -641,10 +641,10 @@ enum NotificationPayload {
         var parts: [String] = []
 
         if likes > 0 {
-            parts.append("\(likes) new like\(likes == 1 ? "" : "s")")
+            parts.append("\(likes) new interest\(likes == 1 ? "" : "s")")
         }
         if matches > 0 {
-            parts.append("\(matches) new match\(matches == 1 ? "" : "es")")
+            parts.append("\(matches) new connection\(matches == 1 ? "" : "s")")
         }
         if messages > 0 {
             parts.append("\(messages) unread message\(messages == 1 ? "" : "s")")
@@ -652,10 +652,10 @@ enum NotificationPayload {
 
         if parts.isEmpty {
             let bodies = [
-                "New profiles are waiting to be discovered!",
-                "Swipe now - your perfect match could be next!",
-                "Don't miss out on today's connections",
-                "The more you swipe, the more you match!"
+                "New musicians are waiting to be discovered!",
+                "Discover now - your perfect collaborator could be next!",
+                "Don't miss out on today's musicians",
+                "The more you explore, the more you connect!"
             ]
             return bodies.randomElement() ?? "Open the app to see what's new!"
         }
@@ -1093,9 +1093,9 @@ struct NotificationPreferenceItem: Identifiable {
     static let allItems: [NotificationPreferenceItem] = [
         NotificationPreferenceItem(
             category: .newMatch,
-            title: "Matches & Likes",
-            description: "Get notified when someone matches or likes you",
-            icon: "heart.fill"
+            title: "Connections & Interests",
+            description: "Get notified when a musician wants to jam with you",
+            icon: "guitars.fill"
         ),
         NotificationPreferenceItem(
             category: .newMessage,

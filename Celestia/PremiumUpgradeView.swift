@@ -270,7 +270,7 @@ struct PremiumUpgradeView: View {
                         .opacity(animateHero ? 1 : 0)
                         .offset(y: animateHero ? 0 : 20)
 
-                    Text("Discover more people who match your vibe")
+                    Text("Discover more musicians who match your sound")
                         .font(.body.weight(.medium))
                         .foregroundColor(.secondary)
                         .multilineTextAlignment(.center)
@@ -670,7 +670,7 @@ struct PremiumUpgradeView: View {
                     .font(.subheadline.weight(.bold))
                     .foregroundColor(.primary)
 
-                Text("Stand out with a verified premium badge on your profile. Members with badges get 2.5x more matches!")
+                Text("Stand out with a verified premium badge on your profile. Members with badges get 2.5x more connections!")
                     .font(.caption)
                     .foregroundColor(.secondary)
                     .lineLimit(3)
@@ -796,7 +796,7 @@ struct PremiumUpgradeView: View {
 
     private var impactStats: some View {
         HStack(spacing: 0) {
-            impactStat(value: "3x", label: "More Matches", icon: "heart.fill", color: .pink)
+            impactStat(value: "3x", label: "More Connections", icon: "guitars.fill", color: .orange)
 
             Rectangle()
                 .fill(Color.gray.opacity(0.15))
@@ -956,21 +956,21 @@ struct PremiumUpgradeView: View {
                 successStoryCard(
                     initials: "JM",
                     name: "Jake M.",
-                    story: "Found my match within 2 weeks! The 'See Who Likes You' feature was a game changer.",
+                    story: "Found my new band within 2 weeks! The 'See Who's Interested' feature was a game changer.",
                     color: .purple
                 )
 
                 successStoryCard(
                     initials: "SE",
                     name: "Sarah E.",
-                    story: "So many more quality matches since upgrading. Unlimited likes means I never miss someone.",
+                    story: "So many more quality collaborators since upgrading. Unlimited connections means I never miss anyone.",
                     color: .pink
                 )
 
                 successStoryCard(
                     initials: "AT",
                     name: "Alex T.",
-                    story: "Profile boost got me 3x the views. Met amazing people I would have missed.",
+                    story: "Profile boost got me 3x the views. Met amazing musicians I would have missed.",
                     color: .orange
                 )
             }
@@ -1085,8 +1085,8 @@ struct PremiumUpgradeView: View {
                 )
 
                 FAQItem(
-                    question: "Do I keep my matches if I cancel?",
-                    answer: "Absolutely! All your matches and conversations are yours to keep. You just won't have access to premium features."
+                    question: "Do I keep my connections if I cancel?",
+                    answer: "Absolutely! All your musician connections and conversations are yours to keep. You just won't have access to premium features."
                 )
 
                 FAQItem(

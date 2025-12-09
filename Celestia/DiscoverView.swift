@@ -1,7 +1,8 @@
 //
 //  DiscoverView.swift
-//  Celestia
+//  MusicJam
 //
+//  Find Musicians Near You
 //  ACCESSIBILITY: Full VoiceOver support, Dynamic Type, Reduce Motion, and WCAG 2.1 AA compliant
 //
 
@@ -70,7 +71,7 @@ struct DiscoverView: View {
             .accessibilityIdentifier(AccessibilityIdentifier.discoverView)
             .task {
                 await viewModel.loadUsers()
-                VoiceOverAnnouncement.screenChanged(to: "Discover view. \(viewModel.users.count) potential matches available.")
+                VoiceOverAnnouncement.screenChanged(to: "Discover view. \(viewModel.users.count) musicians available to connect with.")
             }
             .refreshable {
                 HapticManager.shared.impact(.light)
@@ -479,18 +480,18 @@ struct DiscoverView: View {
     }
     
     // MARK: - Match Animation
-    
+
     private var matchCelebrationView: some View {
         ZStack {
             Color.black.opacity(0.8)
                 .ignoresSafeArea()
 
             VStack(spacing: 30) {
-                Image(systemName: "sparkles")
+                Image(systemName: "guitars.fill")
                     .font(.system(size: 80))
-                    .foregroundColor(.yellow)
+                    .foregroundColor(.orange)
 
-                Text("It's a Match! 🎉")
+                Text("Jam Match Found! 🎸")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
@@ -498,14 +499,14 @@ struct DiscoverView: View {
                     .accessibilityAddTraits(.isHeader)
 
                 if let user = viewModel.matchedUser {
-                    Text("You and \(user.fullName) liked each other!")
+                    Text("You and \(user.fullName) both want to jam!")
                         .font(.title3)
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                         .dynamicTypeSize(min: .medium, max: .accessibility1)
                 }
 
-                Button("Send Message") {
+                Button("Start Chatting") {
                     // Navigate to Messages tab (tab index 2)
                     if let matchedUserId = viewModel.matchedUser?.id {
                         NotificationCenter.default.post(
@@ -517,17 +518,17 @@ struct DiscoverView: View {
                     viewModel.dismissMatchAnimation()
                 }
                 .buttonStyle(.borderedProminent)
-                .tint(.purple)
+                .tint(.orange)
                 .controlSize(.large)
 
-                Button("Keep Swiping") {
+                Button("Keep Discovering") {
                     viewModel.dismissMatchAnimation()
                 }
                 .foregroundColor(.white)
             }
             .task {
                 if let user = viewModel.matchedUser {
-                    VoiceOverAnnouncement.announce("It's a match! You and \(user.fullName) liked each other!")
+                    VoiceOverAnnouncement.announce("Jam match found! You and \(user.fullName) both want to jam together!")
                 }
             }
             .padding(40)
@@ -547,9 +548,9 @@ struct DiscoverView: View {
                 }
             }
             .overlay(alignment: .topTrailing) {
-                // Like indicator
+                // Jam indicator
                 if cardIndex == 0 && viewModel.dragOffset.width > 50 {
-                    swipeIndicator(icon: "heart.fill", color: .green, text: "LIKE")
+                    swipeIndicator(icon: "guitars.fill", color: .green, text: "JAM")
                         .opacity(min(1.0, Double(viewModel.dragOffset.width) / 100.0))
                 }
             }

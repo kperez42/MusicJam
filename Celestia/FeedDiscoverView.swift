@@ -844,7 +844,7 @@ struct FeedDiscoverView: View {
                         .truncationMode(.tail)
                 }
 
-                Button("Send Message") {
+                Button("Start Chatting") {
                     // Navigate to Messages tab and open chat with matched user
                     if let matchedUser = matchedUser, let matchedUserId = matchedUser.id {
                         selectedTab = 2
@@ -864,10 +864,10 @@ struct FeedDiscoverView: View {
                     }
                 }
                 .buttonStyle(.borderedProminent)
-                .tint(.purple)
+                .tint(.orange)
                 .controlSize(.large)
 
-                Button("Keep Browsing") {
+                Button("Keep Discovering") {
                     showMatchAnimation = false
                 }
                 .foregroundColor(.white)

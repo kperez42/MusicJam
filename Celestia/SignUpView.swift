@@ -81,7 +81,7 @@ struct SignUpView: View {
     @State private var ageRangeMin: Int = 18
     @State private var ageRangeMax: Int = 35
 
-    let relationshipGoalOptions = ["Long-term relationship", "Casual dating", "New friends", "Not sure yet"]
+    let musicianGoalOptions = ["Find Band Members", "Start a Band", "Casual Jam Sessions", "Studio Collaboration", "Open to All"]
     let educationLevelOptions = ["High school", "Some college", "Bachelor's degree", "Master's degree", "Doctorate", "Trade school", "Prefer not to say"]
     let smokingOptions = ["Never", "Sometimes", "Regularly", "Prefer not to say"]
     let drinkingOptions = ["Never", "Socially", "Regularly", "Prefer not to say"]

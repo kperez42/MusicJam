@@ -1,6 +1,6 @@
 //
 //  WelcomeView.swift - IMPROVED VERSION
-//  Celestia
+//  MusicJam
 //
 //  ✨ Enhanced with:
 //  - Animated gradient background
@@ -26,9 +26,9 @@ struct WelcomeView: View {
     @State private var showPrivacyPolicy = false
 
     let features = [
-        Feature(icon: "heart.circle.fill", title: "Find Your Match", description: "Meet amazing people near you"),
-        Feature(icon: "heart.text.square.fill", title: "Smart Matching", description: "AI-powered compatibility algorithm"),
-        Feature(icon: "message.fill", title: "Real-Time Chat", description: "Instant messaging with your matches")
+        Feature(icon: "guitars.fill", title: "Find Musicians", description: "Connect with musicians near you"),
+        Feature(icon: "waveform", title: "Smart Matching", description: "AI-powered musical compatibility"),
+        Feature(icon: "message.fill", title: "Real-Time Chat", description: "Coordinate with your jam partners")
     ]
     
     var body: some View {

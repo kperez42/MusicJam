@@ -1,8 +1,8 @@
 //
 //  FirebaseManager.swift
-//  Celestia
+//  MusicJam
 //
-//  Dating app for international connections
+//  MusicJam - Find musicians and collaborators
 //
 
 import Foundation
