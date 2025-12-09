@@ -313,9 +313,9 @@ enum AccessibilityIdentifier {
     // MARK: - Discovery
     static let discoverView = "discover_view"
     static let userCard = "user_card"
-    static let likeButton = "like_button"
+    static let interestButton = "interest_button"
     static let passButton = "pass_button"
-    static let superLikeButton = "super_like_button"
+    static let superInterestButton = "super_interest_button"
     static let shuffleButton = "shuffle_button"
     static let filterButton = "filter_button"
 

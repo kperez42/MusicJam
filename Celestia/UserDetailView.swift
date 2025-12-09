@@ -88,12 +88,12 @@ struct UserDetailView: View {
         .alert("Error", isPresented: $showingError) {
             Button("OK", role: .cancel) { }
         } message: {
-            Text(errorMessage.isEmpty ? "Failed to send like. Please try again." : errorMessage)
+            Text(errorMessage.isEmpty ? "Failed to send interest. Please try again." : errorMessage)
         }
-        .alert("Unliked", isPresented: $showingUnliked) {
+        .alert("Interest Removed", isPresented: $showingUnliked) {
             Button("OK", role: .cancel) { }
         } message: {
-            Text("You unliked \(user.fullName)")
+            Text("You removed your interest in \(user.fullName)")
         }
         .sheet(isPresented: $showingChat) {
             if let match = chatMatch {
@@ -511,8 +511,8 @@ struct UserDetailView: View {
             .shadow(color: Color.black.opacity(0.1), radius: 5)
         }
         .disabled(isProcessing)
-        .accessibilityLabel(isLiked ? "Unlike" : "Like")
-        .accessibilityHint(isLiked ? "Remove like from \(user.fullName)" : "Send interest to \(user.fullName)")
+        .accessibilityLabel(isLiked ? "Remove Interest" : "Send Interest")
+        .accessibilityHint(isLiked ? "Remove interest from \(user.fullName)" : "Send interest to \(user.fullName)")
     }
 
     // MARK: - Helper Properties
@@ -602,7 +602,7 @@ struct UserDetailView: View {
               !isProcessing else { return }
 
         guard currentUserID != targetUserID else {
-            errorMessage = "You can't like your own profile!"
+            errorMessage = "You can't send interest to yourself!"
             showingError = true
             return
         }
@@ -648,7 +648,7 @@ struct UserDetailView: View {
               !isProcessing else { return }
 
         guard currentUserID != targetUserID else {
-            errorMessage = "You can't like your own profile!"
+            errorMessage = "You can't send interest to yourself!"
             showingError = true
             return
         }
@@ -661,7 +661,7 @@ struct UserDetailView: View {
             if !isPremium {
                 guard RateLimiter.shared.canSendLike() else {
                     // Show upgrade sheet with context message
-                    upgradeContextMessage = "You've reached your daily like limit. Subscribe to continue liking!"
+                    upgradeContextMessage = "You've reached your daily interest limit. Subscribe to send more interests!"
                     showPremiumUpgrade = true
                     return
                 }

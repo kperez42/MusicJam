@@ -446,7 +446,7 @@ extension LegalDocumentView {
 
             LegalSection(title: "Virtual Items & Consumables") {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Celestia may offer virtual items (such as Super Likes or Boosts) for purchase:")
+                    Text("MusicJam may offer virtual items (such as Super Interests or Boosts) for purchase:")
                         .font(.subheadline)
                     SimpleBulletPoint("Virtual items have no cash value and cannot be exchanged for cash")
                     SimpleBulletPoint("Virtual items are non-refundable and non-transferable")
@@ -467,9 +467,9 @@ extension LegalDocumentView {
                         .fontWeight(.semibold)
                         .foregroundColor(.red)
 
-                    SimpleBulletPoint("Online dating involves inherent risks including meeting strangers")
+                    SimpleBulletPoint("Meeting musicians online involves inherent risks including meeting strangers")
                     SimpleBulletPoint("You are solely responsible for your interactions with other users")
-                    SimpleBulletPoint("Celestia does not conduct criminal background checks on users")
+                    SimpleBulletPoint("MusicJam does not conduct criminal background checks on users")
                     SimpleBulletPoint("We cannot guarantee the identity, intentions, or conduct of any user")
                     SimpleBulletPoint("You should take appropriate safety precautions when meeting anyone in person")
                     SimpleBulletPoint("Any meetings or relationships that result from the app are at your own risk")
@@ -477,7 +477,7 @@ extension LegalDocumentView {
             }
 
             LegalSection(title: "No Background Checks") {
-                Text("CELESTIA DOES NOT CONDUCT CRIMINAL BACKGROUND CHECKS OR IDENTITY VERIFICATION ON ALL USERS. We are not responsible for the conduct of any user, whether online or offline. You are solely responsible for your safety and should exercise caution when communicating with or meeting other users.")
+                Text("MUSICJAM DOES NOT CONDUCT CRIMINAL BACKGROUND CHECKS OR IDENTITY VERIFICATION ON ALL USERS. We are not responsible for the conduct of any user, whether online or offline. You are solely responsible for your safety and should exercise caution when communicating with or meeting other musicians.")
                     .font(.caption)
             }
 

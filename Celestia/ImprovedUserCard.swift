@@ -42,10 +42,10 @@ struct ImprovedUserCard: View {
         .accessibilityElement(children: .combine)
         .accessibilityLabel("\(user.fullName), \(user.age) years old")
         .accessibilityValue(buildAccessibilityValue())
-        .accessibilityHint("Swipe right to like, left to pass, or tap for details")
+        .accessibilityHint("Swipe right to connect, left to pass, or tap for details")
         .accessibilityIdentifier(AccessibilityIdentifier.userCard)
         .accessibilityActions([
-            AccessibilityCustomAction(name: "Like") {
+            AccessibilityCustomAction(name: "Send Interest") {
                 onSwipe(.right)
             },
             AccessibilityCustomAction(name: "Pass") {
@@ -83,7 +83,7 @@ struct ImprovedUserCard: View {
                         }
 
                         // Announce action to VoiceOver
-                        VoiceOverAnnouncement.announce(direction == .right ? "Liked" : "Passed")
+                        VoiceOverAnnouncement.announce(direction == .right ? "Interest sent" : "Passed")
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                             onSwipe(direction)
@@ -170,10 +170,10 @@ struct ImprovedUserCard: View {
     
     private var swipeIndicators: some View {
         ZStack {
-            // LIKE indicator (right swipe)
+            // JAM indicator (right swipe)
             if offset.width > 20 {
                 SwipeLabel(
-                    text: "LIKE",
+                    text: "JAM!",
                     color: .green,
                     rotation: -15
                 )

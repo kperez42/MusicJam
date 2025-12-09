@@ -27,7 +27,7 @@ struct LikeActivityView: View {
                     activityList
                 }
             }
-            .navigationTitle("Like Activity")
+            .navigationTitle("Interest Activity")
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -103,7 +103,7 @@ struct LikeActivityView: View {
                     .font(.title2)
                     .fontWeight(.bold)
 
-                Text("Your like activity will appear here")
+                Text("Your interest activity will appear here")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
@@ -210,13 +210,13 @@ struct LikeActivity: Identifiable {
         var description: String {
             switch self {
             case .received(let isSuperLike):
-                return isSuperLike ? "Super liked you" : "Liked you"
+                return isSuperLike ? "Super interested in you" : "Wants to jam with you"
             case .sent(let isSuperLike):
-                return isSuperLike ? "You super liked" : "You liked"
+                return isSuperLike ? "You showed super interest" : "You showed interest"
             case .mutual:
-                return "Mutual like!"
+                return "Mutual interest!"
             case .matched:
-                return "It's a match!"
+                return "Jam match!"
             }
         }
     }
