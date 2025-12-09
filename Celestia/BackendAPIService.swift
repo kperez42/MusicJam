@@ -96,7 +96,7 @@ class BackendAPIService: BackendAPIServiceProtocol {
 
     enum Configuration {
         // DISABLED: Backend API not deployed yet - use client-side fallbacks
-        // Set to true when api.celestia.app is available
+        // Set to true when api.musicjam.app is available
         static let isEnabled = false
 
         #if DEBUG

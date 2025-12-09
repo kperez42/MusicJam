@@ -164,10 +164,10 @@ class ImageUploadService {
             FirebaseErrorMapper.logError(error, context: "Image Upload")
 
             // Map Firebase error to MusicJamError
-            let celestiaError = FirebaseErrorMapper.mapError(error)
+            let musicJamError = FirebaseErrorMapper.mapError(error)
 
             // Convert mapped error to appropriate image upload error
-            switch celestiaError {
+            switch musicJamError {
             case .storageQuotaExceeded:
                 throw MusicJamError.imageTooBig
             case .unauthorized, .permissionDenied:

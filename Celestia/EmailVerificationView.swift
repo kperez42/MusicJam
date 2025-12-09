@@ -240,8 +240,8 @@ struct EmailVerificationView: View {
             } catch {
                 await MainActor.run {
                     isSending = false
-                    if let celestiaError = error as? MusicJamError {
-                        errorMessage = celestiaError.errorDescription
+                    if let musicJamError = error as? MusicJamError {
+                        errorMessage = musicJamError.errorDescription
                     } else {
                         errorMessage = "Failed to send verification email. Please try again."
                     }

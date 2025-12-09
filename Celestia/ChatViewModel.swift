@@ -270,10 +270,10 @@ class ChatViewModel: ObservableObject {
                 Logger.shared.error("Error sending message", category: .messaging, error: error)
 
                 // Check if it's a network error
-                let celestiaError = MusicJamError.from(error)
-                if case .networkError = celestiaError {
+                let musicJamError = MusicJamError.from(error)
+                if case .networkError = musicJamError {
                     await showError("You're offline. Message will be sent when connection is restored.")
-                } else if case .noInternetConnection = celestiaError {
+                } else if case .noInternetConnection = musicJamError {
                     await showError("No internet connection. Message will be sent when you're back online.")
                 } else {
                     await showError("Failed to send message. Please check your connection.")

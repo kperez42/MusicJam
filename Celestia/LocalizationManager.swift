@@ -114,7 +114,7 @@ class LocalizationManager: ObservableObject {
 // MARK: - Notification Extension
 
 extension Notification.Name {
-    static let languageChanged = Notification.Name("com.celestia.languageChanged")
+    static let languageChanged = Notification.Name("com.musicjam.languageChanged")
 }
 
 // MARK: - Localized String Keys

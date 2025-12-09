@@ -281,7 +281,7 @@ extension User {
     static var preview: User {
         User(
             id: "preview",
-            email: "test@celestia.app",
+            email: "test@musicjam.app",
             fullName: "Alex Johnson",
             age: 28,
             gender: "Male",

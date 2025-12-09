@@ -17,7 +17,7 @@ class MessageQueueManager: ObservableObject {
     @Published var isSyncing = false
     @Published var failedMessageCount = 0
 
-    private let queue = DispatchQueue(label: "com.celestia.messageQueue", qos: .userInitiated)
+    private let queue = DispatchQueue(label: "com.musicjam.messageQueue", qos: .userInitiated)
     private let persistenceKey = "queued_messages"
     private var syncTimer: Timer?
 

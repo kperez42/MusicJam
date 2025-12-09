@@ -77,7 +77,7 @@ enum LogCategory: String {
     case general = "General"
 
     var subsystem: String {
-        "com.celestia.app"
+        "com.musicjam.app"
     }
 }
 
@@ -122,17 +122,17 @@ class Logger {
         guard let documentsPath = documentsURLs.first else {
             // Fallback to temp directory if documents directory is unavailable
             let tempPath = fileManager.temporaryDirectory
-            return tempPath.appendingPathComponent("celestia_logs.txt")
+            return tempPath.appendingPathComponent("musicjam_logs.txt")
         }
 
-        return documentsPath.appendingPathComponent("celestia_logs.txt")
+        return documentsPath.appendingPathComponent("musicjam_logs.txt")
     }()
 
     /// OSLog instances per category
     private var osLoggers: [LogCategory: OSLog] = [:]
 
     /// Serial queue for thread-safe logging
-    private let loggingQueue = DispatchQueue(label: "com.celestia.logger", qos: .utility)
+    private let loggingQueue = DispatchQueue(label: "com.musicjam.logger", qos: .utility)
 
     /// Date formatter for log timestamps
     private let dateFormatter: DateFormatter = {
