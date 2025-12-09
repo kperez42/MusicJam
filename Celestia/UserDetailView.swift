@@ -485,12 +485,12 @@ struct UserDetailView: View {
             ZStack {
                 if isProcessing {
                     ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle(tint: isLiked ? .pink : .white))
+                        .progressViewStyle(CircularProgressViewStyle(tint: isLiked ? .orange : .white))
                         .scaleEffect(1.0)
                 } else {
-                    Image(systemName: isLiked ? "heart.fill" : "heart")
+                    Image(systemName: isLiked ? "star.fill" : "star")
                         .font(.title2)
-                        .foregroundColor(isLiked ? .pink : .white)
+                        .foregroundColor(isLiked ? .orange : .white)
                 }
             }
             .frame(width: 60, height: 60)
@@ -500,7 +500,7 @@ struct UserDetailView: View {
                         Color.white
                     } else {
                         LinearGradient(
-                            colors: [Color.purple, Color.pink],
+                            colors: [Color.orange, Color.yellow],
                             startPoint: .topLeading,
                             endPoint: .bottomTrailing
                         )
