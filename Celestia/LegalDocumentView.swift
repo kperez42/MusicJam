@@ -122,7 +122,7 @@ extension LegalDocumentView {
     private var privacyPolicyContent: some View {
         VStack(alignment: .leading, spacing: 20) {
             LegalSection(title: "Introduction") {
-                Text("Welcome to Celestia (\"we,\" \"our,\" or \"us\"). We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application and services.")
+                Text("Welcome to MusicJam (\"we,\" \"our,\" or \"us\"). We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application and services.")
             }
 
             LegalSection(title: "Information We Collect") {
@@ -160,7 +160,7 @@ extension LegalDocumentView {
                     SimpleBulletPoint("Sharing: We do not sell, lease, trade, or profit from your biometric data")
                     SimpleBulletPoint("Third Parties: Biometric data may be processed by our secure verification partners under strict contractual obligations")
 
-                    Text("You may opt out of photo verification features. To request deletion of biometric data, contact privacy@celestia.app.")
+                    Text("You may opt out of photo verification features. To request deletion of biometric data, contact privacy@musicjam.app.")
                         .font(.caption)
                         .padding(.top, 4)
                 }
@@ -216,7 +216,7 @@ extension LegalDocumentView {
             }
 
             LegalSection(title: "Children's Privacy") {
-                Text("Celestia is not intended for users under the age of 18. We do not knowingly collect personal information from children. If we become aware that we have collected data from a minor, we will take steps to delete such information promptly.")
+                Text("MusicJam is not intended for users under the age of 18. We do not knowingly collect personal information from children. If we become aware that we have collected data from a minor, we will take steps to delete such information promptly.")
             }
 
             LegalSection(title: "International Data Transfers") {
@@ -248,7 +248,7 @@ extension LegalDocumentView {
                     HStack {
                         Image(systemName: "envelope")
                             .foregroundColor(.blue)
-                        Text("dpo@celestia.app")
+                        Text("dpo@musicjam.app")
                     }
                     .font(.subheadline)
                     Text("EU Representative: Available upon request for EU/EEA residents")
@@ -283,7 +283,7 @@ extension LegalDocumentView {
                     }
 
                     LegalSubsection(title: "Colorado (CPA), Connecticut (CTDPA), Utah (UCPA)") {
-                        Text("Residents of these states have similar rights to access, delete, correct, and opt-out of certain data processing. Contact privacy@celestia.app to exercise your rights.")
+                        Text("Residents of these states have similar rights to access, delete, correct, and opt-out of certain data processing. Contact privacy@musicjam.app to exercise your rights.")
                             .font(.caption)
                     }
                 }
@@ -316,7 +316,7 @@ extension LegalDocumentView {
                     HStack {
                         Image(systemName: "envelope")
                             .foregroundColor(.purple)
-                        Text("support@celestia.app")
+                        Text("support@musicjam.app")
                     }
                     .font(.subheadline)
                 }
@@ -331,12 +331,12 @@ extension LegalDocumentView {
     private var termsOfServiceContent: some View {
         VStack(alignment: .leading, spacing: 20) {
             LegalSection(title: "Acceptance of Terms") {
-                Text("By accessing or using Celestia, you agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree to these terms, please do not use our services.")
+                Text("By accessing or using MusicJam, you agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree to these terms, please do not use our services.")
             }
 
             LegalSection(title: "Eligibility") {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("To use Celestia, you must:")
+                    Text("To use MusicJam, you must:")
                         .font(.subheadline)
                     SimpleBulletPoint("Be at least 18 years of age")
                     SimpleBulletPoint("Be legally capable of entering into a binding contract")
@@ -379,18 +379,18 @@ extension LegalDocumentView {
             LegalSection(title: "Content Ownership") {
                 VStack(alignment: .leading, spacing: 12) {
                     LegalSubsection(title: "Your Content") {
-                        Text("You retain ownership of content you submit. By posting content, you grant Celestia a non-exclusive, worldwide, royalty-free license to use, display, and distribute your content in connection with our services.")
+                        Text("You retain ownership of content you submit. By posting content, you grant MusicJam a non-exclusive, worldwide, royalty-free license to use, display, and distribute your content in connection with our services.")
                     }
 
                     LegalSubsection(title: "Our Content") {
-                        Text("Celestia and its content, features, and functionality are owned by us and protected by intellectual property laws. You may not copy, modify, or distribute our content without permission.")
+                        Text("MusicJam and its content, features, and functionality are owned by us and protected by intellectual property laws. You may not copy, modify, or distribute our content without permission.")
                     }
                 }
             }
 
             LegalSection(title: "Premium Services & Subscriptions") {
                 VStack(alignment: .leading, spacing: 12) {
-                    Text("Celestia offers premium subscription features. By purchasing a subscription, you agree to the following:")
+                    Text("MusicJam offers premium subscription features. By purchasing a subscription, you agree to the following:")
                         .font(.subheadline)
 
                     LegalSubsection(title: "Billing & Payment") {
@@ -417,7 +417,7 @@ extension LegalDocumentView {
                             Text("You may manage or cancel your subscription at any time through your Apple ID account settings:")
                                 .font(.caption)
                             SimpleBulletPoint("Go to Settings > [Your Name] > Subscriptions on your iOS device")
-                            SimpleBulletPoint("Select Celestia and choose Cancel Subscription")
+                            SimpleBulletPoint("Select MusicJam and choose Cancel Subscription")
                             SimpleBulletPoint("Cancellation takes effect at the end of the current billing period")
                         }
                     }
@@ -487,20 +487,20 @@ extension LegalDocumentView {
                         .font(.subheadline)
                         .fontWeight(.semibold)
                         .foregroundColor(.orange)
-                    Text("While we require users to confirm they are 18 years or older, Celestia cannot independently verify the age of all users. We rely on user-provided information and representations. If you become aware of any user who is under 18, please report them immediately to support@celestia.app.")
+                    Text("While we require users to confirm they are 18 years or older, MusicJam cannot independently verify the age of all users. We rely on user-provided information and representations. If you become aware of any user who is under 18, please report them immediately to support@musicjam.app.")
                         .font(.caption)
                 }
             }
 
             LegalSection(title: "FOSTA-SESTA Compliance") {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Celestia has zero tolerance for sex trafficking, prostitution, or any form of sexual exploitation. In compliance with the Allow States and Victims to Fight Online Sex Trafficking Act (FOSTA) and the Stop Enabling Sex Traffickers Act (SESTA):")
+                    Text("MusicJam has zero tolerance for sex trafficking, prostitution, or any form of sexual exploitation. In compliance with the Allow States and Victims to Fight Online Sex Trafficking Act (FOSTA) and the Stop Enabling Sex Traffickers Act (SESTA):")
                         .font(.subheadline)
                     SimpleBulletPoint("We actively monitor and remove content that promotes or facilitates sex trafficking")
                     SimpleBulletPoint("We cooperate fully with law enforcement investigations")
                     SimpleBulletPoint("Users who violate these provisions will be immediately banned and reported to authorities")
                     SimpleBulletPoint("We maintain records as required by 18 U.S.C. § 2257")
-                    Text("If you witness any suspicious activity, report it immediately to support@celestia.app or contact the National Human Trafficking Hotline at 1-888-373-7888.")
+                    Text("If you witness any suspicious activity, report it immediately to support@musicjam.app or contact the National Human Trafficking Hotline at 1-888-373-7888.")
                         .font(.caption)
                         .fontWeight(.semibold)
                         .padding(.top, 4)
@@ -509,13 +509,13 @@ extension LegalDocumentView {
 
             LegalSection(title: "User-Generated Content Disclaimer") {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Celestia is a platform that hosts user-generated content. We do not endorse, verify, or guarantee the accuracy, completeness, or reliability of any content posted by users, including but not limited to:")
+                    Text("MusicJam is a platform that hosts user-generated content. We do not endorse, verify, or guarantee the accuracy, completeness, or reliability of any content posted by users, including but not limited to:")
                         .font(.subheadline)
                     SimpleBulletPoint("Profile information, photos, and biographical details")
                     SimpleBulletPoint("Messages and communications between users")
                     SimpleBulletPoint("Claims about identity, occupation, or personal circumstances")
                     SimpleBulletPoint("Any representations made by users about themselves")
-                    Text("Content posted by users represents the views and opinions of those users only and does not represent the views of Celestia. We are not responsible for any user content and disclaim all liability arising from user-generated content.")
+                    Text("Content posted by users represents the views and opinions of those users only and does not represent the views of MusicJam. We are not responsible for any user content and disclaim all liability arising from user-generated content.")
                         .font(.caption)
                         .padding(.top, 4)
                 }
@@ -533,18 +533,18 @@ extension LegalDocumentView {
             }
 
             LegalSection(title: "No Professional Advice") {
-                Text("Celestia does not provide professional advice of any kind, including but not limited to legal, medical, psychological, financial, or relationship counseling. Any information provided through the app is for general informational purposes only and should not be relied upon as professional advice. Always seek the advice of qualified professionals for specific concerns.")
+                Text("MusicJam does not provide professional advice of any kind, including but not limited to legal, medical, psychological, financial, or relationship counseling. Any information provided through the app is for general informational purposes only and should not be relied upon as professional advice. Always seek the advice of qualified professionals for specific concerns.")
                     .font(.caption)
             }
 
             LegalSection(title: "Third-Party Trademarks") {
-                Text("All third-party trademarks, service marks, logos, and trade names referenced in this app are the property of their respective owners. Reference to any third-party products, services, or other information does not constitute or imply endorsement, sponsorship, or recommendation by Celestia or any affiliation with such third parties. Apple, the Apple logo, iPhone, and iOS are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc.")
+                Text("All third-party trademarks, service marks, logos, and trade names referenced in this app are the property of their respective owners. Reference to any third-party products, services, or other information does not constitute or imply endorsement, sponsorship, or recommendation by MusicJam or any affiliation with such third parties. Apple, the Apple logo, iPhone, and iOS are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc.")
                     .font(.caption)
             }
 
             LegalSection(title: "User Representations") {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("By using Celestia, you represent and warrant that:")
+                    Text("By using MusicJam, you represent and warrant that:")
                         .font(.subheadline)
                     SimpleBulletPoint("You are at least 18 years old")
                     SimpleBulletPoint("You are legally permitted to use the service in your jurisdiction")
@@ -556,13 +556,13 @@ extension LegalDocumentView {
             }
 
             LegalSection(title: "Indemnification") {
-                Text("You agree to indemnify, defend, and hold harmless Celestia, its officers, directors, employees, agents, and affiliates from any claims, damages, losses, liabilities, costs, and expenses (including reasonable attorney fees) arising from: (a) your use of the service; (b) your violation of these Terms; (c) your violation of any rights of another person or entity; (d) your conduct in connection with the service; or (e) any content you submit to the service.")
+                Text("You agree to indemnify, defend, and hold harmless MusicJam, its officers, directors, employees, agents, and affiliates from any claims, damages, losses, liabilities, costs, and expenses (including reasonable attorney fees) arising from: (a) your use of the service; (b) your violation of these Terms; (c) your violation of any rights of another person or entity; (d) your conduct in connection with the service; or (e) any content you submit to the service.")
                     .font(.caption)
             }
 
             LegalSection(title: "Disclaimers") {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("CELESTIA IS PROVIDED \"AS IS\" WITHOUT WARRANTIES OF ANY KIND. WE DO NOT GUARANTEE:")
+                    Text("MUSICJAM IS PROVIDED \"AS IS\" WITHOUT WARRANTIES OF ANY KIND. WE DO NOT GUARANTEE:")
                         .font(.subheadline)
                         .fontWeight(.semibold)
 
@@ -574,7 +574,7 @@ extension LegalDocumentView {
             }
 
             LegalSection(title: "Limitation of Liability") {
-                Text("TO THE MAXIMUM EXTENT PERMITTED BY LAW, CELESTIA SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE SERVICE, INCLUDING DAMAGES FOR LOSS OF PROFITS, DATA, OR OTHER INTANGIBLE LOSSES.")
+                Text("TO THE MAXIMUM EXTENT PERMITTED BY LAW, MUSICJAM SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE SERVICE, INCLUDING DAMAGES FOR LOSS OF PROFITS, DATA, OR OTHER INTANGIBLE LOSSES.")
                     .font(.caption)
             }
 
@@ -585,7 +585,7 @@ extension LegalDocumentView {
                         .fontWeight(.bold)
                         .foregroundColor(.red)
 
-                    Text("You and Celestia agree that any dispute, claim, or controversy arising out of or relating to these Terms or your use of the Service shall be resolved exclusively through final and binding arbitration, rather than in court.")
+                    Text("You and MusicJam agree that any dispute, claim, or controversy arising out of or relating to these Terms or your use of the Service shall be resolved exclusively through final and binding arbitration, rather than in court.")
                         .font(.caption)
 
                     LegalSubsection(title: "Arbitration Rules") {
@@ -598,7 +598,7 @@ extension LegalDocumentView {
                     }
 
                     LegalSubsection(title: "Arbitration Fees") {
-                        Text("For claims under $10,000, Celestia will reimburse your filing fees and pay the arbitrator's fees. For claims above $10,000, fees will be allocated according to AAA rules.")
+                        Text("For claims under $10,000, MusicJam will reimburse your filing fees and pay the arbitrator's fees. For claims above $10,000, fees will be allocated according to AAA rules.")
                             .font(.caption)
                     }
 
@@ -606,7 +606,7 @@ extension LegalDocumentView {
                         VStack(alignment: .leading, spacing: 4) {
                             Text("You may opt out of this arbitration agreement within 30 days of creating your account by sending written notice to:")
                                 .font(.caption)
-                            Text("legal@celestia.app")
+                            Text("legal@musicjam.app")
                                 .font(.caption)
                                 .fontWeight(.semibold)
                             Text("Include your name, email, and a statement that you wish to opt out of the arbitration agreement.")
@@ -623,7 +623,7 @@ extension LegalDocumentView {
 
             LegalSection(title: "Class Action Waiver") {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("YOU AND CELESTIA AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS, CONSOLIDATED, OR REPRESENTATIVE ACTION.")
+                    Text("YOU AND MUSICJAM AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS, CONSOLIDATED, OR REPRESENTATIVE ACTION.")
                         .font(.caption)
                         .fontWeight(.semibold)
 
@@ -663,7 +663,7 @@ extension LegalDocumentView {
 
             LegalSection(title: "Copyright & DMCA") {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("If you believe content on Celestia infringes your copyright, please send a DMCA notice to support@celestia.app including:")
+                    Text("If you believe content on MusicJam infringes your copyright, please send a DMCA notice to support@musicjam.app including:")
                         .font(.subheadline)
                     SimpleBulletPoint("Identification of the copyrighted work")
                     SimpleBulletPoint("Identification of the infringing material")
@@ -679,21 +679,21 @@ extension LegalDocumentView {
             }
 
             LegalSection(title: "Entire Agreement") {
-                Text("These Terms, together with our Privacy Policy and Community Guidelines, constitute the entire agreement between you and Celestia regarding your use of the service and supersede all prior agreements and understandings.")
+                Text("These Terms, together with our Privacy Policy and Community Guidelines, constitute the entire agreement between you and MusicJam regarding your use of the service and supersede all prior agreements and understandings.")
             }
 
             LegalSection(title: "No Waiver") {
-                Text("Our failure to enforce any right or provision of these Terms shall not constitute a waiver of such right or provision. Any waiver must be in writing and signed by an authorized representative of Celestia.")
+                Text("Our failure to enforce any right or provision of these Terms shall not constitute a waiver of such right or provision. Any waiver must be in writing and signed by an authorized representative of MusicJam.")
             }
 
             LegalSection(title: "Force Majeure") {
-                Text("Celestia shall not be liable for any failure or delay in performance resulting from causes beyond our reasonable control, including but not limited to: acts of God, natural disasters, pandemic, war, terrorism, riots, embargoes, acts of civil or military authorities, fire, floods, accidents, strikes, labor disputes, equipment failures, internet or telecommunications failures, or actions of third-party service providers.")
+                Text("MusicJam shall not be liable for any failure or delay in performance resulting from causes beyond our reasonable control, including but not limited to: acts of God, natural disasters, pandemic, war, terrorism, riots, embargoes, acts of civil or military authorities, fire, floods, accidents, strikes, labor disputes, equipment failures, internet or telecommunications failures, or actions of third-party service providers.")
                     .font(.caption)
             }
 
             LegalSection(title: "Third-Party Services") {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Celestia may contain links to or integrate with third-party services. We are not responsible for:")
+                    Text("MusicJam may contain links to or integrate with third-party services. We are not responsible for:")
                         .font(.subheadline)
                     SimpleBulletPoint("The content, accuracy, or practices of third-party websites or services")
                     SimpleBulletPoint("Any damages arising from your use of third-party services")
@@ -711,7 +711,7 @@ extension LegalDocumentView {
             }
 
             LegalSection(title: "Assignment") {
-                Text("You may not assign or transfer these Terms or your rights hereunder without our prior written consent. Celestia may assign these Terms without restriction. Subject to the foregoing, these Terms will bind and inure to the benefit of the parties and their successors and assigns.")
+                Text("You may not assign or transfer these Terms or your rights hereunder without our prior written consent. MusicJam may assign these Terms without restriction. Subject to the foregoing, these Terms will bind and inure to the benefit of the parties and their successors and assigns.")
                     .font(.caption)
             }
 
@@ -727,13 +727,13 @@ extension LegalDocumentView {
                     HStack {
                         Image(systemName: "envelope")
                             .foregroundColor(.purple)
-                        Text("support@celestia.app")
+                        Text("support@musicjam.app")
                     }
                     .font(.subheadline)
                     HStack {
                         Image(systemName: "doc.text")
                             .foregroundColor(.blue)
-                        Text("legal@celestia.app")
+                        Text("legal@musicjam.app")
                     }
                     .font(.subheadline)
                 }
@@ -748,7 +748,7 @@ extension LegalDocumentView {
     private var communityGuidelinesContent: some View {
         VStack(alignment: .leading, spacing: 20) {
             LegalSection(title: "Our Community Values") {
-                Text("Celestia is built on respect, authenticity, and safety. These guidelines help create a positive environment where everyone can find meaningful connections. Violations may result in warnings, temporary suspensions, or permanent bans.")
+                Text("MusicJam is built on respect, authenticity, and safety. These guidelines help create a positive environment where everyone can find meaningful connections. Violations may result in warnings, temporary suspensions, or permanent bans.")
             }
 
             LegalSection(title: "Be Authentic") {
@@ -863,7 +863,7 @@ extension LegalDocumentView {
     private var safetyTipsContent: some View {
         VStack(alignment: .leading, spacing: 20) {
             LegalSection(title: "Your Safety Matters") {
-                Text("While we work hard to keep Celestia safe, online dating requires caution. These tips will help protect you while meeting new people.")
+                Text("While we work hard to keep MusicJam safe, connecting with musicians online requires caution. These tips will help protect you while meeting new collaborators.")
             }
 
             LegalSection(title: "Protect Your Personal Information") {
@@ -944,7 +944,7 @@ extension LegalDocumentView {
                 VStack(alignment: .leading, spacing: 8) {
                     SimpleBulletPoint("Trust your instincts and leave immediately")
                     SimpleBulletPoint("Call 911 if you're in immediate danger")
-                    SimpleBulletPoint("Report the user on Celestia")
+                    SimpleBulletPoint("Report the user on MusicJam")
                     SimpleBulletPoint("Block the person on all platforms")
                     SimpleBulletPoint("Save any threatening messages as evidence")
                     SimpleBulletPoint("Contact local authorities if needed")
@@ -961,11 +961,11 @@ extension LegalDocumentView {
 
             LegalSection(title: "Report Concerns") {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Help us keep Celestia safe:")
+                    Text("Help us keep MusicJam safe:")
                         .font(.subheadline)
                     SimpleBulletPoint("Report suspicious profiles immediately")
                     SimpleBulletPoint("Report harassment or inappropriate messages")
-                    SimpleBulletPoint("Contact support@celestia.app for urgent concerns")
+                    SimpleBulletPoint("Contact support@musicjam.app for urgent concerns")
                 }
             }
         }
@@ -978,7 +978,7 @@ extension LegalDocumentView {
     private var cookiePolicyContent: some View {
         VStack(alignment: .leading, spacing: 20) {
             LegalSection(title: "About This Policy") {
-                Text("This Cookie & Data Policy explains how Celestia uses cookies, local storage, and similar technologies to collect and store information when you use our mobile application and related services.")
+                Text("This Cookie & Data Policy explains how MusicJam uses cookies, local storage, and similar technologies to collect and store information when you use our mobile application and related services.")
             }
 
             LegalSection(title: "What Are Cookies?") {
@@ -1102,7 +1102,7 @@ extension LegalDocumentView {
                     HStack {
                         Image(systemName: "envelope")
                             .foregroundColor(.purple)
-                        Text("privacy@celestia.app")
+                        Text("privacy@musicjam.app")
                     }
                     .font(.subheadline)
                 }
@@ -1211,12 +1211,12 @@ extension LegalDocumentView {
     private var eulaContent: some View {
         VStack(alignment: .leading, spacing: 20) {
             LegalSection(title: "End User License Agreement") {
-                Text("This End User License Agreement (\"EULA\") is a legal agreement between you and Celestia for the use of the Celestia mobile application. By installing or using Celestia, you agree to be bound by the terms of this EULA.")
+                Text("This End User License Agreement (\"EULA\") is a legal agreement between you and MusicJam for the use of the MusicJam mobile application. By installing or using MusicJam, you agree to be bound by the terms of this EULA.")
             }
 
             LegalSection(title: "License Grant") {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Subject to your compliance with this EULA, Celestia grants you a limited, non-exclusive, non-transferable, revocable license to:")
+                    Text("Subject to your compliance with this EULA, MusicJam grants you a limited, non-exclusive, non-transferable, revocable license to:")
                         .font(.subheadline)
                     SimpleBulletPoint("Download and install the app on devices you own or control")
                     SimpleBulletPoint("Use the app for personal, non-commercial purposes")
@@ -1245,14 +1245,14 @@ extension LegalDocumentView {
 
             LegalSection(title: "Intellectual Property Rights") {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Celestia and its licensors own all intellectual property rights in the app, including:")
+                    Text("MusicJam and its licensors own all intellectual property rights in the app, including:")
                         .font(.subheadline)
                     SimpleBulletPoint("Software code, algorithms, and architecture")
                     SimpleBulletPoint("User interface design and visual elements")
                     SimpleBulletPoint("Trademarks, logos, and brand identity")
                     SimpleBulletPoint("Documentation and other materials")
 
-                    Text("All rights not expressly granted in this EULA are reserved by Celestia.")
+                    Text("All rights not expressly granted in this EULA are reserved by MusicJam.")
                         .font(.caption)
                         .fontWeight(.semibold)
                         .padding(.top, 4)
@@ -1260,12 +1260,12 @@ extension LegalDocumentView {
             }
 
             LegalSection(title: "Open Source Components") {
-                Text("Celestia may include open source software components subject to their respective licenses. A list of open source components and their licenses is available in the app settings. Open source licenses take precedence over this EULA for those specific components.")
+                Text("MusicJam may include open source software components subject to their respective licenses. A list of open source components and their licenses is available in the app settings. Open source licenses take precedence over this EULA for those specific components.")
             }
 
             LegalSection(title: "Updates and Modifications") {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Celestia may release updates that modify the app's functionality:")
+                    Text("MusicJam may release updates that modify the app's functionality:")
                         .font(.subheadline)
                     SimpleBulletPoint("Updates may be downloaded and installed automatically")
                     SimpleBulletPoint("Some updates may be required to continue using the app")
@@ -1316,12 +1316,12 @@ extension LegalDocumentView {
             }
 
             LegalSection(title: "Disclaimer of Warranties") {
-                Text("THE APP IS PROVIDED \"AS IS\" AND \"AS AVAILABLE\" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. CELESTIA DOES NOT WARRANT THAT THE APP WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF HARMFUL COMPONENTS.")
+                Text("THE APP IS PROVIDED \"AS IS\" AND \"AS AVAILABLE\" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. MUSICJAM DOES NOT WARRANT THAT THE APP WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF HARMFUL COMPONENTS.")
                     .font(.caption)
             }
 
             LegalSection(title: "Limitation of Liability") {
-                Text("TO THE FULLEST EXTENT PERMITTED BY LAW, CELESTIA SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF OR RELATED TO YOUR USE OF THE APP, REGARDLESS OF WHETHER SUCH DAMAGES ARE BASED ON CONTRACT, TORT, STRICT LIABILITY, OR ANY OTHER THEORY.")
+                Text("TO THE FULLEST EXTENT PERMITTED BY LAW, MUSICJAM SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF OR RELATED TO YOUR USE OF THE APP, REGARDLESS OF WHETHER SUCH DAMAGES ARE BASED ON CONTRACT, TORT, STRICT LIABILITY, OR ANY OTHER THEORY.")
                     .font(.caption)
             }
 
@@ -1341,7 +1341,7 @@ extension LegalDocumentView {
                     HStack {
                         Image(systemName: "envelope")
                             .foregroundColor(.indigo)
-                        Text("legal@celestia.app")
+                        Text("legal@musicjam.app")
                     }
                     .font(.subheadline)
                 }
@@ -1356,7 +1356,7 @@ extension LegalDocumentView {
     private var accessibilityContent: some View {
         VStack(alignment: .leading, spacing: 20) {
             LegalSection(title: "Our Commitment to Accessibility") {
-                Text("Celestia is committed to ensuring digital accessibility for people with disabilities. We continually improve the user experience for everyone and apply the relevant accessibility standards to ensure we provide equal access to all users.")
+                Text("MusicJam is committed to ensuring digital accessibility for people with disabilities. We continually improve the user experience for everyone and apply the relevant accessibility standards to ensure we provide equal access to all users.")
             }
 
             LegalSection(title: "Accessibility Standards") {
@@ -1449,14 +1449,14 @@ extension LegalDocumentView {
 
             LegalSection(title: "Feedback & Assistance") {
                 VStack(alignment: .leading, spacing: 12) {
-                    Text("We welcome your feedback on the accessibility of Celestia. If you encounter accessibility barriers or need assistance, please contact us:")
+                    Text("We welcome your feedback on the accessibility of MusicJam. If you encounter accessibility barriers or need assistance, please contact us:")
                         .font(.subheadline)
 
                     VStack(alignment: .leading, spacing: 8) {
                         HStack {
                             Image(systemName: "envelope")
                                 .foregroundColor(.teal)
-                            Text("accessibility@celestia.app")
+                            Text("accessibility@musicjam.app")
                         }
                         .font(.subheadline)
 
@@ -1498,7 +1498,7 @@ extension LegalDocumentView {
             }
 
             LegalSection(title: "Legal Information") {
-                Text("This statement was last updated on November 29, 2025. Celestia strives to comply with applicable accessibility laws and regulations. If you believe you have experienced discrimination based on disability in accessing our services, you may file a complaint with the appropriate regulatory authority in your jurisdiction.")
+                Text("This statement was last updated on November 29, 2025. MusicJam strives to comply with applicable accessibility laws and regulations. If you believe you have experienced discrimination based on disability in accessing our services, you may file a complaint with the appropriate regulatory authority in your jurisdiction.")
                     .font(.caption)
             }
         }
