@@ -339,9 +339,9 @@ struct BasicInterestCard: View {
                         }
                         
                         Button(action: onAccept) {
-                            Image(systemName: "heart.fill")
+                            Image(systemName: "star.fill")
                                 .font(.caption)
-                                .foregroundColor(.green)
+                                .foregroundColor(.orange)
                                 .frame(maxWidth: .infinity)
                                 .padding(.vertical, 8)
                                 .background(Color.green.opacity(0.1))

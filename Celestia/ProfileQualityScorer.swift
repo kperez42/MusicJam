@@ -452,7 +452,7 @@ struct ProfileQualityCard: View {
                         .trim(from: 0, to: scorer.getCompletionPercentage())
                         .stroke(
                             LinearGradient(
-                                colors: [.purple, .pink],
+                                colors: [.purple, .orange],
                                 startPoint: .leading,
                                 endPoint: .trailing
                             ),
